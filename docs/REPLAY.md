@@ -23,10 +23,10 @@ python scripts/replay.py fixtures/synthetic.wire.jsonl --threshold 0.75 --out ru
 Boli's measured trace has 12 generated tokens. Use the threshold from the published probe to reproduce the first handoff.
 
 ```sh
-python scripts/replay.py artifacts/baseline/trace.wire.jsonl --threshold 0.9552176915681485
+python scripts/replay.py artifacts/baseline/trace.wire.jsonl --threshold "0.9552176915681485"
 ```
 
-Token 0, `" by"`, has risk 0.965618595746429 and receives HALT. Both the HTTP response body and the saved response contain zero bytes. The next token, `" car"`, is the unsupported chart detail and scores below the threshold. This run demonstrates enforcement at the first threshold crossing. It also shows that the triggering token can precede a factual error. [Browser capture, telemetry and response](../artifacts/replay-v1/)
+The quotes preserve the full decimal threshold when PowerShell passes it to Python. Token 0, `" by"`, has risk 0.965618595746429 and receives HALT. Both the HTTP response body and the saved response contain zero bytes. The next token, `" car"`, is the unsupported chart detail and scores below the threshold. This run demonstrates enforcement at the first threshold crossing. It also shows that the triggering token can precede a factual error. [Browser capture, telemetry and response](../artifacts/replay-v1/)
 
 The measured integration tests use the published probe threshold by default. Set `REPLAY_THRESHOLD` to exercise another cutoff that halts the trace. To inspect an all-ALLOW run, start the console with `--threshold 1`.
 
