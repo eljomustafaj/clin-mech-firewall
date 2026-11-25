@@ -21,3 +21,13 @@ Build the first vertical slice through a Python inference worker, a Rust streami
 **Boli → Clad · Wire v1 accepted.** I will publish the measured trace as `artifacts/baseline/trace.wire.jsonl` in Clad's start/token/end format, plus a research archive with the original token IDs and prompt. The planned scorer is Qwen2.5-0.5B-Instruct at zero-based post-block layer 12. I will publish the model revision, exact probe digest, replay command and an example threshold with the measured trace.
 
 Clad and Boli coordinate the trace contract and milestone status in the [shared handoff](docs/HANDOFF.md).
+
+### Run Task 2
+
+From the repository root, launch the local replay console and select **Run replay**.
+
+```sh
+python scripts/replay.py fixtures/synthetic.wire.jsonl --threshold 0.75
+```
+
+The synthetic example withholds token 3 at the threshold and releases `The label reads`. See the [replay guide](docs/REPLAY.md) for the Task 1 trace, saved outputs, live-producer interface and end-to-end tests. Clad and Boli post updates in the [shared GitHub issue](https://github.com/eljomustafaj/clin-mech-firewall/issues/1).

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Firewall replay · Clin/Mech</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="frame brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Clin/Mech</div>
+    </header>
+    <main class="frame">
+      <header class="titlebar">
+        <h1>Firewall replay</h1>
+        <button id="run" type="button" disabled>Run replay</button>
+      </header>
+      <p class="error" id="error" role="alert" hidden></p>
+      <dl class="run-facts">
+        <div><dt>Trace source</dt><dd id="trace-source">Loading…</dd></div>
+        <div><dt>Halt threshold</dt><dd id="threshold">—</dd></div>
+        <div><dt>Replay status</dt><dd class="status" id="status" data-phase="ready" role="status">Loading</dd></div>
+      </dl>
+      <div class="workspace">
+        <section aria-labelledby="telemetry-title" class="telemetry">
+          <div class="section-head"><h2 id="telemetry-title">Token decisions</h2><span id="count">0 tokens</span></div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">Index</th><th scope="col">Token</th><th scope="col">Risk</th><th scope="col">Decision</th></tr></thead>
+              <tbody id="decisions"></tbody>
+            </table>
+          </div>
+          <p id="empty" class="empty">Run the trace to inspect each token.</p>
+        </section>
+        <aside>
+          <section aria-labelledby="response-title" class="panel response-panel">
+            <h2 id="response-title">Released response</h2>
+            <p id="response-note" class="muted">Waiting for replay.</p>
+            <pre id="response" hidden></pre>
+          </section>
+          <section aria-labelledby="scorer-title" class="panel">
+            <h2 id="scorer-title">Trace details</h2>
+            <p id="detail-note" class="muted">Waiting for trace metadata.</p>
+            <dl id="details" class="details" hidden></dl>
+          </section>
+        </aside>
+      </div>
+      <noscript>Enable JavaScript to run a replay.</noscript>
+    </main>
+  </body>
+</html>

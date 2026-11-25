@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/eljomustafaj/clin-mech-firewall/main/schema/wire-v1.schema.json",
+  "title": "Clinical firewall wire protocol v1",
+  "description": "Each UTF-8 JSONL line is one object with unique keys. Validate producer records against #/$defs/inputEvent and replay output against #/$defs/telemetryEvent. Strings contain Unicode scalar values. On the wire, integer fields use integer literals without a decimal point or exponent.",
+  "oneOf": [
+    { "$ref": "#/$defs/inputEvent" },
+    { "$ref": "#/$defs/telemetryEvent" }
+  ],
+  "$defs": {
+    "safeInteger": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+    "identifier": {
+      "type": "string",
+      "description": "Contains at least one character outside the Unicode White_Space property.",
+      "pattern": "[^\\u0009-\\u000d\\u0020\\u0085\\u00a0\\u1680\\u2000-\\u200a\\u2028\\u2029\\u202f\\u205f\\u3000]"
+    },
+    "score": { "type": "number", "minimum": 0, "maximum": 1 },
+    "source": {
+      "type": "object",
+      "required": ["schema_version", "trace_id", "model_id", "model_revision", "layer", "probe_id", "probe_revision"],
+      "properties": {
+        "schema_version": { "type": "integer", "const": 1 },
+        "trace_id": { "$ref": "#/$defs/identifier" },
+        "model_id": { "$ref": "#/$defs/identifier" },
+        "model_revision": { "$ref": "#/$defs/identifier" },
+        "layer": { "$ref": "#/$defs/safeInteger", "description": "Zero-based transformer block." },
+        "probe_id": { "$ref": "#/$defs/identifier" },
+        "probe_revision": { "$ref": "#/$defs/identifier" }
+      }
+    },
+    "scoredToken": {
+      "type": "object",
+      "required": ["index", "text", "risk"],
+      "properties": {
+        "index": {
+          "type": "integer", "minimum": 0, "maximum": 9007199254740990,
+          "description": "Zero-based token index. Its one-based count must also be a safe integer."
+        },
+        "text": { "type": "string", "description": "Exact incremental decoded text, including whitespace." },
+        "risk": { "$ref": "#/$defs/score", "description": "Higher scores indicate greater risk." },
+        "sae_feature_ids": { "type": "array", "items": { "$ref": "#/$defs/safeInteger" } }
+      }
+    },
+    "inputEvent": {
+      "description": "The worker validates one start, then contiguous tokens from index zero, then one end with the observed count, followed by EOF.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/source",
+          "type": "object", "required": ["type"],
+          "properties": { "type": { "const": "start" } },
+          "unevaluatedProperties": false
+        },
+        {
+          "$ref": "#/$defs/scoredToken",
+          "type": "object", "required": ["type"],
+          "properties": { "type": { "const": "token" } },
+          "unevaluatedProperties": false
+        },
+        {
+          "type": "object", "required": ["type", "token_count"],
+          "properties": {
+            "type": { "const": "end" },
+            "token_count": { "$ref": "#/$defs/safeInteger" }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "telemetryEvent": {
+      "description": "A successful replay streams one start, contiguous decisions with the same trace_id, and one end. A token with risk >= threshold receives HALT, is withheld, and is the final decision. The end count includes it. A failed HTTP replay can emit a terminal error instead.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/source",
+          "type": "object", "required": ["type", "threshold"],
+          "properties": {
+            "type": { "const": "start" },
+            "threshold": { "$ref": "#/$defs/score" }
+          },
+          "unevaluatedProperties": false
+        },
+        {
+          "$ref": "#/$defs/scoredToken",
+          "type": "object", "required": ["type", "trace_id", "decision"],
+          "properties": {
+            "type": { "const": "decision" },
+            "trace_id": { "$ref": "#/$defs/identifier" },
+            "decision": { "enum": ["ALLOW", "HALT"] }
+          },
+          "unevaluatedProperties": false
+        },
+        {
+          "type": "object", "required": ["type", "trace_id", "status", "token_count"],
+          "properties": {
+            "type": { "const": "end" },
+            "trace_id": { "$ref": "#/$defs/identifier" },
+            "status": { "enum": ["complete", "halted"] },
+            "token_count": { "$ref": "#/$defs/safeInteger" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object", "required": ["type", "message"],
+          "properties": {
+            "type": { "const": "error" },
+            "message": { "type": "string" }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}
