@@ -3,7 +3,7 @@ import { spawn } from "node:child_process";
 import { once } from "node:events";
 import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
-import { join, resolve } from "node:path";
+import { join, relative, resolve } from "node:path";
 import { createInterface } from "node:readline";
 import { after, before, test } from "node:test";
 import { fileURLToPath } from "node:url";
@@ -11,9 +11,8 @@ import { chromium } from "playwright-core";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const fixture = join(root, "fixtures/synthetic.wire.jsonl");
-const archive = process.env.REAL_TRACE
-  ? resolve(process.env.REAL_TRACE)
-  : join(root, "artifacts/baseline/trace.wire.jsonl");
+const baseline = join(root, "artifacts/baseline/trace.wire.jsonl");
+const archive = process.env.REAL_TRACE ? resolve(process.env.REAL_TRACE) : baseline;
 const executable = process.platform === "win32" ? "firewall-proxy.exe" : "firewall-proxy";
 const proxy = process.env.FIREWALL_PROXY || join(root, "proxy/target/debug", executable);
 let browser;
@@ -72,6 +71,7 @@ async function verify(t, trace, supplied, { requireHalt = true } = {}) {
   assert.deepEqual(await result.body(), Buffer.from(expected, "utf8"));
   await page.getByRole("button", { name: "Run again" }).waitFor();
   assert.equal(await page.locator("#error").isHidden(), true, await page.locator("#error").textContent());
+  assert.equal(await page.locator("#threshold").textContent(), `≥ ${threshold}`);
   assert.equal(await page.locator("#status").textContent(), halt < 0 ? "Complete" : `Halted at #${halt}`);
   assert.equal(await page.locator("#response").textContent(), expected);
   assert.deepEqual(await page.locator("#decisions tr").evaluateAll((rows) => rows.map((row) => ({
@@ -154,6 +154,14 @@ test("browser preserves Unicode and markup as text, and detects a mismatched res
 test("browser matches Task 1 archive through the real worker and proxy", {
   skip: !process.env.REAL_TRACE && !existsSync(archive) ? "Task 1 wire trace is not present" : false,
 }, async (t) => {
-  const threshold = process.env.REPLAY_THRESHOLD === undefined ? undefined : Number(process.env.REPLAY_THRESHOLD);
+  let threshold;
+  if (process.env.REPLAY_THRESHOLD !== undefined) {
+    threshold = Number(process.env.REPLAY_THRESHOLD);
+  } else if (relative(baseline, archive) === "") {
+    const probe = JSON.parse(await readFile(join(root, "artifacts/baseline/probe.json"), "utf8"));
+    assert.ok(Number.isFinite(probe.threshold) && probe.threshold >= 0 && probe.threshold <= 1,
+      "The published probe must include its validation threshold.");
+    threshold = probe.threshold;
+  }
   await verify(t, archive, threshold);
 });

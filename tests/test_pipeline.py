@@ -157,7 +157,8 @@ class ReplayIntegration(unittest.TestCase):
         self.assertEqual(rows(regenerated), rows(BASELINE))
         tokens = rows(BASELINE)[1:-1]
         self.assertTrue(tokens, "the real trace must contain generated tokens")
-        threshold = float(os.environ.get("REPLAY_THRESHOLD", max(t["risk"] for t in tokens)))
+        probe = json.loads(BASELINE.with_name("probe.json").read_bytes())
+        threshold = float(os.environ.get("REPLAY_THRESHOLD", probe["threshold"]))
         self.assertTrue(any(token["risk"] >= threshold for token in tokens),
                         "the baseline acceptance run must exercise HALT")
         self.http_replay(BASELINE, threshold)

@@ -40,7 +40,7 @@ jobs:
           path: proxy/target/debug/firewall-proxy.exe
       - name: Test the worker and the complete replay pipeline
         run: |
-          python -m unittest -v worker.test_replay
+          python -m unittest -v worker.test_replay worker.test_inference
           python -m unittest discover -s tests -v
       - name: Verify the checked-in TypeScript build
         working-directory: web

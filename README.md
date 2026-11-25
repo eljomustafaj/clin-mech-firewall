@@ -22,6 +22,8 @@ python -m eval.report artifacts/baseline
 
 ## Task 2 — Clad owns the streaming firewall and visualizer
 
+**Completed.** Clad verified Boli's measured trace in Chrome and through the separate HTTP response. The firewall withheld token 0, `" by"`, and released zero bytes. [Browser capture](artifacts/replay-v1/browser.png) · [Decision telemetry](artifacts/replay-v1/telemetry.jsonl) · [Replay guide and tests](docs/REPLAY.md)
+
 Start by agreeing on a versioned event schema with Boli, before either owner builds against it. Define how a trace identifies the model and probe, orders tokens, records a risk score, and links a policy decision to a token. Allow sparse autoencoder feature IDs to be absent while the linear probe is the only scorer.
 
 Build the first vertical slice through a Python inference worker, a Rust streaming proxy, and a TypeScript replay view. The proxy should apply a configurable `ALLOW` or `HALT` decision before releasing each token and stream the decision to the view. Record the triggering token in telemetry even when it is withheld from the response.

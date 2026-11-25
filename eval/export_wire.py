@@ -16,6 +16,11 @@ def wire_records(trace):
     max_safe_integer = 2**53 - 1
     if trace["layer"] > max_safe_integer or len(trace["tokens"]) > max_safe_integer:
         raise ValueError("wire layer and token count must be JavaScript safe integers")
+    yield from scored_wire_records(trace, trace["tokens"])
+
+
+def scored_wire_records(trace, tokens):
+    """Map archived or live candidate scores to v1 without buffering generated tokens."""
     yield {
         "type": "start",
         "schema_version": 1,
@@ -26,14 +31,15 @@ def wire_records(trace):
         "probe_id": "research-linear-probe-v1",
         "probe_revision": trace["probe_id"],
     }
-    for token in trace["tokens"]:
+    count = 0
+    for count, token in enumerate(tokens, 1):
         yield {
             "type": "token",
             "index": token["position"],
             "text": token["text"],
             "risk": token["risk_score"],
         }
-    yield {"type": "end", "token_count": len(trace["tokens"])}
+    yield {"type": "end", "token_count": count}
 
 
 def export_wire(archive: Path, probe: Path, output: Path) -> None:

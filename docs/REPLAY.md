@@ -20,7 +20,15 @@ python scripts/replay.py fixtures/synthetic.wire.jsonl --threshold 0.75 --out ru
 
 ## Run a measured trace
 
-Boli publishes the Task 1 input at `artifacts/baseline/trace.wire.jsonl`. Supply it in place of the fixture and use a threshold within its observed score range to exercise HALT. The integration tests below choose the maximum observed risk by default, ensuring that at least one generated token triggers HALT. Set `REPLAY_THRESHOLD` to test a different cutoff. A threshold chosen for a replay demonstrates the release rule. Clinical calibration requires separate evidence.
+Boli's measured trace has 12 generated tokens. Use the threshold from the published probe to reproduce the first handoff.
+
+```sh
+python scripts/replay.py artifacts/baseline/trace.wire.jsonl --threshold 0.9552176915681485
+```
+
+Token 0, `" by"`, has risk 0.965618595746429 and receives HALT. Both the HTTP response body and the saved response contain zero bytes. The next token, `" car"`, is the unsupported chart detail and scores below the threshold. This run demonstrates enforcement at the first threshold crossing. It also shows that the triggering token can precede a factual error. [Browser capture, telemetry and response](../artifacts/replay-v1/)
+
+The measured integration tests use the published probe threshold by default. Set `REPLAY_THRESHOLD` to exercise another cutoff that halts the trace. To inspect an all-ALLOW run, start the console with `--threshold 1`.
 
 ## How a token reaches the browser
 
@@ -31,12 +39,26 @@ Boli publishes the Task 1 input at `artifacts/baseline/trace.wire.jsonl`. Supply
 
 To run with an existing build, add `--proxy PATH_TO_EXECUTABLE`. To use a different loopback port, add `--port 8001`.
 
+### Stream from a loaded model
+
+After loading Boli's pinned `ResidualModel` in the research environment, pass that instance and a prompt to the worker. The target can be the Rust proxy's binary stdin. The worker computes the probe revision from the bytes it actually scores with and emits each candidate as the model produces it. A new run ID identifies live output independently of the archived trace. [Loading the model](RESEARCH.md#scoring-a-live-prompt)
+
+```python
+from pathlib import Path
+import sys
+from uuid import uuid4
+from worker.inference import write_inference
+
+write_inference(model, prompt, Path("artifacts/baseline/probe.json"), sys.stdout.buffer,
+                trace_id=uuid4().hex, max_new_tokens=12)
+```
+
 ## Reproduce the checks
 
 ```sh
 cargo test --locked --manifest-path proxy/Cargo.toml
 cargo build --locked --manifest-path proxy/Cargo.toml
-python -m unittest -v worker.test_replay
+python -m unittest -v worker.test_replay worker.test_inference
 python -m unittest discover -s tests -v
 cd web
 npm ci

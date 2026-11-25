@@ -1,3 +1,4 @@
+import io
 import json
 import tempfile
 import unittest
@@ -13,6 +14,8 @@ from transformers import GPT2Config, GPT2LMHeadModel, PreTrainedTokenizerFast
 from eval.run import grouped_intervals, pair_accuracy, split_indices, trace_identifier
 from mech_interp.model import ResidualModel, last_span_token
 from mech_interp.probe import choose_threshold, classification_metrics, fit_probe, score, sigmoid
+from worker.inference import write_inference
+from worker.replay import read_trace
 
 
 class ProbeTests(unittest.TestCase):
@@ -130,6 +133,24 @@ class OfflineModelTests(unittest.TestCase):
         wrong_layer = {**self.probe, "layer": 0}
         with self.assertRaisesRegex(ValueError, "layer"):
             list(self.decoder.generate_tokens("room", wrong_layer, 1))
+
+    def test_live_worker_matches_the_loaded_decoder(self):
+        prompt = "patient room"
+        probe = {**self.probe, "threshold": 0.5}
+        expected = list(self.decoder.generate_tokens(prompt, probe, 3))
+        target = io.BytesIO()
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "probe.json"
+            path.write_text(json.dumps(probe), encoding="utf-8")
+            write_inference(self.decoder, prompt, path, target, trace_id="live-decoder", max_new_tokens=3)
+        target.seek(0)
+        start, *tokens, end = read_trace(target)
+        self.assertEqual(start["trace_id"], "live-decoder")
+        self.assertEqual(tokens, [
+            {"type": "token", "index": t["position"], "text": t["text"], "risk": t["risk_score"]}
+            for t in expected
+        ])
+        self.assertEqual(end, {"type": "end", "token_count": len(expected)})
 
 
 if __name__ == "__main__":

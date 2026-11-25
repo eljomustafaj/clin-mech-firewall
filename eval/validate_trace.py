@@ -72,12 +72,17 @@ def validate_probe(trace, path):
     raw = path.read_bytes()
     if trace["probe_id"] != "sha256:" + hashlib.sha256(raw).hexdigest():
         raise ValueError("probe_id differs from the supplied file's SHA-256")
+    parse_probe(raw, trace)
+
+
+def parse_probe(raw, source):
+    """Parse fitted probe bytes and check their weights and source metadata."""
     probe = parse_json(raw)
     _object(probe, "probe")
     if probe.get("schema_version") != "linear-probe.v1" or probe.get("positive_label") != "unsupported":
         raise ValueError("expected linear-probe.v1 with positive_label=unsupported")
     for name in ("model_id", "model_revision", "layer"):
-        if type(probe.get(name)) is not type(trace[name]) or probe[name] != trace[name]:
+        if type(probe.get(name)) is not type(source[name]) or probe[name] != source[name]:
             raise ValueError(f"probe {name} differs from the trace")
     size = probe.get("hidden_size")
     weights = probe.get("weights")
@@ -88,6 +93,7 @@ def validate_probe(trace, path):
     threshold = probe.get("threshold")
     if not _finite_number(threshold) or not 0 <= threshold <= 1:
         raise ValueError("probe threshold must be a finite number in [0, 1]")
+    return probe
 
 
 def main():

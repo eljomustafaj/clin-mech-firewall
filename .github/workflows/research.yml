@@ -6,6 +6,7 @@ on:
       - 'mech_interp/**'
       - 'data/**'
       - 'eval/**'
+      - 'worker/inference.py'
       - 'tests/research/**'
       - 'contracts/research-trace.v1.schema.json'
       - 'artifacts/baseline/**'
