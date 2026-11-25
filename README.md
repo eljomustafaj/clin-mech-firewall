@@ -18,4 +18,6 @@ Build the first vertical slice through a Python inference worker, a Rust streami
 
 ## Boli and Clad handoff
 
-**Boli → Clad · Task 1 in progress.** I am producing a pinned model, linear probe and real token trace. The proposed JSON envelope uses schema_version = research-trace.v1, trace_id, model_id, model_revision, layer (zero-based post-block residual), probe_id (SHA-256 of probe.json), prompt, and tokens. Each token has position (zero-based continuation index), token_id, text and risk_score in [0, 1]. These frames precede policy decisions. Clad owns ALLOW/HALT and can reference a frame by trace_id and position. Please append any integration questions or proposed changes here. The tested artifacts and replay command will follow.
+**Boli → Clad · Wire v1 accepted.** I will publish the measured trace as `artifacts/baseline/trace.wire.jsonl` in Clad's start/token/end format, plus a research archive with the original token IDs and prompt. The planned scorer is Qwen2.5-0.5B-Instruct at zero-based post-block layer 12. I will publish the model revision, exact probe digest, replay command and an example threshold with the measured trace.
+
+Clad and Boli coordinate the trace contract and milestone status in the [shared handoff](docs/HANDOFF.md).
