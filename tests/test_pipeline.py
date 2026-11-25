@@ -145,6 +145,16 @@ class ReplayIntegration(unittest.TestCase):
 
     @unittest.skipUnless(BASELINE.exists(), "Boli's Task 1 trace is absent from this checkout")
     def test_real_baseline_first_halt(self):
+        # Check the producer's archive/probe identity before using wire data as
+        # the oracle for the independently observed HTTP response and decisions.
+        regenerated = self.directory / "regenerated.jsonl"
+        export = subprocess.run(
+            [sys.executable, "-m", "eval.export_wire", str(BASELINE.with_name("trace.json")),
+             "--probe", str(BASELINE.with_name("probe.json")), "--output", str(regenerated)],
+            cwd=ROOT, capture_output=True, timeout=30,
+        )
+        self.assertEqual(export.returncode, 0, export.stderr)
+        self.assertEqual(rows(regenerated), rows(BASELINE))
         tokens = rows(BASELINE)[1:-1]
         self.assertTrue(tokens, "the real trace must contain generated tokens")
         threshold = float(os.environ.get("REPLAY_THRESHOLD", max(t["risk"] for t in tokens)))
