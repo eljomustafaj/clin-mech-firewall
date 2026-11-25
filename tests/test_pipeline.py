@@ -147,7 +147,10 @@ class ReplayIntegration(unittest.TestCase):
     def test_real_baseline_first_halt(self):
         tokens = rows(BASELINE)[1:-1]
         self.assertTrue(tokens, "the real trace must contain generated tokens")
-        self.http_replay(BASELINE, float(os.environ.get("REPLAY_THRESHOLD", max(t["risk"] for t in tokens))))
+        threshold = float(os.environ.get("REPLAY_THRESHOLD", max(t["risk"] for t in tokens)))
+        self.assertTrue(any(token["risk"] >= threshold for token in tokens),
+                        "the baseline acceptance run must exercise HALT")
+        self.http_replay(BASELINE, threshold)
 
 
 if __name__ == "__main__":

@@ -17,6 +17,13 @@ from uuid import uuid4
 
 
 ROOT = Path(__file__).resolve().parents[1]
+ASSETS = {
+    "/": ("index.html", "text/html; charset=utf-8"),
+    "/style.css": ("style.css", "text/css; charset=utf-8"),
+    "/main.js": ("main.js", "text/javascript; charset=utf-8"),
+    "/view.js": ("view.js", "text/javascript; charset=utf-8"),
+    "/telemetry.js": ("telemetry.js", "text/javascript; charset=utf-8"),
+}
 
 
 @contextmanager
@@ -137,16 +144,9 @@ class ReplayHandler(BaseHTTPRequestHandler):
             if data is None:
                 return self.send_error(404, "Response unavailable")
             return self.send_bytes(data, "text/plain; charset=utf-8")
-        assets = {
-            "/": ("index.html", "text/html; charset=utf-8"),
-            "/style.css": ("style.css", "text/css; charset=utf-8"),
-            "/main.js": ("main.js", "text/javascript; charset=utf-8"),
-            "/view.js": ("view.js", "text/javascript; charset=utf-8"),
-            "/telemetry.js": ("telemetry.js", "text/javascript; charset=utf-8"),
-        }
-        if self.path not in assets:
+        if self.path not in ASSETS:
             return self.send_error(404)
-        name, content_type = assets[self.path]
+        name, content_type = ASSETS[self.path]
         return self.send_bytes((ROOT / "web/dist" / name).read_bytes(), content_type)
 
     def do_POST(self):
@@ -216,6 +216,8 @@ def main():
                 raise
             print(f"Wrote replay to {args.out}")
             return
+        if any(not (ROOT / "web/dist" / name).is_file() for name, _ in ASSETS.values()):
+            raise ValueError("Browser assets are missing. In web/, run npm ci and npm run build.")
         with tempfile.TemporaryDirectory(prefix="firewall-") as tmp:
             handler = partial(ReplayHandler, trace=args.trace, threshold=args.threshold,
                               proxy=proxy, store=ReplayStore(tmp))

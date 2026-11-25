@@ -35,7 +35,11 @@ impl Source {
             &self.probe_id,
             &self.probe_revision,
         ] {
-            if id.trim().is_empty() {
+            // Python's str.isspace() also includes the four information separators.
+            if id
+                .chars()
+                .all(|c| c.is_whitespace() || ('\u{1c}'..='\u{1f}').contains(&c))
+            {
                 return Err("source identifiers and revisions must contain text".into());
             }
         }
@@ -101,7 +105,14 @@ fn emit(out: &mut impl Write, event: Event<'_>) -> Result<()> {
 }
 
 fn parse(line: Option<std::io::Result<String>>, number: u64) -> Result<Input> {
-    let line = line.ok_or_else(|| format!("unexpected EOF before line {number}"))??;
+    let line = line
+        .ok_or_else(|| format!("unexpected EOF before line {number}"))?
+        .map_err(|error| format!("line {number}: {error}"))?;
+    // Serde also supports positional struct representations. JSONL v1 requires
+    // each record to be a named-field object, even when read directly from stdin.
+    if !line.trim_start().starts_with('{') {
+        return Err(format!("line {number}: expected a JSON object").into());
+    }
     serde_json::from_str(&line).map_err(|error| format!("line {number}: {error}").into())
 }
 
@@ -264,6 +275,7 @@ mod tests {
     #[test]
     fn rejects_malformed_or_ambiguous_records_before_release() {
         for token in [
+            r#"["token",0,"x",0,[]]"#,
             r#"{"type":"token","index":0,"text":"x","risk":1.1}"#,
             r#"{"type":"token","index":false,"text":"x","risk":0}"#,
             r#"{"type":"token","index":0.0,"text":"x","risk":0}"#,
@@ -280,6 +292,7 @@ mod tests {
         for bad_start in [
             START.replace(r#""schema_version":1"#, r#""schema_version":2"#),
             START.replace(r#""model_id":"M""#, r#""model_id":"  ""#),
+            START.replace(r#""model_id":"M""#, r#""model_id":"\u001c""#),
             START.replace(r#""layer":0"#, r#""layer":9007199254740992"#),
         ] {
             let (result, response, events) = run(&[&bad_start]);

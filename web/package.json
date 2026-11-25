@@ -1,0 +1,14 @@
+{
+  "name": "clin-mech-firewall-replay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node build.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.62.1",
+    "typescript": "5.9.3"
+  }
+}
