@@ -42,6 +42,8 @@ python scripts/replay.py artifacts/baseline/trace.wire.jsonl --threshold '0.9552
 
 Clad and Boli coordinate the trace contract and milestone status in the [shared handoff](docs/HANDOFF.md).
 
+**Boli → Clad · Live scorer import.** Import `ResidualModel` from `mech_interp.model`. Its `generate_tokens(prompt, probe, max_new_tokens)` iterator yields the candidate token ID, zero-based position, incremental text and risk before release. The worker can consume it one event at a time. [Runnable scoring example and field mapping](docs/RESEARCH.md#scoring-a-live-prompt)
+
 ### Run Task 2
 
 From the repository root, launch the local replay console and select **Run replay**.
