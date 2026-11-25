@@ -1,0 +1,73 @@
+{
+  "schema_version": "source-role-development.v1",
+  "selection_sha256": "6b7dc3b52e77721705bd5fe4a9d7e2c6321783c2ce450f84605b9f74ec01b6ae",
+  "probe_sha256": "8d0f4e8d359affa07be74cb3a2e8c564296c21f654861068530833f9d436358c",
+  "fallback_probe_sha256": "3c7bd6c3ab4547618a013f4aae07e1ad69708ca151064ba3b8da8b230d945350",
+  "threshold": 0.9412578522854479,
+  "validation": {
+    "overall": {
+      "n": 384,
+      "tp": 101,
+      "fp": 4,
+      "tn": 188,
+      "fn": 91,
+      "auroc": 0.9098036024305557,
+      "f1": 0.6801346801346801,
+      "false_positive_rate": 0.020833333333333332,
+      "recall": 0.5260416666666666,
+      "accuracy": 0.7526041666666666,
+      "precision": 0.9619047619047619
+    },
+    "by_layout": {
+      "signed_extract": {
+        "n_supported": 64,
+        "fp": 4,
+        "fpr": 0.0625
+      },
+      "tab_history": {
+        "n_supported": 64,
+        "fp": 0,
+        "fpr": 0.0
+      },
+      "visit_labels": {
+        "n_supported": 64,
+        "fp": 0,
+        "fpr": 0.0
+      }
+    },
+    "by_location": {
+      "prior": {
+        "n_errors": 96,
+        "tp": 6,
+        "recall": 0.0625
+      },
+      "absent": {
+        "n_errors": 96,
+        "tp": 95,
+        "recall": 0.9895833333333334
+      }
+    },
+    "feasible": true
+  },
+  "coverage": {
+    "train": {
+      "matched": 696,
+      "rows": 928
+    },
+    "validation": {
+      "matched": 288,
+      "rows": 384
+    }
+  },
+  "device": "cuda",
+  "dtype": "float16",
+  "batch_size": 8,
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "layer": 12,
+  "sha256": {
+    "source-activations.npz": "7f0ec4da5bb6d548c4ba0f764d64ed9e6a7ee493aa0f6ae7cb06cc85b5ba878d",
+    "source-probe.json": "8d0f4e8d359affa07be74cb3a2e8c564296c21f654861068530833f9d436358c",
+    "validation-predictions.jsonl": "10cbe6a6d7b555fb3c2801c99226642acbb71b63b0db9612032d22c93b168b9c"
+  }
+}

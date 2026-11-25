@@ -20,7 +20,7 @@ python scripts/replay.py fixtures/synthetic.wire.jsonl --threshold 0.75 --out ru
 
 ## Run a measured trace
 
-Boli's measured trace has 12 generated tokens. Use the threshold from the published probe to reproduce the first handoff.
+The measured trace has 12 generated tokens. Use the threshold from the published probe to reproduce the first handoff.
 
 ```sh
 python scripts/replay.py artifacts/baseline/trace.wire.jsonl --threshold "0.9552176915681485"
@@ -32,7 +32,7 @@ The measured integration tests use the published probe threshold by default. Set
 
 ## How a token reaches the browser
 
-1. The Python worker reads Boli's scored trace one UTF-8 JSON object at a time. A live producer can pass an iterator of scored records to `worker.replay.write_trace(records, binary_output)`, or send its JSONL to `python -u worker/replay.py -`. The offline replay reuses Task 1's recorded scores.
+1. The Python worker reads the scored trace one UTF-8 JSON object at a time. A live producer can pass an iterator of scored records to `worker.replay.write_trace(records, binary_output)`, or send its JSONL to `python -u worker/replay.py -`. The offline replay reuses Task 1's recorded scores.
 2. The Rust proxy reads each token from standard input, checks its index and risk and applies the threshold before writing response bytes. It flushes ALLOW text to the response file and flushes each decision to telemetry. At the first score greater than or equal to the threshold, it emits HALT and ends the replay. A complete all-ALLOW run requires a matching end count and EOF.
 3. The loopback server starts a separate worker and proxy for each replay. `POST /api/replays` streams operator telemetry as NDJSON and returns an `X-Replay-Id` header. `GET /api/replays/<id>/response` returns the approved text only after a successful terminal event. The server retains the 32 latest completed responses until it exits. A failed replay has no retrievable response.
 4. The TypeScript view renders each decision as it arrives. It displays the separate response after checking that its decoded text equals the ALLOW prefix. Trace details identify the model, revision, layer, probe and probe revision.
@@ -41,7 +41,7 @@ To run with an existing build, add `--proxy PATH_TO_EXECUTABLE`. To use a differ
 
 ### Stream from a loaded model
 
-After loading Boli's pinned `ResidualModel` in the research environment, pass that instance and a prompt to the worker. The target can be the Rust proxy's binary stdin. The worker computes the probe revision from the bytes it actually scores with and emits each candidate as the model produces it. A new run ID identifies live output independently of the archived trace. [Loading the model](RESEARCH.md#scoring-a-live-prompt)
+After loading the pinned `ResidualModel` in the research environment, pass that instance and a prompt to the worker. The target can be the Rust proxy's binary stdin. The worker computes the probe revision from the bytes it actually scores with and emits each candidate as the model produces it. A new run ID identifies live output independently of the archived trace. [Loading the model](RESEARCH.md#scoring-a-live-prompt)
 
 ```python
 from pathlib import Path
@@ -69,4 +69,4 @@ npm test
 
 Browser development and tests use Node.js 22 and npm. On Linux, use `npx playwright-core install --with-deps chromium` if the system needs Chromium libraries. `CHROME_PATH` selects an installed Chrome executable. `FIREWALL_PROXY` selects a prebuilt proxy for integration tests.
 
-The tests exercise HALT on the threshold, an empty release, a completed all-ALLOW replay, truncation, token delivery before producer EOF and a failed second replay in the browser. The measured-trace tests run when Boli's wire file is present and otherwise report a skip. The browser test compares the actual HTTP response bytes and every displayed token index, text, score and decision against the input. The [shared handoff](HANDOFF.md) records the agreed wire format and links the owners' coordination issue.
+The tests exercise HALT on the threshold, an empty release, a completed all-ALLOW replay, truncation, token delivery before producer EOF and a failed second replay in the browser. The measured-trace tests run when the wire file is present and otherwise report a skip. The browser test compares the actual HTTP response bytes and every displayed token index, text, score and decision against the input. The [shared handoff](HANDOFF.md) records the agreed wire format and links the owners' coordination issue.

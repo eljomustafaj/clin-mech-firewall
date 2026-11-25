@@ -143,7 +143,7 @@ class ReplayIntegration(unittest.TestCase):
             urlopen(url, timeout=10)
         self.assertEqual(response.exception.code, http.client.NOT_FOUND)
 
-    @unittest.skipUnless(BASELINE.exists(), "Boli's Task 1 trace is absent from this checkout")
+    @unittest.skipUnless(BASELINE.exists(), "The Task 1 trace is absent from this checkout")
     def test_real_baseline_first_halt(self):
         # Check the producer's archive/probe identity before using wire data as
         # the oracle for the independently observed HTTP response and decisions.

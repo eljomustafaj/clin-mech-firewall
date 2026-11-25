@@ -19,7 +19,7 @@ def wire_records(trace):
     yield from scored_wire_records(trace, trace["tokens"])
 
 
-def scored_wire_records(trace, tokens):
+def scored_wire_records(trace, tokens, *, probe_family="research-linear-probe-v1"):
     """Map archived or live candidate scores to v1 without buffering generated tokens."""
     yield {
         "type": "start",
@@ -28,7 +28,7 @@ def scored_wire_records(trace, tokens):
         "model_id": trace["model_id"],
         "model_revision": trace["model_revision"],
         "layer": trace["layer"],
-        "probe_id": "research-linear-probe-v1",
+        "probe_id": probe_family,
         "probe_revision": trace["probe_id"],
     }
     count = 0

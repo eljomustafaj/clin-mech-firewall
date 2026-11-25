@@ -1,4 +1,4 @@
-# Reproducing Boli’s research baseline
+# Reproducing the research baseline
 
 The experiment asks whether a linear classifier can identify an unsupported candidate answer from the model state at the last token of the relevant fact. A second experiment records that same classifier during greedy generation. Only the supplied candidate answers have reference labels.
 
