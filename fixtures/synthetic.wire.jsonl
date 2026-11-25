@@ -1,0 +1,7 @@
+{"type":"start","schema_version":1,"trace_id":"synthetic-clipboard-01","model_id":"synthetic","model_revision":"fixture-v1","layer":0,"probe_id":"synthetic","probe_revision":"fixture-v1"}
+{"type":"token","index":0,"text":"The","risk":0.04}
+{"type":"token","index":1,"text":" label","risk":0.19,"sae_feature_ids":[]}
+{"type":"token","index":2,"text":" reads","risk":0.31}
+{"type":"token","index":3,"text":" amber","risk":0.75,"sae_feature_ids":[7]}
+{"type":"token","index":4,"text":".","risk":0.21}
+{"type":"end","token_count":5}

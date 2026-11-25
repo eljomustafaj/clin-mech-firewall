@@ -1,0 +1,46 @@
+name: Streaming replay
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Build and test the locked Rust proxy
+        run: |
+          cargo test --locked --manifest-path proxy/Cargo.toml
+          cargo build --locked --manifest-path proxy/Cargo.toml
+      - name: Make the Windows build available for replay
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v4
+        with:
+          name: firewall-proxy-windows
+          path: proxy/target/debug/firewall-proxy.exe
+      - name: Test the worker and the complete replay pipeline
+        run: |
+          python -m unittest -v worker.test_replay
+          python -m unittest discover -s tests -v
+      - name: Verify the checked-in TypeScript build
+        working-directory: web
+        run: |
+          npm ci
+          npm run build
+          git diff --exit-code -- dist
+      - name: Install test browser
+        working-directory: web
+        run: npx playwright-core install --with-deps chromium
+      - name: Check the replay in Chromium
+        working-directory: web
+        run: npm test
