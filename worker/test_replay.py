@@ -63,6 +63,20 @@ class TraceTests(unittest.TestCase):
         records = [START, {**END, "token_count": 0}]
         self.assertEqual(list(replay.validate_trace(records)), records)
 
+    def test_identifiers_use_unicode_white_space(self):
+        for value in ["\x1c", "\x1d", "\x1e", "\x1f", "\ufeff"]:
+            with self.subTest(value=value):
+                records = [{**START, "trace_id": value}, {**END, "token_count": 0}]
+                self.assertEqual(list(replay.validate_trace(records)), records)
+        with self.assertRaisesRegex(replay.TraceError, "trace_id"):
+            list(replay.validate_trace([{**START, "trace_id": "\x85\u2000\u202f"}]))
+
+    def test_last_token_count_remains_exact_in_the_browser(self):
+        last_index = replay.MAX_SAFE_INTEGER - 1
+        replay._validate_token({**TOKEN, "index": last_index}, last_index)
+        with self.assertRaisesRegex(ValueError, "token count exceeds"):
+            replay._validate_token({**TOKEN, "index": last_index + 1}, last_index + 1)
+
     def test_invalid_framing_has_line_number(self):
         for invalid in (b"[]", b"{", b"", b'{"a":1,"a":2}', b'{"a":NaN}', b'{"a":"\xff"}'):
             with self.subTest(invalid=invalid):

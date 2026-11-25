@@ -2,6 +2,9 @@ name: Streaming replay
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
+defaults:
+  run:
+    shell: bash
 
 jobs:
   replay:
@@ -39,8 +42,13 @@ jobs:
           npm run build
           git diff --exit-code -- dist
       - name: Install test browser
+        if: runner.os == 'Linux'
         working-directory: web
-        run: npx playwright-core install --with-deps chromium
+        run: npx playwright-core install --with-deps --only-shell chromium
+      - name: Install test browser on Windows
+        if: runner.os == 'Windows'
+        working-directory: web
+        run: npx playwright-core install --only-shell chromium
       - name: Check the replay in Chromium
         working-directory: web
         run: npm test

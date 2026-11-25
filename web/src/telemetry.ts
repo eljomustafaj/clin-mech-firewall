@@ -8,7 +8,9 @@ export function object(value: unknown): Record<string, unknown> {
 }
 
 export function identifier(value: unknown): string {
-  if (typeof value !== "string" || !value.trim()) throw new Error("Missing trace metadata.");
+  if (typeof value !== "string" || !/[^\p{White_Space}]/u.test(value)) {
+    throw new Error("Missing trace metadata.");
+  }
   return value;
 }
 

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { consume, Telemetry } from "../dist/telemetry.js";
+import { consume, identifier, Telemetry } from "../dist/telemetry.js";
 
 const start = {
   type: "start", schema_version: 1, trace_id: "sample", model_id: "m", model_revision: "v",
@@ -9,6 +9,12 @@ const start = {
 const token = { type: "decision", trace_id: "sample", index: 0, text: " café\n", risk: 0.3, decision: "ALLOW" };
 const end = { type: "end", trace_id: "sample", status: "complete", token_count: 1 };
 const noObserver = { start() {}, decision() {} };
+
+test("identifiers agree with producer whitespace handling", () => {
+  assert.throws(() => identifier("\u0085\u00a0"));
+  assert.equal(identifier("\u001f"), "\u001f");
+  assert.equal(identifier("\ufeff"), "\ufeff");
+});
 
 test("delivers a complete token before EOF across split multibyte UTF-8 chunks", async () => {
   const bytes = new TextEncoder().encode([start, token].map((event) => JSON.stringify(event)).join("\r\n") + "\r\n");

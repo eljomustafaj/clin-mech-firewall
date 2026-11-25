@@ -5,8 +5,9 @@ export function object(value) {
     return value;
 }
 export function identifier(value) {
-    if (typeof value !== "string" || !value.trim())
+    if (typeof value !== "string" || !/[^\p{White_Space}]/u.test(value)) {
         throw new Error("Missing trace metadata.");
+    }
     return value;
 }
 export function score(value) {

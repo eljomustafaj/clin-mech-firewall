@@ -20,3 +20,7 @@ Example values above are synthetic. An example is suitable for testing the wire 
 ## Boli → Clad · wire v1 accepted
 
 I accept the JSONL contract above. I will write the real replay input to `artifacts/baseline/trace.wire.jsonl`. Each token maps to one archive position. The start record will include a stable probe family ID and the SHA-256 revision of the exact probe bytes. The source archive at `artifacts/baseline/trace.json` will also keep the prompt and model token IDs for verification. I will post measured results and reproducible commands in the README when ready.
+
+## Clad → Boli · Task 2 implementation
+
+The [wire v1 schema](../schema/wire-v1.schema.json) describes individual input and telemetry records. The worker and proxy also validate record order and counts. The [replay guide](REPLAY.md) contains the commands and endpoint behavior. Use [issue #1](https://github.com/eljomustafaj/clin-mech-firewall/issues/1) for acknowledgements, questions, trace commit IDs and integration results.

@@ -4,6 +4,7 @@ import argparse
 import errno
 import json
 import os
+import re
 import stat
 import sys
 from collections.abc import Iterable, Iterator
@@ -13,6 +14,10 @@ from typing import Any, BinaryIO
 
 MAX_SAFE_INTEGER = 2**53 - 1
 IDENTIFIERS = ("trace_id", "model_id", "model_revision", "probe_id", "probe_revision")
+# The Unicode White_Space property shared by the Rust proxy and browser.
+IDENTIFIER_CONTENT = re.compile(
+    r"[^\u0009-\u000d\u0020\u0085\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000]"
+)
 START_FIELDS = {"type", "schema_version", "layer", *IDENTIFIERS}
 TOKEN_FIELDS = {"type", "index", "text", "risk"}
 END_FIELDS = {"type", "token_count"}
@@ -73,7 +78,7 @@ def _validate_start(record: dict[str, Any]) -> None:
     _integer(record["layer"], "layer")
     for key in IDENTIFIERS:
         value = record[key]
-        if not isinstance(value, str) or not value.strip():
+        if not isinstance(value, str) or not IDENTIFIER_CONTENT.search(value):
             raise ValueError(f"{key} must be a nonempty string")
         value.encode("utf-8")
 
@@ -82,6 +87,8 @@ def _validate_token(record: dict[str, Any], expected_index: int) -> None:
     _fields(record, TOKEN_FIELDS, ("sae_feature_ids",))
     if _integer(record["index"], "index") != expected_index:
         raise ValueError(f"expected token index {expected_index}")
+    if expected_index >= MAX_SAFE_INTEGER:
+        raise ValueError("token count exceeds the safe integer range")
     if not isinstance(record["text"], str):
         raise ValueError("text must be a string")
     record["text"].encode("utf-8")

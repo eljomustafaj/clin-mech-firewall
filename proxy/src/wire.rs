@@ -35,11 +35,7 @@ impl Source {
             &self.probe_id,
             &self.probe_revision,
         ] {
-            // Python's str.isspace() also includes the four information separators.
-            if id
-                .chars()
-                .all(|c| c.is_whitespace() || ('\u{1c}'..='\u{1f}').contains(&c))
-            {
+            if id.trim().is_empty() {
                 return Err("source identifiers and revisions must contain text".into());
             }
         }
@@ -292,7 +288,7 @@ mod tests {
         for bad_start in [
             START.replace(r#""schema_version":1"#, r#""schema_version":2"#),
             START.replace(r#""model_id":"M""#, r#""model_id":"  ""#),
-            START.replace(r#""model_id":"M""#, r#""model_id":"\u001c""#),
+            START.replace(r#""model_id":"M""#, r#""model_id":"\u0085""#),
             START.replace(r#""layer":0"#, r#""layer":9007199254740992"#),
         ] {
             let (result, response, events) = run(&[&bad_start]);
