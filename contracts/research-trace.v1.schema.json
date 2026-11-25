@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research token trace v1",
+  "description": "One generated continuation before firewall policy. A consumer links decisions using (trace_id, position). Additional fields may carry experimental annotations.",
+  "type": "object",
+  "required": ["schema_version", "trace_id", "model_id", "model_revision", "layer", "probe_id", "prompt", "tokens"],
+  "properties": {
+    "schema_version": {"const": "research-trace.v1"},
+    "trace_id": {"type": "string", "minLength": 1},
+    "model_id": {"type": "string", "minLength": 1},
+    "model_revision": {"type": "string", "minLength": 1},
+    "layer": {"type": "integer", "minimum": 0, "description": "Zero-based transformer block index. Scoring reads the post-block residual at the candidate token."},
+    "probe_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$", "description": "SHA-256 of the exact probe.json bytes."},
+    "prompt": {"type": "string", "minLength": 1},
+    "tokens": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Completion tokens only, in sequence. Each token's position must equal its array index; the Python validator checks this cross-item constraint.",
+      "items": {
+        "type": "object",
+        "required": ["position", "token_id", "text", "risk_score"],
+        "properties": {
+          "position": {"type": "integer", "minimum": 0},
+          "token_id": {"type": "integer", "minimum": 0, "description": "Candidate ID in the identified tokenizer's vocabulary."},
+          "text": {"type": "string", "description": "The incremental decoded fragment. Concatenate fragments in position order to display the continuation without adding spaces. A token that supplies only part of a character, or a special token with no visible output, may have an empty fragment."},
+          "risk_score": {"type": "number", "minimum": 0.0, "maximum": 1.0, "description": "Probe sigmoid score for the unsupported label, available after evaluating the candidate internally and before its release. This is an experimental association with the benchmark label."}
+        }
+      }
+    }
+  }
+}
