@@ -1,0 +1,3387 @@
+{
+  "schema_version": "temporal-test.v1",
+  "primary": "recalibrated-v1",
+  "thresholds": {
+    "frozen-v1": 0.9552176915681485,
+    "recalibrated-v1": 0.9740611507233753,
+    "balanced-v2": 0.9276687148704176,
+    "prior-weighted-v2": 0.9533648688310457,
+    "lexical": 0.5
+  },
+  "rows": 640,
+  "groups": 40,
+  "overall": {
+    "frozen-v1": {
+      "n": 640,
+      "tp": 193,
+      "fp": 39,
+      "tn": 281,
+      "fn": 127,
+      "auroc": 0.7901464843749999,
+      "f1": 0.6992753623188406,
+      "false_positive_rate": 0.121875,
+      "recall": 0.603125,
+      "accuracy": 0.740625,
+      "precision": 0.8318965517241379,
+      "prior_catch": {
+        "flagged": 39,
+        "total": 160,
+        "rate": 0.24375
+      },
+      "absent_catch": {
+        "flagged": 154,
+        "total": 160,
+        "rate": 0.9625
+      },
+      "supported_false_alarm": {
+        "flagged": 39,
+        "total": 320,
+        "rate": 0.121875
+      }
+    },
+    "recalibrated-v1": {
+      "n": 640,
+      "tp": 172,
+      "fp": 20,
+      "tn": 300,
+      "fn": 148,
+      "auroc": 0.7901464843749999,
+      "f1": 0.671875,
+      "false_positive_rate": 0.0625,
+      "recall": 0.5375,
+      "accuracy": 0.7375,
+      "precision": 0.8958333333333334,
+      "prior_catch": {
+        "flagged": 27,
+        "total": 160,
+        "rate": 0.16875
+      },
+      "absent_catch": {
+        "flagged": 145,
+        "total": 160,
+        "rate": 0.90625
+      },
+      "supported_false_alarm": {
+        "flagged": 20,
+        "total": 320,
+        "rate": 0.0625
+      }
+    },
+    "balanced-v2": {
+      "n": 640,
+      "tp": 170,
+      "fp": 2,
+      "tn": 318,
+      "fn": 150,
+      "auroc": 0.8158007812499999,
+      "f1": 0.6910569105691057,
+      "false_positive_rate": 0.00625,
+      "recall": 0.53125,
+      "accuracy": 0.7625,
+      "precision": 0.9883720930232558,
+      "prior_catch": {
+        "flagged": 18,
+        "total": 160,
+        "rate": 0.1125
+      },
+      "absent_catch": {
+        "flagged": 152,
+        "total": 160,
+        "rate": 0.95
+      },
+      "supported_false_alarm": {
+        "flagged": 2,
+        "total": 320,
+        "rate": 0.00625
+      }
+    },
+    "prior-weighted-v2": {
+      "n": 640,
+      "tp": 164,
+      "fp": 2,
+      "tn": 318,
+      "fn": 156,
+      "auroc": 0.814990234375,
+      "f1": 0.6748971193415638,
+      "false_positive_rate": 0.00625,
+      "recall": 0.5125,
+      "accuracy": 0.753125,
+      "precision": 0.9879518072289156,
+      "prior_catch": {
+        "flagged": 17,
+        "total": 160,
+        "rate": 0.10625
+      },
+      "absent_catch": {
+        "flagged": 147,
+        "total": 160,
+        "rate": 0.91875
+      },
+      "supported_false_alarm": {
+        "flagged": 2,
+        "total": 320,
+        "rate": 0.00625
+      }
+    },
+    "lexical": {
+      "n": 640,
+      "tp": 160,
+      "fp": 0,
+      "tn": 320,
+      "fn": 160,
+      "auroc": 0.75,
+      "f1": 0.6666666666666666,
+      "false_positive_rate": 0.0,
+      "recall": 0.5,
+      "accuracy": 0.75,
+      "precision": 1.0,
+      "prior_catch": {
+        "flagged": 0,
+        "total": 160,
+        "rate": 0.0
+      },
+      "absent_catch": {
+        "flagged": 160,
+        "total": 160,
+        "rate": 1.0
+      },
+      "supported_false_alarm": {
+        "flagged": 0,
+        "total": 320,
+        "rate": 0.0
+      }
+    }
+  },
+  "by_layout": {
+    "annotated_extract": {
+      "frozen-v1": {
+        "n": 160,
+        "tp": 40,
+        "fp": 5,
+        "tn": 75,
+        "fn": 40,
+        "auroc": 0.7124999999999999,
+        "f1": 0.64,
+        "false_positive_rate": 0.0625,
+        "recall": 0.5,
+        "accuracy": 0.71875,
+        "precision": 0.8888888888888888,
+        "prior_catch": {
+          "flagged": 2,
+          "total": 40,
+          "rate": 0.05
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 5,
+          "total": 80,
+          "rate": 0.0625
+        }
+      },
+      "recalibrated-v1": {
+        "n": 160,
+        "tp": 37,
+        "fp": 0,
+        "tn": 80,
+        "fn": 43,
+        "auroc": 0.7124999999999999,
+        "f1": 0.6324786324786325,
+        "false_positive_rate": 0.0,
+        "recall": 0.4625,
+        "accuracy": 0.73125,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 0,
+          "total": 40,
+          "rate": 0.0
+        },
+        "absent_catch": {
+          "flagged": 37,
+          "total": 40,
+          "rate": 0.925
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      },
+      "balanced-v2": {
+        "n": 160,
+        "tp": 38,
+        "fp": 0,
+        "tn": 80,
+        "fn": 42,
+        "auroc": 0.72703125,
+        "f1": 0.6440677966101694,
+        "false_positive_rate": 0.0,
+        "recall": 0.475,
+        "accuracy": 0.7375,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 0,
+          "total": 40,
+          "rate": 0.0
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      },
+      "prior-weighted-v2": {
+        "n": 160,
+        "tp": 36,
+        "fp": 0,
+        "tn": 80,
+        "fn": 44,
+        "auroc": 0.7260937500000001,
+        "f1": 0.6206896551724138,
+        "false_positive_rate": 0.0,
+        "recall": 0.45,
+        "accuracy": 0.725,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 0,
+          "total": 40,
+          "rate": 0.0
+        },
+        "absent_catch": {
+          "flagged": 36,
+          "total": 40,
+          "rate": 0.9
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      },
+      "lexical": {
+        "n": 160,
+        "tp": 40,
+        "fp": 0,
+        "tn": 80,
+        "fn": 40,
+        "auroc": 0.75,
+        "f1": 0.6666666666666666,
+        "false_positive_rate": 0.0,
+        "recall": 0.5,
+        "accuracy": 0.75,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 0,
+          "total": 40,
+          "rate": 0.0
+        },
+        "absent_catch": {
+          "flagged": 40,
+          "total": 40,
+          "rate": 1.0
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      }
+    },
+    "case_index": {
+      "frozen-v1": {
+        "n": 160,
+        "tp": 42,
+        "fp": 12,
+        "tn": 68,
+        "fn": 38,
+        "auroc": 0.74140625,
+        "f1": 0.6268656716417911,
+        "false_positive_rate": 0.15,
+        "recall": 0.525,
+        "accuracy": 0.6875,
+        "precision": 0.7777777777777778,
+        "prior_catch": {
+          "flagged": 3,
+          "total": 40,
+          "rate": 0.075
+        },
+        "absent_catch": {
+          "flagged": 39,
+          "total": 40,
+          "rate": 0.975
+        },
+        "supported_false_alarm": {
+          "flagged": 12,
+          "total": 80,
+          "rate": 0.15
+        }
+      },
+      "recalibrated-v1": {
+        "n": 160,
+        "tp": 40,
+        "fp": 5,
+        "tn": 75,
+        "fn": 40,
+        "auroc": 0.74140625,
+        "f1": 0.64,
+        "false_positive_rate": 0.0625,
+        "recall": 0.5,
+        "accuracy": 0.71875,
+        "precision": 0.8888888888888888,
+        "prior_catch": {
+          "flagged": 2,
+          "total": 40,
+          "rate": 0.05
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 5,
+          "total": 80,
+          "rate": 0.0625
+        }
+      },
+      "balanced-v2": {
+        "n": 160,
+        "tp": 38,
+        "fp": 0,
+        "tn": 80,
+        "fn": 42,
+        "auroc": 0.7690625000000001,
+        "f1": 0.6440677966101694,
+        "false_positive_rate": 0.0,
+        "recall": 0.475,
+        "accuracy": 0.7375,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 0,
+          "total": 40,
+          "rate": 0.0
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      },
+      "prior-weighted-v2": {
+        "n": 160,
+        "tp": 38,
+        "fp": 0,
+        "tn": 80,
+        "fn": 42,
+        "auroc": 0.7728124999999999,
+        "f1": 0.6440677966101694,
+        "false_positive_rate": 0.0,
+        "recall": 0.475,
+        "accuracy": 0.7375,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 0,
+          "total": 40,
+          "rate": 0.0
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      },
+      "lexical": {
+        "n": 160,
+        "tp": 40,
+        "fp": 0,
+        "tn": 80,
+        "fn": 40,
+        "auroc": 0.75,
+        "f1": 0.6666666666666666,
+        "false_positive_rate": 0.0,
+        "recall": 0.5,
+        "accuracy": 0.75,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 0,
+          "total": 40,
+          "rate": 0.0
+        },
+        "absent_catch": {
+          "flagged": 40,
+          "total": 40,
+          "rate": 1.0
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      }
+    },
+    "copy_review": {
+      "frozen-v1": {
+        "n": 160,
+        "tp": 43,
+        "fp": 4,
+        "tn": 76,
+        "fn": 37,
+        "auroc": 0.84984375,
+        "f1": 0.6771653543307087,
+        "false_positive_rate": 0.05,
+        "recall": 0.5375,
+        "accuracy": 0.74375,
+        "precision": 0.9148936170212766,
+        "prior_catch": {
+          "flagged": 4,
+          "total": 40,
+          "rate": 0.1
+        },
+        "absent_catch": {
+          "flagged": 39,
+          "total": 40,
+          "rate": 0.975
+        },
+        "supported_false_alarm": {
+          "flagged": 4,
+          "total": 80,
+          "rate": 0.05
+        }
+      },
+      "recalibrated-v1": {
+        "n": 160,
+        "tp": 37,
+        "fp": 3,
+        "tn": 77,
+        "fn": 43,
+        "auroc": 0.84984375,
+        "f1": 0.6166666666666667,
+        "false_positive_rate": 0.0375,
+        "recall": 0.4625,
+        "accuracy": 0.7125,
+        "precision": 0.925,
+        "prior_catch": {
+          "flagged": 2,
+          "total": 40,
+          "rate": 0.05
+        },
+        "absent_catch": {
+          "flagged": 35,
+          "total": 40,
+          "rate": 0.875
+        },
+        "supported_false_alarm": {
+          "flagged": 3,
+          "total": 80,
+          "rate": 0.0375
+        }
+      },
+      "balanced-v2": {
+        "n": 160,
+        "tp": 42,
+        "fp": 2,
+        "tn": 78,
+        "fn": 38,
+        "auroc": 0.8484375,
+        "f1": 0.6774193548387096,
+        "false_positive_rate": 0.025,
+        "recall": 0.525,
+        "accuracy": 0.75,
+        "precision": 0.9545454545454546,
+        "prior_catch": {
+          "flagged": 4,
+          "total": 40,
+          "rate": 0.1
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 2,
+          "total": 80,
+          "rate": 0.025
+        }
+      },
+      "prior-weighted-v2": {
+        "n": 160,
+        "tp": 39,
+        "fp": 2,
+        "tn": 78,
+        "fn": 41,
+        "auroc": 0.8442187499999999,
+        "f1": 0.6446280991735537,
+        "false_positive_rate": 0.025,
+        "recall": 0.4875,
+        "accuracy": 0.73125,
+        "precision": 0.9512195121951219,
+        "prior_catch": {
+          "flagged": 4,
+          "total": 40,
+          "rate": 0.1
+        },
+        "absent_catch": {
+          "flagged": 35,
+          "total": 40,
+          "rate": 0.875
+        },
+        "supported_false_alarm": {
+          "flagged": 2,
+          "total": 80,
+          "rate": 0.025
+        }
+      },
+      "lexical": {
+        "n": 160,
+        "tp": 40,
+        "fp": 0,
+        "tn": 80,
+        "fn": 40,
+        "auroc": 0.75,
+        "f1": 0.6666666666666666,
+        "false_positive_rate": 0.0,
+        "recall": 0.5,
+        "accuracy": 0.75,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 0,
+          "total": 40,
+          "rate": 0.0
+        },
+        "absent_catch": {
+          "flagged": 40,
+          "total": 40,
+          "rate": 1.0
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      }
+    },
+    "revision_notes": {
+      "frozen-v1": {
+        "n": 160,
+        "tp": 68,
+        "fp": 18,
+        "tn": 62,
+        "fn": 12,
+        "auroc": 0.9012500000000001,
+        "f1": 0.8192771084337349,
+        "false_positive_rate": 0.225,
+        "recall": 0.85,
+        "accuracy": 0.8125,
+        "precision": 0.7906976744186046,
+        "prior_catch": {
+          "flagged": 30,
+          "total": 40,
+          "rate": 0.75
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 18,
+          "total": 80,
+          "rate": 0.225
+        }
+      },
+      "recalibrated-v1": {
+        "n": 160,
+        "tp": 58,
+        "fp": 12,
+        "tn": 68,
+        "fn": 22,
+        "auroc": 0.9012500000000001,
+        "f1": 0.7733333333333333,
+        "false_positive_rate": 0.15,
+        "recall": 0.725,
+        "accuracy": 0.7875,
+        "precision": 0.8285714285714286,
+        "prior_catch": {
+          "flagged": 23,
+          "total": 40,
+          "rate": 0.575
+        },
+        "absent_catch": {
+          "flagged": 35,
+          "total": 40,
+          "rate": 0.875
+        },
+        "supported_false_alarm": {
+          "flagged": 12,
+          "total": 80,
+          "rate": 0.15
+        }
+      },
+      "balanced-v2": {
+        "n": 160,
+        "tp": 52,
+        "fp": 0,
+        "tn": 80,
+        "fn": 28,
+        "auroc": 0.9373437499999999,
+        "f1": 0.7878787878787878,
+        "false_positive_rate": 0.0,
+        "recall": 0.65,
+        "accuracy": 0.825,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 14,
+          "total": 40,
+          "rate": 0.35
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      },
+      "prior-weighted-v2": {
+        "n": 160,
+        "tp": 51,
+        "fp": 0,
+        "tn": 80,
+        "fn": 29,
+        "auroc": 0.9309375,
+        "f1": 0.7786259541984732,
+        "false_positive_rate": 0.0,
+        "recall": 0.6375,
+        "accuracy": 0.81875,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 13,
+          "total": 40,
+          "rate": 0.325
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      },
+      "lexical": {
+        "n": 160,
+        "tp": 40,
+        "fp": 0,
+        "tn": 80,
+        "fn": 40,
+        "auroc": 0.75,
+        "f1": 0.6666666666666666,
+        "false_positive_rate": 0.0,
+        "recall": 0.5,
+        "accuracy": 0.75,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 0,
+          "total": 40,
+          "rate": 0.0
+        },
+        "absent_catch": {
+          "flagged": 40,
+          "total": 40,
+          "rate": 1.0
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      }
+    }
+  },
+  "by_chart_order": {
+    "current_first": {
+      "frozen-v1": {
+        "n": 320,
+        "tp": 91,
+        "fp": 37,
+        "tn": 123,
+        "fn": 69,
+        "auroc": 0.6951953125000001,
+        "f1": 0.6319444444444444,
+        "false_positive_rate": 0.23125,
+        "recall": 0.56875,
+        "accuracy": 0.66875,
+        "precision": 0.7109375,
+        "prior_catch": {
+          "flagged": 13,
+          "total": 80,
+          "rate": 0.1625
+        },
+        "absent_catch": {
+          "flagged": 78,
+          "total": 80,
+          "rate": 0.975
+        },
+        "supported_false_alarm": {
+          "flagged": 37,
+          "total": 160,
+          "rate": 0.23125
+        }
+      },
+      "recalibrated-v1": {
+        "n": 320,
+        "tp": 78,
+        "fp": 20,
+        "tn": 140,
+        "fn": 82,
+        "auroc": 0.6951953125000001,
+        "f1": 0.6046511627906976,
+        "false_positive_rate": 0.125,
+        "recall": 0.4875,
+        "accuracy": 0.68125,
+        "precision": 0.7959183673469388,
+        "prior_catch": {
+          "flagged": 5,
+          "total": 80,
+          "rate": 0.0625
+        },
+        "absent_catch": {
+          "flagged": 73,
+          "total": 80,
+          "rate": 0.9125
+        },
+        "supported_false_alarm": {
+          "flagged": 20,
+          "total": 160,
+          "rate": 0.125
+        }
+      },
+      "balanced-v2": {
+        "n": 320,
+        "tp": 82,
+        "fp": 0,
+        "tn": 160,
+        "fn": 78,
+        "auroc": 0.8631640624999999,
+        "f1": 0.6776859504132231,
+        "false_positive_rate": 0.0,
+        "recall": 0.5125,
+        "accuracy": 0.75625,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 6,
+          "total": 80,
+          "rate": 0.075
+        },
+        "absent_catch": {
+          "flagged": 76,
+          "total": 80,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 160,
+          "rate": 0.0
+        }
+      },
+      "prior-weighted-v2": {
+        "n": 320,
+        "tp": 79,
+        "fp": 0,
+        "tn": 160,
+        "fn": 81,
+        "auroc": 0.86109375,
+        "f1": 0.6610878661087866,
+        "false_positive_rate": 0.0,
+        "recall": 0.49375,
+        "accuracy": 0.746875,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 6,
+          "total": 80,
+          "rate": 0.075
+        },
+        "absent_catch": {
+          "flagged": 73,
+          "total": 80,
+          "rate": 0.9125
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 160,
+          "rate": 0.0
+        }
+      },
+      "lexical": {
+        "n": 320,
+        "tp": 80,
+        "fp": 0,
+        "tn": 160,
+        "fn": 80,
+        "auroc": 0.75,
+        "f1": 0.6666666666666666,
+        "false_positive_rate": 0.0,
+        "recall": 0.5,
+        "accuracy": 0.75,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        },
+        "absent_catch": {
+          "flagged": 80,
+          "total": 80,
+          "rate": 1.0
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 160,
+          "rate": 0.0
+        }
+      }
+    },
+    "prior_first": {
+      "frozen-v1": {
+        "n": 320,
+        "tp": 102,
+        "fp": 2,
+        "tn": 158,
+        "fn": 58,
+        "auroc": 0.8748828124999999,
+        "f1": 0.7727272727272727,
+        "false_positive_rate": 0.0125,
+        "recall": 0.6375,
+        "accuracy": 0.8125,
+        "precision": 0.9807692307692307,
+        "prior_catch": {
+          "flagged": 26,
+          "total": 80,
+          "rate": 0.325
+        },
+        "absent_catch": {
+          "flagged": 76,
+          "total": 80,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 2,
+          "total": 160,
+          "rate": 0.0125
+        }
+      },
+      "recalibrated-v1": {
+        "n": 320,
+        "tp": 94,
+        "fp": 0,
+        "tn": 160,
+        "fn": 66,
+        "auroc": 0.8748828124999999,
+        "f1": 0.7401574803149606,
+        "false_positive_rate": 0.0,
+        "recall": 0.5875,
+        "accuracy": 0.79375,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 22,
+          "total": 80,
+          "rate": 0.275
+        },
+        "absent_catch": {
+          "flagged": 72,
+          "total": 80,
+          "rate": 0.9
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 160,
+          "rate": 0.0
+        }
+      },
+      "balanced-v2": {
+        "n": 320,
+        "tp": 88,
+        "fp": 2,
+        "tn": 158,
+        "fn": 72,
+        "auroc": 0.7675,
+        "f1": 0.704,
+        "false_positive_rate": 0.0125,
+        "recall": 0.55,
+        "accuracy": 0.76875,
+        "precision": 0.9777777777777777,
+        "prior_catch": {
+          "flagged": 12,
+          "total": 80,
+          "rate": 0.15
+        },
+        "absent_catch": {
+          "flagged": 76,
+          "total": 80,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 2,
+          "total": 160,
+          "rate": 0.0125
+        }
+      },
+      "prior-weighted-v2": {
+        "n": 320,
+        "tp": 85,
+        "fp": 2,
+        "tn": 158,
+        "fn": 75,
+        "auroc": 0.7680078124999999,
+        "f1": 0.6882591093117408,
+        "false_positive_rate": 0.0125,
+        "recall": 0.53125,
+        "accuracy": 0.759375,
+        "precision": 0.9770114942528736,
+        "prior_catch": {
+          "flagged": 11,
+          "total": 80,
+          "rate": 0.1375
+        },
+        "absent_catch": {
+          "flagged": 74,
+          "total": 80,
+          "rate": 0.925
+        },
+        "supported_false_alarm": {
+          "flagged": 2,
+          "total": 160,
+          "rate": 0.0125
+        }
+      },
+      "lexical": {
+        "n": 320,
+        "tp": 80,
+        "fp": 0,
+        "tn": 160,
+        "fn": 80,
+        "auroc": 0.75,
+        "f1": 0.6666666666666666,
+        "false_positive_rate": 0.0,
+        "recall": 0.5,
+        "accuracy": 0.75,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        },
+        "absent_catch": {
+          "flagged": 80,
+          "total": 80,
+          "rate": 1.0
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 160,
+          "rate": 0.0
+        }
+      }
+    }
+  },
+  "by_layout_and_order": [
+    {
+      "layout_id": "annotated_extract",
+      "chart_order": "current_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 20,
+          "fp": 4,
+          "tn": 36,
+          "fn": 20,
+          "auroc": 0.701875,
+          "f1": 0.625,
+          "false_positive_rate": 0.1,
+          "recall": 0.5,
+          "accuracy": 0.7,
+          "precision": 0.8333333333333334,
+          "prior_catch": {
+            "flagged": 1,
+            "total": 20,
+            "rate": 0.05
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 4,
+            "total": 40,
+            "rate": 0.1
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 19,
+          "fp": 0,
+          "tn": 40,
+          "fn": 21,
+          "auroc": 0.701875,
+          "f1": 0.6440677966101694,
+          "false_positive_rate": 0.0,
+          "recall": 0.475,
+          "accuracy": 0.7375,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "balanced-v2": {
+          "n": 80,
+          "tp": 19,
+          "fp": 0,
+          "tn": 40,
+          "fn": 21,
+          "auroc": 0.805625,
+          "f1": 0.6440677966101694,
+          "false_positive_rate": 0.0,
+          "recall": 0.475,
+          "accuracy": 0.7375,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "prior-weighted-v2": {
+          "n": 80,
+          "tp": 18,
+          "fp": 0,
+          "tn": 40,
+          "fn": 22,
+          "auroc": 0.805,
+          "f1": 0.6206896551724138,
+          "false_positive_rate": 0.0,
+          "recall": 0.45,
+          "accuracy": 0.725,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 18,
+            "total": 20,
+            "rate": 0.9
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "lexical": {
+          "n": 80,
+          "tp": 20,
+          "fp": 0,
+          "tn": 40,
+          "fn": 20,
+          "auroc": 0.75,
+          "f1": 0.6666666666666666,
+          "false_positive_rate": 0.0,
+          "recall": 0.5,
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "annotated_extract",
+      "chart_order": "prior_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 20,
+          "fp": 1,
+          "tn": 39,
+          "fn": 20,
+          "auroc": 0.713125,
+          "f1": 0.6557377049180327,
+          "false_positive_rate": 0.025,
+          "recall": 0.5,
+          "accuracy": 0.7375,
+          "precision": 0.9523809523809523,
+          "prior_catch": {
+            "flagged": 1,
+            "total": 20,
+            "rate": 0.05
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 1,
+            "total": 40,
+            "rate": 0.025
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 18,
+          "fp": 0,
+          "tn": 40,
+          "fn": 22,
+          "auroc": 0.713125,
+          "f1": 0.6206896551724138,
+          "false_positive_rate": 0.0,
+          "recall": 0.45,
+          "accuracy": 0.725,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 18,
+            "total": 20,
+            "rate": 0.9
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "balanced-v2": {
+          "n": 80,
+          "tp": 19,
+          "fp": 0,
+          "tn": 40,
+          "fn": 21,
+          "auroc": 0.653125,
+          "f1": 0.6440677966101694,
+          "false_positive_rate": 0.0,
+          "recall": 0.475,
+          "accuracy": 0.7375,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "prior-weighted-v2": {
+          "n": 80,
+          "tp": 18,
+          "fp": 0,
+          "tn": 40,
+          "fn": 22,
+          "auroc": 0.6537499999999999,
+          "f1": 0.6206896551724138,
+          "false_positive_rate": 0.0,
+          "recall": 0.45,
+          "accuracy": 0.725,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 18,
+            "total": 20,
+            "rate": 0.9
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "lexical": {
+          "n": 80,
+          "tp": 20,
+          "fp": 0,
+          "tn": 40,
+          "fn": 20,
+          "auroc": 0.75,
+          "f1": 0.6666666666666666,
+          "false_positive_rate": 0.0,
+          "recall": 0.5,
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "case_index",
+      "chart_order": "current_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 20,
+          "fp": 12,
+          "tn": 28,
+          "fn": 20,
+          "auroc": 0.5575000000000001,
+          "f1": 0.5555555555555556,
+          "false_positive_rate": 0.3,
+          "recall": 0.5,
+          "accuracy": 0.6,
+          "precision": 0.625,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 12,
+            "total": 40,
+            "rate": 0.3
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 19,
+          "fp": 5,
+          "tn": 35,
+          "fn": 21,
+          "auroc": 0.5575000000000001,
+          "f1": 0.59375,
+          "false_positive_rate": 0.125,
+          "recall": 0.475,
+          "accuracy": 0.675,
+          "precision": 0.7916666666666666,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 5,
+            "total": 40,
+            "rate": 0.125
+          }
+        },
+        "balanced-v2": {
+          "n": 80,
+          "tp": 19,
+          "fp": 0,
+          "tn": 40,
+          "fn": 21,
+          "auroc": 0.79875,
+          "f1": 0.6440677966101694,
+          "false_positive_rate": 0.0,
+          "recall": 0.475,
+          "accuracy": 0.7375,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "prior-weighted-v2": {
+          "n": 80,
+          "tp": 19,
+          "fp": 0,
+          "tn": 40,
+          "fn": 21,
+          "auroc": 0.7949999999999999,
+          "f1": 0.6440677966101694,
+          "false_positive_rate": 0.0,
+          "recall": 0.475,
+          "accuracy": 0.7375,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "lexical": {
+          "n": 80,
+          "tp": 20,
+          "fp": 0,
+          "tn": 40,
+          "fn": 20,
+          "auroc": 0.75,
+          "f1": 0.6666666666666666,
+          "false_positive_rate": 0.0,
+          "recall": 0.5,
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "case_index",
+      "chart_order": "prior_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 22,
+          "fp": 0,
+          "tn": 40,
+          "fn": 18,
+          "auroc": 0.928125,
+          "f1": 0.7096774193548387,
+          "false_positive_rate": 0.0,
+          "recall": 0.55,
+          "accuracy": 0.775,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 3,
+            "total": 20,
+            "rate": 0.15
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 21,
+          "fp": 0,
+          "tn": 40,
+          "fn": 19,
+          "auroc": 0.928125,
+          "f1": 0.6885245901639344,
+          "false_positive_rate": 0.0,
+          "recall": 0.525,
+          "accuracy": 0.7625,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 2,
+            "total": 20,
+            "rate": 0.1
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "balanced-v2": {
+          "n": 80,
+          "tp": 19,
+          "fp": 0,
+          "tn": 40,
+          "fn": 21,
+          "auroc": 0.7387500000000001,
+          "f1": 0.6440677966101694,
+          "false_positive_rate": 0.0,
+          "recall": 0.475,
+          "accuracy": 0.7375,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "prior-weighted-v2": {
+          "n": 80,
+          "tp": 19,
+          "fp": 0,
+          "tn": 40,
+          "fn": 21,
+          "auroc": 0.750625,
+          "f1": 0.6440677966101694,
+          "false_positive_rate": 0.0,
+          "recall": 0.475,
+          "accuracy": 0.7375,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "lexical": {
+          "n": 80,
+          "tp": 20,
+          "fp": 0,
+          "tn": 40,
+          "fn": 20,
+          "auroc": 0.75,
+          "f1": 0.6666666666666666,
+          "false_positive_rate": 0.0,
+          "recall": 0.5,
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "copy_review",
+      "chart_order": "current_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 21,
+          "fp": 4,
+          "tn": 36,
+          "fn": 19,
+          "auroc": 0.818125,
+          "f1": 0.6461538461538462,
+          "false_positive_rate": 0.1,
+          "recall": 0.525,
+          "accuracy": 0.7125,
+          "precision": 0.84,
+          "prior_catch": {
+            "flagged": 1,
+            "total": 20,
+            "rate": 0.05
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 4,
+            "total": 40,
+            "rate": 0.1
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 17,
+          "fp": 3,
+          "tn": 37,
+          "fn": 23,
+          "auroc": 0.818125,
+          "f1": 0.5666666666666667,
+          "false_positive_rate": 0.075,
+          "recall": 0.425,
+          "accuracy": 0.675,
+          "precision": 0.85,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 17,
+            "total": 20,
+            "rate": 0.85
+          },
+          "supported_false_alarm": {
+            "flagged": 3,
+            "total": 40,
+            "rate": 0.075
+          }
+        },
+        "balanced-v2": {
+          "n": 80,
+          "tp": 21,
+          "fp": 0,
+          "tn": 40,
+          "fn": 19,
+          "auroc": 0.9356249999999999,
+          "f1": 0.6885245901639344,
+          "false_positive_rate": 0.0,
+          "recall": 0.525,
+          "accuracy": 0.7625,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 2,
+            "total": 20,
+            "rate": 0.1
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "prior-weighted-v2": {
+          "n": 80,
+          "tp": 19,
+          "fp": 0,
+          "tn": 40,
+          "fn": 21,
+          "auroc": 0.93125,
+          "f1": 0.6440677966101694,
+          "false_positive_rate": 0.0,
+          "recall": 0.475,
+          "accuracy": 0.7375,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 2,
+            "total": 20,
+            "rate": 0.1
+          },
+          "absent_catch": {
+            "flagged": 17,
+            "total": 20,
+            "rate": 0.85
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "lexical": {
+          "n": 80,
+          "tp": 20,
+          "fp": 0,
+          "tn": 40,
+          "fn": 20,
+          "auroc": 0.75,
+          "f1": 0.6666666666666666,
+          "false_positive_rate": 0.0,
+          "recall": 0.5,
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "copy_review",
+      "chart_order": "prior_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 22,
+          "fp": 0,
+          "tn": 40,
+          "fn": 18,
+          "auroc": 0.88125,
+          "f1": 0.7096774193548387,
+          "false_positive_rate": 0.0,
+          "recall": 0.55,
+          "accuracy": 0.775,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 3,
+            "total": 20,
+            "rate": 0.15
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 20,
+          "fp": 0,
+          "tn": 40,
+          "fn": 20,
+          "auroc": 0.88125,
+          "f1": 0.6666666666666666,
+          "false_positive_rate": 0.0,
+          "recall": 0.5,
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 2,
+            "total": 20,
+            "rate": 0.1
+          },
+          "absent_catch": {
+            "flagged": 18,
+            "total": 20,
+            "rate": 0.9
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "balanced-v2": {
+          "n": 80,
+          "tp": 21,
+          "fp": 2,
+          "tn": 38,
+          "fn": 19,
+          "auroc": 0.724375,
+          "f1": 0.6666666666666666,
+          "false_positive_rate": 0.05,
+          "recall": 0.525,
+          "accuracy": 0.7375,
+          "precision": 0.9130434782608695,
+          "prior_catch": {
+            "flagged": 2,
+            "total": 20,
+            "rate": 0.1
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 2,
+            "total": 40,
+            "rate": 0.05
+          }
+        },
+        "prior-weighted-v2": {
+          "n": 80,
+          "tp": 20,
+          "fp": 2,
+          "tn": 38,
+          "fn": 20,
+          "auroc": 0.71875,
+          "f1": 0.6451612903225806,
+          "false_positive_rate": 0.05,
+          "recall": 0.5,
+          "accuracy": 0.725,
+          "precision": 0.9090909090909091,
+          "prior_catch": {
+            "flagged": 2,
+            "total": 20,
+            "rate": 0.1
+          },
+          "absent_catch": {
+            "flagged": 18,
+            "total": 20,
+            "rate": 0.9
+          },
+          "supported_false_alarm": {
+            "flagged": 2,
+            "total": 40,
+            "rate": 0.05
+          }
+        },
+        "lexical": {
+          "n": 80,
+          "tp": 20,
+          "fp": 0,
+          "tn": 40,
+          "fn": 20,
+          "auroc": 0.75,
+          "f1": 0.6666666666666666,
+          "false_positive_rate": 0.0,
+          "recall": 0.5,
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "revision_notes",
+      "chart_order": "current_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 30,
+          "fp": 17,
+          "tn": 23,
+          "fn": 10,
+          "auroc": 0.75625,
+          "f1": 0.6896551724137931,
+          "false_positive_rate": 0.425,
+          "recall": 0.75,
+          "accuracy": 0.6625,
+          "precision": 0.6382978723404256,
+          "prior_catch": {
+            "flagged": 11,
+            "total": 20,
+            "rate": 0.55
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 17,
+            "total": 40,
+            "rate": 0.425
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 23,
+          "fp": 12,
+          "tn": 28,
+          "fn": 17,
+          "auroc": 0.75625,
+          "f1": 0.6133333333333333,
+          "false_positive_rate": 0.3,
+          "recall": 0.575,
+          "accuracy": 0.6375,
+          "precision": 0.6571428571428571,
+          "prior_catch": {
+            "flagged": 5,
+            "total": 20,
+            "rate": 0.25
+          },
+          "absent_catch": {
+            "flagged": 18,
+            "total": 20,
+            "rate": 0.9
+          },
+          "supported_false_alarm": {
+            "flagged": 12,
+            "total": 40,
+            "rate": 0.3
+          }
+        },
+        "balanced-v2": {
+          "n": 80,
+          "tp": 23,
+          "fp": 0,
+          "tn": 40,
+          "fn": 17,
+          "auroc": 0.9212499999999999,
+          "f1": 0.7301587301587301,
+          "false_positive_rate": 0.0,
+          "recall": 0.575,
+          "accuracy": 0.7875,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 4,
+            "total": 20,
+            "rate": 0.2
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "prior-weighted-v2": {
+          "n": 80,
+          "tp": 23,
+          "fp": 0,
+          "tn": 40,
+          "fn": 17,
+          "auroc": 0.9162500000000001,
+          "f1": 0.7301587301587301,
+          "false_positive_rate": 0.0,
+          "recall": 0.575,
+          "accuracy": 0.7875,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 4,
+            "total": 20,
+            "rate": 0.2
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "lexical": {
+          "n": 80,
+          "tp": 20,
+          "fp": 0,
+          "tn": 40,
+          "fn": 20,
+          "auroc": 0.75,
+          "f1": 0.6666666666666666,
+          "false_positive_rate": 0.0,
+          "recall": 0.5,
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "revision_notes",
+      "chart_order": "prior_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 38,
+          "fp": 1,
+          "tn": 39,
+          "fn": 2,
+          "auroc": 0.99,
+          "f1": 0.9620253164556962,
+          "false_positive_rate": 0.025,
+          "recall": 0.95,
+          "accuracy": 0.9625,
+          "precision": 0.9743589743589743,
+          "prior_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 1,
+            "total": 40,
+            "rate": 0.025
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 35,
+          "fp": 0,
+          "tn": 40,
+          "fn": 5,
+          "auroc": 0.99,
+          "f1": 0.9333333333333333,
+          "false_positive_rate": 0.0,
+          "recall": 0.875,
+          "accuracy": 0.9375,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 18,
+            "total": 20,
+            "rate": 0.9
+          },
+          "absent_catch": {
+            "flagged": 17,
+            "total": 20,
+            "rate": 0.85
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "balanced-v2": {
+          "n": 80,
+          "tp": 29,
+          "fp": 0,
+          "tn": 40,
+          "fn": 11,
+          "auroc": 0.9512499999999999,
+          "f1": 0.8405797101449275,
+          "false_positive_rate": 0.0,
+          "recall": 0.725,
+          "accuracy": 0.8625,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 10,
+            "total": 20,
+            "rate": 0.5
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "prior-weighted-v2": {
+          "n": 80,
+          "tp": 28,
+          "fp": 0,
+          "tn": 40,
+          "fn": 12,
+          "auroc": 0.94625,
+          "f1": 0.8235294117647058,
+          "false_positive_rate": 0.0,
+          "recall": 0.7,
+          "accuracy": 0.85,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 9,
+            "total": 20,
+            "rate": 0.45
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "lexical": {
+          "n": 80,
+          "tp": 20,
+          "fp": 0,
+          "tn": 40,
+          "fn": 20,
+          "auroc": 0.75,
+          "f1": 0.6666666666666666,
+          "false_positive_rate": 0.0,
+          "recall": 0.5,
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "paired": {
+    "frozen-v1": {
+      "recalibrated-v1": {
+        "prior_catch": {
+          "total": 160,
+          "both_flagged": 27,
+          "both_clear": 121,
+          "newly_flagged": 0,
+          "newly_clear": 12,
+          "rate_delta": -0.075,
+          "group_bootstrap_95pct": [
+            -0.11265625,
+            -0.0375
+          ]
+        },
+        "absent_catch": {
+          "total": 160,
+          "both_flagged": 145,
+          "both_clear": 6,
+          "newly_flagged": 0,
+          "newly_clear": 9,
+          "rate_delta": -0.05625,
+          "group_bootstrap_95pct": [
+            -0.1,
+            -0.01875
+          ]
+        },
+        "supported_false_alarm": {
+          "total": 320,
+          "both_flagged": 20,
+          "both_clear": 281,
+          "newly_flagged": 0,
+          "newly_clear": 19,
+          "rate_delta": -0.059375,
+          "group_bootstrap_95pct": [
+            -0.0875,
+            -0.03125
+          ]
+        }
+      },
+      "balanced-v2": {
+        "prior_catch": {
+          "total": 160,
+          "both_flagged": 16,
+          "both_clear": 119,
+          "newly_flagged": 2,
+          "newly_clear": 23,
+          "rate_delta": -0.13125,
+          "group_bootstrap_95pct": [
+            -0.1875,
+            -0.08109375000000085
+          ]
+        },
+        "absent_catch": {
+          "total": 160,
+          "both_flagged": 149,
+          "both_clear": 3,
+          "newly_flagged": 3,
+          "newly_clear": 5,
+          "rate_delta": -0.0125,
+          "group_bootstrap_95pct": [
+            -0.0625,
+            0.0375
+          ]
+        },
+        "supported_false_alarm": {
+          "total": 320,
+          "both_flagged": 0,
+          "both_clear": 279,
+          "newly_flagged": 2,
+          "newly_clear": 39,
+          "rate_delta": -0.115625,
+          "group_bootstrap_95pct": [
+            -0.15945312499999997,
+            -0.075
+          ]
+        }
+      },
+      "prior-weighted-v2": {
+        "prior_catch": {
+          "total": 160,
+          "both_flagged": 15,
+          "both_clear": 119,
+          "newly_flagged": 2,
+          "newly_clear": 24,
+          "rate_delta": -0.1375,
+          "group_bootstrap_95pct": [
+            -0.1875,
+            -0.0875
+          ]
+        },
+        "absent_catch": {
+          "total": 160,
+          "both_flagged": 147,
+          "both_clear": 6,
+          "newly_flagged": 0,
+          "newly_clear": 7,
+          "rate_delta": -0.04375,
+          "group_bootstrap_95pct": [
+            -0.08125,
+            -0.0125
+          ]
+        },
+        "supported_false_alarm": {
+          "total": 320,
+          "both_flagged": 0,
+          "both_clear": 279,
+          "newly_flagged": 2,
+          "newly_clear": 39,
+          "rate_delta": -0.115625,
+          "group_bootstrap_95pct": [
+            -0.15945312499999997,
+            -0.075
+          ]
+        }
+      },
+      "lexical": {
+        "prior_catch": {
+          "total": 160,
+          "both_flagged": 0,
+          "both_clear": 121,
+          "newly_flagged": 0,
+          "newly_clear": 39,
+          "rate_delta": -0.24375,
+          "group_bootstrap_95pct": [
+            -0.29375,
+            -0.19375
+          ]
+        },
+        "absent_catch": {
+          "total": 160,
+          "both_flagged": 154,
+          "both_clear": 0,
+          "newly_flagged": 6,
+          "newly_clear": 0,
+          "rate_delta": 0.0375,
+          "group_bootstrap_95pct": [
+            0.00625,
+            0.08125
+          ]
+        },
+        "supported_false_alarm": {
+          "total": 320,
+          "both_flagged": 0,
+          "both_clear": 281,
+          "newly_flagged": 0,
+          "newly_clear": 39,
+          "rate_delta": -0.121875,
+          "group_bootstrap_95pct": [
+            -0.165625,
+            -0.078125
+          ]
+        }
+      }
+    },
+    "recalibrated-v1": {
+      "frozen-v1": {
+        "prior_catch": {
+          "total": 160,
+          "both_flagged": 27,
+          "both_clear": 121,
+          "newly_flagged": 12,
+          "newly_clear": 0,
+          "rate_delta": 0.075,
+          "group_bootstrap_95pct": [
+            0.0375,
+            0.11265624999999915
+          ]
+        },
+        "absent_catch": {
+          "total": 160,
+          "both_flagged": 145,
+          "both_clear": 6,
+          "newly_flagged": 9,
+          "newly_clear": 0,
+          "rate_delta": 0.05625,
+          "group_bootstrap_95pct": [
+            0.01875,
+            0.1
+          ]
+        },
+        "supported_false_alarm": {
+          "total": 320,
+          "both_flagged": 20,
+          "both_clear": 281,
+          "newly_flagged": 19,
+          "newly_clear": 0,
+          "rate_delta": 0.059375,
+          "group_bootstrap_95pct": [
+            0.03125,
+            0.0875
+          ]
+        }
+      },
+      "balanced-v2": {
+        "prior_catch": {
+          "total": 160,
+          "both_flagged": 12,
+          "both_clear": 127,
+          "newly_flagged": 6,
+          "newly_clear": 15,
+          "rate_delta": -0.05625,
+          "group_bootstrap_95pct": [
+            -0.125,
+            0.00625
+          ]
+        },
+        "absent_catch": {
+          "total": 160,
+          "both_flagged": 143,
+          "both_clear": 6,
+          "newly_flagged": 9,
+          "newly_clear": 2,
+          "rate_delta": 0.04375,
+          "group_bootstrap_95pct": [
+            -0.00625,
+            0.1
+          ]
+        },
+        "supported_false_alarm": {
+          "total": 320,
+          "both_flagged": 0,
+          "both_clear": 298,
+          "newly_flagged": 2,
+          "newly_clear": 20,
+          "rate_delta": -0.05625,
+          "group_bootstrap_95pct": [
+            -0.090625,
+            -0.025
+          ]
+        }
+      },
+      "prior-weighted-v2": {
+        "prior_catch": {
+          "total": 160,
+          "both_flagged": 12,
+          "both_clear": 128,
+          "newly_flagged": 5,
+          "newly_clear": 15,
+          "rate_delta": -0.0625,
+          "group_bootstrap_95pct": [
+            -0.125,
+            -0.00625
+          ]
+        },
+        "absent_catch": {
+          "total": 160,
+          "both_flagged": 143,
+          "both_clear": 11,
+          "newly_flagged": 4,
+          "newly_clear": 2,
+          "rate_delta": 0.0125,
+          "group_bootstrap_95pct": [
+            -0.01875,
+            0.05
+          ]
+        },
+        "supported_false_alarm": {
+          "total": 320,
+          "both_flagged": 0,
+          "both_clear": 298,
+          "newly_flagged": 2,
+          "newly_clear": 20,
+          "rate_delta": -0.05625,
+          "group_bootstrap_95pct": [
+            -0.090625,
+            -0.025
+          ]
+        }
+      },
+      "lexical": {
+        "prior_catch": {
+          "total": 160,
+          "both_flagged": 0,
+          "both_clear": 133,
+          "newly_flagged": 0,
+          "newly_clear": 27,
+          "rate_delta": -0.16875,
+          "group_bootstrap_95pct": [
+            -0.2125,
+            -0.125
+          ]
+        },
+        "absent_catch": {
+          "total": 160,
+          "both_flagged": 145,
+          "both_clear": 0,
+          "newly_flagged": 15,
+          "newly_clear": 0,
+          "rate_delta": 0.09375,
+          "group_bootstrap_95pct": [
+            0.04375,
+            0.15625
+          ]
+        },
+        "supported_false_alarm": {
+          "total": 320,
+          "both_flagged": 0,
+          "both_clear": 300,
+          "newly_flagged": 0,
+          "newly_clear": 20,
+          "rate_delta": -0.0625,
+          "group_bootstrap_95pct": [
+            -0.096875,
+            -0.03125
+          ]
+        }
+      }
+    }
+  },
+  "paired_by_layout_and_order": [
+    {
+      "layout_id": "annotated_extract",
+      "chart_order": "current_first",
+      "reference": "frozen-v1",
+      "methods": {
+        "recalibrated-v1": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 19,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 36,
+            "newly_flagged": 0,
+            "newly_clear": 4,
+            "rate_delta": -0.1
+          }
+        },
+        "balanced-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 19,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 18,
+            "both_clear": 0,
+            "newly_flagged": 1,
+            "newly_clear": 1,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 36,
+            "newly_flagged": 0,
+            "newly_clear": 4,
+            "rate_delta": -0.1
+          }
+        },
+        "prior-weighted-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 19,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 18,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 36,
+            "newly_flagged": 0,
+            "newly_clear": 4,
+            "rate_delta": -0.1
+          }
+        },
+        "lexical": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 19,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 0,
+            "newly_flagged": 1,
+            "newly_clear": 0,
+            "rate_delta": 0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 36,
+            "newly_flagged": 0,
+            "newly_clear": 4,
+            "rate_delta": -0.1
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "annotated_extract",
+      "chart_order": "prior_first",
+      "reference": "frozen-v1",
+      "methods": {
+        "recalibrated-v1": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 19,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 18,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 39,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.025
+          }
+        },
+        "balanced-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 19,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 18,
+            "both_clear": 0,
+            "newly_flagged": 1,
+            "newly_clear": 1,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 39,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.025
+          }
+        },
+        "prior-weighted-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 19,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 18,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 39,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.025
+          }
+        },
+        "lexical": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 19,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 0,
+            "newly_flagged": 1,
+            "newly_clear": 0,
+            "rate_delta": 0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 39,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.025
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "case_index",
+      "chart_order": "current_first",
+      "reference": "frozen-v1",
+      "methods": {
+        "recalibrated-v1": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 20,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 0,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 5,
+            "both_clear": 28,
+            "newly_flagged": 0,
+            "newly_clear": 7,
+            "rate_delta": -0.175
+          }
+        },
+        "balanced-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 20,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 0,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 28,
+            "newly_flagged": 0,
+            "newly_clear": 12,
+            "rate_delta": -0.3
+          }
+        },
+        "prior-weighted-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 20,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 0,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 28,
+            "newly_flagged": 0,
+            "newly_clear": 12,
+            "rate_delta": -0.3
+          }
+        },
+        "lexical": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 20,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 20,
+            "both_clear": 0,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 28,
+            "newly_flagged": 0,
+            "newly_clear": 12,
+            "rate_delta": -0.3
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "case_index",
+      "chart_order": "prior_first",
+      "reference": "frozen-v1",
+      "methods": {
+        "recalibrated-v1": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 2,
+            "both_clear": 17,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 40,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        },
+        "balanced-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 17,
+            "newly_flagged": 0,
+            "newly_clear": 3,
+            "rate_delta": -0.15
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 40,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        },
+        "prior-weighted-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 17,
+            "newly_flagged": 0,
+            "newly_clear": 3,
+            "rate_delta": -0.15
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 40,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        },
+        "lexical": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 17,
+            "newly_flagged": 0,
+            "newly_clear": 3,
+            "rate_delta": -0.15
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 0,
+            "newly_flagged": 1,
+            "newly_clear": 0,
+            "rate_delta": 0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 40,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "copy_review",
+      "chart_order": "current_first",
+      "reference": "frozen-v1",
+      "methods": {
+        "recalibrated-v1": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 19,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 17,
+            "both_clear": 0,
+            "newly_flagged": 0,
+            "newly_clear": 3,
+            "rate_delta": -0.15
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 3,
+            "both_clear": 36,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.025
+          }
+        },
+        "balanced-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 1,
+            "both_clear": 18,
+            "newly_flagged": 1,
+            "newly_clear": 0,
+            "rate_delta": 0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 0,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 36,
+            "newly_flagged": 0,
+            "newly_clear": 4,
+            "rate_delta": -0.1
+          }
+        },
+        "prior-weighted-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 1,
+            "both_clear": 18,
+            "newly_flagged": 1,
+            "newly_clear": 0,
+            "rate_delta": 0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 17,
+            "both_clear": 0,
+            "newly_flagged": 0,
+            "newly_clear": 3,
+            "rate_delta": -0.15
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 36,
+            "newly_flagged": 0,
+            "newly_clear": 4,
+            "rate_delta": -0.1
+          }
+        },
+        "lexical": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 19,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 20,
+            "both_clear": 0,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 36,
+            "newly_flagged": 0,
+            "newly_clear": 4,
+            "rate_delta": -0.1
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "copy_review",
+      "chart_order": "prior_first",
+      "reference": "frozen-v1",
+      "methods": {
+        "recalibrated-v1": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 2,
+            "both_clear": 17,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 18,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 40,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        },
+        "balanced-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 2,
+            "both_clear": 17,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 18,
+            "both_clear": 0,
+            "newly_flagged": 1,
+            "newly_clear": 1,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 38,
+            "newly_flagged": 2,
+            "newly_clear": 0,
+            "rate_delta": 0.05
+          }
+        },
+        "prior-weighted-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 2,
+            "both_clear": 17,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 18,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 38,
+            "newly_flagged": 2,
+            "newly_clear": 0,
+            "rate_delta": 0.05
+          }
+        },
+        "lexical": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 17,
+            "newly_flagged": 0,
+            "newly_clear": 3,
+            "rate_delta": -0.15
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 0,
+            "newly_flagged": 1,
+            "newly_clear": 0,
+            "rate_delta": 0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 40,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "revision_notes",
+      "chart_order": "current_first",
+      "reference": "frozen-v1",
+      "methods": {
+        "recalibrated-v1": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 5,
+            "both_clear": 9,
+            "newly_flagged": 0,
+            "newly_clear": 6,
+            "rate_delta": -0.3
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 18,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 12,
+            "both_clear": 23,
+            "newly_flagged": 0,
+            "newly_clear": 5,
+            "rate_delta": -0.125
+          }
+        },
+        "balanced-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 3,
+            "both_clear": 8,
+            "newly_flagged": 1,
+            "newly_clear": 8,
+            "rate_delta": -0.35
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 23,
+            "newly_flagged": 0,
+            "newly_clear": 17,
+            "rate_delta": -0.425
+          }
+        },
+        "prior-weighted-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 3,
+            "both_clear": 8,
+            "newly_flagged": 1,
+            "newly_clear": 8,
+            "rate_delta": -0.35
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 23,
+            "newly_flagged": 0,
+            "newly_clear": 17,
+            "rate_delta": -0.425
+          }
+        },
+        "lexical": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 9,
+            "newly_flagged": 0,
+            "newly_clear": 11,
+            "rate_delta": -0.55
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 0,
+            "newly_flagged": 1,
+            "newly_clear": 0,
+            "rate_delta": 0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 23,
+            "newly_flagged": 0,
+            "newly_clear": 17,
+            "rate_delta": -0.425
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "revision_notes",
+      "chart_order": "prior_first",
+      "reference": "frozen-v1",
+      "methods": {
+        "recalibrated-v1": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 18,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 17,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 2,
+            "rate_delta": -0.1
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 39,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.025
+          }
+        },
+        "balanced-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 10,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 9,
+            "rate_delta": -0.45
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 39,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.025
+          }
+        },
+        "prior-weighted-v2": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 9,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 10,
+            "rate_delta": -0.5
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 39,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.025
+          }
+        },
+        "lexical": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 19,
+            "rate_delta": -0.95
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 0,
+            "newly_flagged": 1,
+            "newly_clear": 0,
+            "rate_delta": 0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 39,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.025
+          }
+        }
+      }
+    }
+  ],
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 1729,
+    "unit": "complete matched group; resampled within each held-out layout",
+    "interval": "percentile; conditional on the published layouts and frozen thresholds"
+  }
+}

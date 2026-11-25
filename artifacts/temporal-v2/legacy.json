@@ -1,0 +1,1158 @@
+{
+  "scope": "Known original holdout; failures motivated this study.",
+  "original_manifest_sha256": "c789cfc0e9cdea3492ef433cfa9f3d0c78e27f5afc67721f7b5b18f76f739dc5",
+  "selection_sha256": "6b7dc3b52e77721705bd5fe4a9d7e2c6321783c2ce450f84605b9f74ec01b6ae",
+  "source_probe_sha256": "8d0f4e8d359affa07be74cb3a2e8c564296c21f654861068530833f9d436358c",
+  "device": "cuda",
+  "dtype": "float16",
+  "thresholds": {
+    "frozen-v1": 0.9552176915681485,
+    "recalibrated-v1": 0.9740611507233753,
+    "source-role": 0.9412578522854479,
+    "chronology-words": 0.9552176915681485
+  },
+  "counts": {
+    "frozen-v1": {
+      "prior_caught": {
+        "flagged": 0,
+        "total": 10
+      },
+      "absent_caught": {
+        "flagged": 10,
+        "total": 10
+      },
+      "supported_flagged": {
+        "flagged": 0,
+        "total": 20
+      }
+    },
+    "recalibrated-v1": {
+      "prior_caught": {
+        "flagged": 0,
+        "total": 10
+      },
+      "absent_caught": {
+        "flagged": 10,
+        "total": 10
+      },
+      "supported_flagged": {
+        "flagged": 0,
+        "total": 20
+      }
+    },
+    "source-role": {
+      "prior_caught": {
+        "flagged": 0,
+        "total": 10
+      },
+      "absent_caught": {
+        "flagged": 10,
+        "total": 10
+      },
+      "supported_flagged": {
+        "flagged": 0,
+        "total": 20
+      }
+    },
+    "chronology-words": {
+      "prior_caught": {
+        "flagged": 10,
+        "total": 10
+      },
+      "absent_caught": {
+        "flagged": 10,
+        "total": 10
+      },
+      "supported_flagged": {
+        "flagged": 0,
+        "total": 20
+      }
+    }
+  },
+  "source_matched": 30,
+  "original_prior_misses": 10,
+  "original_prior_misses_recovered": 0,
+  "word_comparator_original_prior_misses_recovered": 10,
+  "original_test_rows": [
+    {
+      "id": "reconciliation.arrival.0-3.current-0.candidate-0",
+      "label": 0,
+      "condition": "absent",
+      "current": "by bus",
+      "earlier": "by car",
+      "target": "bus",
+      "candidate_prefix": " by bus",
+      "match": {
+        "start": 108,
+        "end": 114,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "by bus",
+      "scores": {
+        "frozen-v1": 0.6858108514384819,
+        "recalibrated-v1": 0.6858108514384819,
+        "source-role": 0.1894226704791385,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.arrival.0-3.current-0.candidate-3",
+      "label": 1,
+      "condition": "absent",
+      "current": "by bus",
+      "earlier": "by car",
+      "target": "foot",
+      "candidate_prefix": " on foot",
+      "match": null,
+      "cue": "unmatched",
+      "matched_text": null,
+      "scores": {
+        "frozen-v1": 0.9972027238026161,
+        "recalibrated-v1": 0.9972027238026161,
+        "source-role": 0.9972027238026161,
+        "chronology-words": 0.9972027238026161
+      },
+      "flagged": {
+        "frozen-v1": true,
+        "recalibrated-v1": true,
+        "source-role": true,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.arrival.0-3.current-3.candidate-3",
+      "label": 0,
+      "condition": "absent",
+      "current": "on foot",
+      "earlier": "by bicycle",
+      "target": "foot",
+      "candidate_prefix": " on foot",
+      "match": {
+        "start": 112,
+        "end": 119,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "on foot",
+      "scores": {
+        "frozen-v1": 0.1648213622738731,
+        "recalibrated-v1": 0.1648213622738731,
+        "source-role": 0.08670757089147567,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.arrival.0-3.current-3.candidate-0",
+      "label": 1,
+      "condition": "absent",
+      "current": "on foot",
+      "earlier": "by bicycle",
+      "target": "bus",
+      "candidate_prefix": " by bus",
+      "match": null,
+      "cue": "unmatched",
+      "matched_text": null,
+      "scores": {
+        "frozen-v1": 0.999598296801881,
+        "recalibrated-v1": 0.999598296801881,
+        "source-role": 0.999598296801881,
+        "chronology-words": 0.999598296801881
+      },
+      "flagged": {
+        "frozen-v1": true,
+        "recalibrated-v1": true,
+        "source-role": true,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.arrival.1-2.current-1.candidate-1",
+      "label": 0,
+      "condition": "prior",
+      "current": "by car",
+      "earlier": "by bicycle",
+      "target": "car",
+      "candidate_prefix": " by car",
+      "match": {
+        "start": 112,
+        "end": 118,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "by car",
+      "scores": {
+        "frozen-v1": 0.29741819414128434,
+        "recalibrated-v1": 0.29741819414128434,
+        "source-role": 0.09932780375656075,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.arrival.1-2.current-1.candidate-2",
+      "label": 1,
+      "condition": "prior",
+      "current": "by car",
+      "earlier": "by bicycle",
+      "target": "bicycle",
+      "candidate_prefix": " by bicycle",
+      "match": {
+        "start": 69,
+        "end": 79,
+        "words": 2
+      },
+      "cue": "prior-cue",
+      "matched_text": "by bicycle",
+      "scores": {
+        "frozen-v1": 0.8397123058668334,
+        "recalibrated-v1": 0.8397123058668334,
+        "source-role": 0.42660523691846924,
+        "chronology-words": 1.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.arrival.1-2.current-2.candidate-2",
+      "label": 0,
+      "condition": "prior",
+      "current": "by bicycle",
+      "earlier": "by car",
+      "target": "bicycle",
+      "candidate_prefix": " by bicycle",
+      "match": {
+        "start": 108,
+        "end": 118,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "by bicycle",
+      "scores": {
+        "frozen-v1": 0.2078648697619414,
+        "recalibrated-v1": 0.2078648697619414,
+        "source-role": 0.14394871662374378,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.arrival.1-2.current-2.candidate-1",
+      "label": 1,
+      "condition": "prior",
+      "current": "by bicycle",
+      "earlier": "by car",
+      "target": "car",
+      "candidate_prefix": " by car",
+      "match": {
+        "start": 69,
+        "end": 75,
+        "words": 2
+      },
+      "cue": "prior-cue",
+      "matched_text": "by car",
+      "scores": {
+        "frozen-v1": 0.9181576388041733,
+        "recalibrated-v1": 0.9181576388041733,
+        "source-role": 0.7058897157322551,
+        "chronology-words": 1.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.site.0-3.current-0.candidate-0",
+      "label": 0,
+      "condition": "prior",
+      "current": "the blue room",
+      "earlier": "the purple room",
+      "target": "blue",
+      "candidate_prefix": " the blue",
+      "match": {
+        "start": 119,
+        "end": 127,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "the blue",
+      "scores": {
+        "frozen-v1": 0.07470015525460938,
+        "recalibrated-v1": 0.07470015525460938,
+        "source-role": 0.10764934751207214,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.site.0-3.current-0.candidate-3",
+      "label": 1,
+      "condition": "prior",
+      "current": "the blue room",
+      "earlier": "the purple room",
+      "target": "purple",
+      "candidate_prefix": " the purple",
+      "match": {
+        "start": 71,
+        "end": 81,
+        "words": 2
+      },
+      "cue": "prior-cue",
+      "matched_text": "the purple",
+      "scores": {
+        "frozen-v1": 0.6611127161950464,
+        "recalibrated-v1": 0.6611127161950464,
+        "source-role": 0.3891165295433608,
+        "chronology-words": 1.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.site.0-3.current-3.candidate-3",
+      "label": 0,
+      "condition": "prior",
+      "current": "the purple room",
+      "earlier": "the blue room",
+      "target": "purple",
+      "candidate_prefix": " the purple",
+      "match": {
+        "start": 117,
+        "end": 127,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "the purple",
+      "scores": {
+        "frozen-v1": 0.03155767517614126,
+        "recalibrated-v1": 0.03155767517614126,
+        "source-role": 0.09971395786687245,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.site.0-3.current-3.candidate-0",
+      "label": 1,
+      "condition": "prior",
+      "current": "the purple room",
+      "earlier": "the blue room",
+      "target": "blue",
+      "candidate_prefix": " the blue",
+      "match": {
+        "start": 71,
+        "end": 79,
+        "words": 2
+      },
+      "cue": "prior-cue",
+      "matched_text": "the blue",
+      "scores": {
+        "frozen-v1": 0.7747154743144862,
+        "recalibrated-v1": 0.7747154743144862,
+        "source-role": 0.4069563324611263,
+        "chronology-words": 1.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.site.1-2.current-1.candidate-1",
+      "label": 0,
+      "condition": "absent",
+      "current": "the green room",
+      "earlier": "the blue room",
+      "target": "green",
+      "candidate_prefix": " the green",
+      "match": {
+        "start": 117,
+        "end": 126,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "the green",
+      "scores": {
+        "frozen-v1": 0.0810726681201974,
+        "recalibrated-v1": 0.0810726681201974,
+        "source-role": 0.06637093551010019,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.site.1-2.current-1.candidate-2",
+      "label": 1,
+      "condition": "absent",
+      "current": "the green room",
+      "earlier": "the blue room",
+      "target": "orange",
+      "candidate_prefix": " the orange",
+      "match": null,
+      "cue": "unmatched",
+      "matched_text": null,
+      "scores": {
+        "frozen-v1": 0.9993254847042475,
+        "recalibrated-v1": 0.9993254847042475,
+        "source-role": 0.9993254847042475,
+        "chronology-words": 0.9993254847042475
+      },
+      "flagged": {
+        "frozen-v1": true,
+        "recalibrated-v1": true,
+        "source-role": true,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.site.1-2.current-2.candidate-2",
+      "label": 0,
+      "condition": "absent",
+      "current": "the orange room",
+      "earlier": "the purple room",
+      "target": "orange",
+      "candidate_prefix": " the orange",
+      "match": {
+        "start": 119,
+        "end": 129,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "the orange",
+      "scores": {
+        "frozen-v1": 0.08930047345593155,
+        "recalibrated-v1": 0.08930047345593155,
+        "source-role": 0.1377591918584711,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.site.1-2.current-2.candidate-1",
+      "label": 1,
+      "condition": "absent",
+      "current": "the orange room",
+      "earlier": "the purple room",
+      "target": "green",
+      "candidate_prefix": " the green",
+      "match": null,
+      "cue": "unmatched",
+      "matched_text": null,
+      "scores": {
+        "frozen-v1": 0.9992584602997561,
+        "recalibrated-v1": 0.9992584602997561,
+        "source-role": 0.9992584602997561,
+        "chronology-words": 0.9992584602997561
+      },
+      "flagged": {
+        "frozen-v1": true,
+        "recalibrated-v1": true,
+        "source-role": true,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.mobility.0-3.current-0.candidate-0",
+      "label": 0,
+      "condition": "absent",
+      "current": "a cane",
+      "earlier": "a walker",
+      "target": "cane",
+      "candidate_prefix": " a cane",
+      "match": {
+        "start": 119,
+        "end": 125,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "a cane",
+      "scores": {
+        "frozen-v1": 0.2963112966218384,
+        "recalibrated-v1": 0.2963112966218384,
+        "source-role": 0.02237746416775068,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.mobility.0-3.current-0.candidate-3",
+      "label": 1,
+      "condition": "absent",
+      "current": "a cane",
+      "earlier": "a walker",
+      "target": "wheelchair",
+      "candidate_prefix": " a wheelchair",
+      "match": null,
+      "cue": "unmatched",
+      "matched_text": null,
+      "scores": {
+        "frozen-v1": 0.9965539442269884,
+        "recalibrated-v1": 0.9965539442269884,
+        "source-role": 0.9965539442269884,
+        "chronology-words": 0.9965539442269884
+      },
+      "flagged": {
+        "frozen-v1": true,
+        "recalibrated-v1": true,
+        "source-role": true,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.mobility.0-3.current-3.candidate-3",
+      "label": 0,
+      "condition": "absent",
+      "current": "a wheelchair",
+      "earlier": "crutches",
+      "target": "wheelchair",
+      "candidate_prefix": " a wheelchair",
+      "match": {
+        "start": 119,
+        "end": 131,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "a wheelchair",
+      "scores": {
+        "frozen-v1": 0.1272378329398764,
+        "recalibrated-v1": 0.1272378329398764,
+        "source-role": 0.03225912311886741,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.mobility.0-3.current-3.candidate-0",
+      "label": 1,
+      "condition": "absent",
+      "current": "a wheelchair",
+      "earlier": "crutches",
+      "target": "cane",
+      "candidate_prefix": " a cane",
+      "match": null,
+      "cue": "unmatched",
+      "matched_text": null,
+      "scores": {
+        "frozen-v1": 0.9991361605674735,
+        "recalibrated-v1": 0.9991361605674735,
+        "source-role": 0.9991361605674735,
+        "chronology-words": 0.9991361605674735
+      },
+      "flagged": {
+        "frozen-v1": true,
+        "recalibrated-v1": true,
+        "source-role": true,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.mobility.1-2.current-1.candidate-1",
+      "label": 0,
+      "condition": "prior",
+      "current": "a walker",
+      "earlier": "crutches",
+      "target": "walker",
+      "candidate_prefix": " a walker",
+      "match": {
+        "start": 119,
+        "end": 127,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "a walker",
+      "scores": {
+        "frozen-v1": 0.12537056277909175,
+        "recalibrated-v1": 0.12537056277909175,
+        "source-role": 0.018154711957122743,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.mobility.1-2.current-1.candidate-2",
+      "label": 1,
+      "condition": "prior",
+      "current": "a walker",
+      "earlier": "crutches",
+      "target": "crutches",
+      "candidate_prefix": " crutches",
+      "match": {
+        "start": 78,
+        "end": 86,
+        "words": 1
+      },
+      "cue": "prior-cue",
+      "matched_text": "crutches",
+      "scores": {
+        "frozen-v1": 0.9292915008518752,
+        "recalibrated-v1": 0.9292915008518752,
+        "source-role": 0.5996080492057787,
+        "chronology-words": 1.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.mobility.1-2.current-2.candidate-2",
+      "label": 0,
+      "condition": "prior",
+      "current": "crutches",
+      "earlier": "a walker",
+      "target": "crutches",
+      "candidate_prefix": " crutches",
+      "match": {
+        "start": 119,
+        "end": 127,
+        "words": 1
+      },
+      "cue": "current-cue",
+      "matched_text": "crutches",
+      "scores": {
+        "frozen-v1": 0.26753890118393137,
+        "recalibrated-v1": 0.26753890118393137,
+        "source-role": 0.03831696880081346,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.mobility.1-2.current-2.candidate-1",
+      "label": 1,
+      "condition": "prior",
+      "current": "crutches",
+      "earlier": "a walker",
+      "target": "walker",
+      "candidate_prefix": " a walker",
+      "match": {
+        "start": 78,
+        "end": 86,
+        "words": 2
+      },
+      "cue": "prior-cue",
+      "matched_text": "a walker",
+      "scores": {
+        "frozen-v1": 0.7383434511101882,
+        "recalibrated-v1": 0.7383434511101882,
+        "source-role": 0.6748608713761496,
+        "chronology-words": 1.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.imaging.0-3.current-0.candidate-0",
+      "label": 0,
+      "condition": "prior",
+      "current": "an ultrasound",
+      "earlier": "an X-ray",
+      "target": "ultrasound",
+      "candidate_prefix": " an ultrasound",
+      "match": {
+        "start": 118,
+        "end": 131,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "an ultrasound",
+      "scores": {
+        "frozen-v1": 0.12320079089979921,
+        "recalibrated-v1": 0.12320079089979921,
+        "source-role": 0.007557582874782998,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.imaging.0-3.current-0.candidate-3",
+      "label": 1,
+      "condition": "prior",
+      "current": "an ultrasound",
+      "earlier": "an X-ray",
+      "target": "X-ray",
+      "candidate_prefix": " an X-ray",
+      "match": {
+        "start": 77,
+        "end": 85,
+        "words": 2
+      },
+      "cue": "prior-cue",
+      "matched_text": "an X-ray",
+      "scores": {
+        "frozen-v1": 0.9187862509242802,
+        "recalibrated-v1": 0.9187862509242802,
+        "source-role": 0.3946548183981806,
+        "chronology-words": 1.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.imaging.0-3.current-3.candidate-3",
+      "label": 0,
+      "condition": "prior",
+      "current": "an X-ray",
+      "earlier": "an ultrasound",
+      "target": "X-ray",
+      "candidate_prefix": " an X-ray",
+      "match": {
+        "start": 123,
+        "end": 131,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "an X-ray",
+      "scores": {
+        "frozen-v1": 0.14672407045962793,
+        "recalibrated-v1": 0.14672407045962793,
+        "source-role": 0.0035373038484469224,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.imaging.0-3.current-3.candidate-0",
+      "label": 1,
+      "condition": "prior",
+      "current": "an X-ray",
+      "earlier": "an ultrasound",
+      "target": "ultrasound",
+      "candidate_prefix": " an ultrasound",
+      "match": {
+        "start": 77,
+        "end": 90,
+        "words": 2
+      },
+      "cue": "prior-cue",
+      "matched_text": "an ultrasound",
+      "scores": {
+        "frozen-v1": 0.553332254959246,
+        "recalibrated-v1": 0.553332254959246,
+        "source-role": 0.5186372367762293,
+        "chronology-words": 1.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.imaging.1-2.current-1.candidate-1",
+      "label": 0,
+      "condition": "absent",
+      "current": "an MRI",
+      "earlier": "an ultrasound",
+      "target": "MRI",
+      "candidate_prefix": " an MRI",
+      "match": {
+        "start": 123,
+        "end": 129,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "an MRI",
+      "scores": {
+        "frozen-v1": 0.12179491265942728,
+        "recalibrated-v1": 0.12179491265942728,
+        "source-role": 0.0025140417098867465,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.imaging.1-2.current-1.candidate-2",
+      "label": 1,
+      "condition": "absent",
+      "current": "an MRI",
+      "earlier": "an ultrasound",
+      "target": "CT scan",
+      "candidate_prefix": " a CT scan",
+      "match": null,
+      "cue": "unmatched",
+      "matched_text": null,
+      "scores": {
+        "frozen-v1": 0.999475838144099,
+        "recalibrated-v1": 0.999475838144099,
+        "source-role": 0.999475838144099,
+        "chronology-words": 0.999475838144099
+      },
+      "flagged": {
+        "frozen-v1": true,
+        "recalibrated-v1": true,
+        "source-role": true,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.imaging.1-2.current-2.candidate-2",
+      "label": 0,
+      "condition": "absent",
+      "current": "a CT scan",
+      "earlier": "an X-ray",
+      "target": "CT scan",
+      "candidate_prefix": " a CT scan",
+      "match": {
+        "start": 118,
+        "end": 127,
+        "words": 3
+      },
+      "cue": "current-cue",
+      "matched_text": "a CT scan",
+      "scores": {
+        "frozen-v1": 0.18019641487465116,
+        "recalibrated-v1": 0.18019641487465116,
+        "source-role": 0.00932195546422946,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.imaging.1-2.current-2.candidate-1",
+      "label": 1,
+      "condition": "absent",
+      "current": "a CT scan",
+      "earlier": "an X-ray",
+      "target": "MRI",
+      "candidate_prefix": " an MRI",
+      "match": null,
+      "cue": "unmatched",
+      "matched_text": null,
+      "scores": {
+        "frozen-v1": 0.9992937099647291,
+        "recalibrated-v1": 0.9992937099647291,
+        "source-role": 0.9992937099647291,
+        "chronology-words": 0.9992937099647291
+      },
+      "flagged": {
+        "frozen-v1": true,
+        "recalibrated-v1": true,
+        "source-role": true,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.specimen.0-3.current-0.candidate-0",
+      "label": 0,
+      "condition": "absent",
+      "current": "a throat swab",
+      "earlier": "a blood sample",
+      "target": "throat",
+      "candidate_prefix": " a throat",
+      "match": {
+        "start": 117,
+        "end": 125,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "a throat",
+      "scores": {
+        "frozen-v1": 0.21953206501099348,
+        "recalibrated-v1": 0.21953206501099348,
+        "source-role": 0.3238784389913242,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.specimen.0-3.current-0.candidate-3",
+      "label": 1,
+      "condition": "absent",
+      "current": "a throat swab",
+      "earlier": "a blood sample",
+      "target": "nasal",
+      "candidate_prefix": " a nasal",
+      "match": null,
+      "cue": "unmatched",
+      "matched_text": null,
+      "scores": {
+        "frozen-v1": 0.996732840958489,
+        "recalibrated-v1": 0.996732840958489,
+        "source-role": 0.996732840958489,
+        "chronology-words": 0.996732840958489
+      },
+      "flagged": {
+        "frozen-v1": true,
+        "recalibrated-v1": true,
+        "source-role": true,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.specimen.0-3.current-3.candidate-3",
+      "label": 0,
+      "condition": "absent",
+      "current": "a nasal swab",
+      "earlier": "a urine sample",
+      "target": "nasal",
+      "candidate_prefix": " a nasal",
+      "match": {
+        "start": 117,
+        "end": 124,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "a nasal",
+      "scores": {
+        "frozen-v1": 0.4196113582983719,
+        "recalibrated-v1": 0.4196113582983719,
+        "source-role": 0.35899479288553576,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.specimen.0-3.current-3.candidate-0",
+      "label": 1,
+      "condition": "absent",
+      "current": "a nasal swab",
+      "earlier": "a urine sample",
+      "target": "throat",
+      "candidate_prefix": " a throat",
+      "match": null,
+      "cue": "unmatched",
+      "matched_text": null,
+      "scores": {
+        "frozen-v1": 0.9980617465207878,
+        "recalibrated-v1": 0.9980617465207878,
+        "source-role": 0.9980617465207878,
+        "chronology-words": 0.9980617465207878
+      },
+      "flagged": {
+        "frozen-v1": true,
+        "recalibrated-v1": true,
+        "source-role": true,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.specimen.1-2.current-1.candidate-1",
+      "label": 0,
+      "condition": "prior",
+      "current": "a blood sample",
+      "earlier": "a urine sample",
+      "target": "blood",
+      "candidate_prefix": " a blood",
+      "match": {
+        "start": 117,
+        "end": 124,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "a blood",
+      "scores": {
+        "frozen-v1": 0.5141674937658767,
+        "recalibrated-v1": 0.5141674937658767,
+        "source-role": 0.13493753254844357,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.specimen.1-2.current-1.candidate-2",
+      "label": 1,
+      "condition": "prior",
+      "current": "a blood sample",
+      "earlier": "a urine sample",
+      "target": "urine",
+      "candidate_prefix": " a urine",
+      "match": {
+        "start": 70,
+        "end": 77,
+        "words": 2
+      },
+      "cue": "prior-cue",
+      "matched_text": "a urine",
+      "scores": {
+        "frozen-v1": 0.4963643777850341,
+        "recalibrated-v1": 0.4963643777850341,
+        "source-role": 0.4332212415885043,
+        "chronology-words": 1.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": true
+      }
+    },
+    {
+      "id": "reconciliation.specimen.1-2.current-2.candidate-2",
+      "label": 0,
+      "condition": "prior",
+      "current": "a urine sample",
+      "earlier": "a blood sample",
+      "target": "urine",
+      "candidate_prefix": " a urine",
+      "match": {
+        "start": 117,
+        "end": 124,
+        "words": 2
+      },
+      "cue": "current-cue",
+      "matched_text": "a urine",
+      "scores": {
+        "frozen-v1": 0.46079772414296416,
+        "recalibrated-v1": 0.46079772414296416,
+        "source-role": 0.06075590949445553,
+        "chronology-words": 0.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": false
+      }
+    },
+    {
+      "id": "reconciliation.specimen.1-2.current-2.candidate-1",
+      "label": 1,
+      "condition": "prior",
+      "current": "a urine sample",
+      "earlier": "a blood sample",
+      "target": "blood",
+      "candidate_prefix": " a blood",
+      "match": {
+        "start": 70,
+        "end": 77,
+        "words": 2
+      },
+      "cue": "prior-cue",
+      "matched_text": "a blood",
+      "scores": {
+        "frozen-v1": 0.8731345132590997,
+        "recalibrated-v1": 0.8731345132590997,
+        "source-role": 0.4961551314835779,
+        "chronology-words": 1.0
+      },
+      "flagged": {
+        "frozen-v1": false,
+        "recalibrated-v1": false,
+        "source-role": false,
+        "chronology-words": true
+      }
+    }
+  ]
+}

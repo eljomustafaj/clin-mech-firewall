@@ -1,0 +1,21 @@
+{
+  "schema_version": "source-role-test.v1",
+  "selection_sha256": "6b7dc3b52e77721705bd5fe4a9d7e2c6321783c2ce450f84605b9f74ec01b6ae",
+  "source_probe_sha256": "8d0f4e8d359affa07be74cb3a2e8c564296c21f654861068530833f9d436358c",
+  "raw_test_sha256": {
+    "dataset.jsonl": "d1a844e5302ebde8d8c65f78e3c3e285990d5285851770a557f585f809882536",
+    "predictions.jsonl": "e8397c2fc3189b5ca290ce2985014157170c5a460db542e2326c31119959acaa",
+    "manifest.json": "0dc5b5ae278ec5b4b341b67abcd6c286cd41c5f07794fba8e747edf2b193222c"
+  },
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "layer": 12,
+  "device": "cuda",
+  "dtype": "float16",
+  "batch_size": 8,
+  "sha256": {
+    "metrics.json": "9c2dbb86ae0e8a96320f13251c12696a64df12654b0640511661a54e4b94179a",
+    "predictions.jsonl": "8a8cd40d7d291b3521db02f73d33f6ce4bc2839cc8de2ca63e88e24c1306535c",
+    "source-activations.npz": "8cd4ceb0714d557be936af7fe30875d666b29a143abce8378588fd3524794d7c"
+  }
+}

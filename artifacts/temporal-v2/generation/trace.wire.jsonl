@@ -1,0 +1,18 @@
+{"type": "start", "schema_version": 1, "trace_id": "greedy-246fcd823c4b534425528d45a20d4f5bed0a8d12a480778837199d61be47dd7a", "model_id": "Qwen/Qwen2.5-0.5B-Instruct", "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775", "layer": 12, "probe_id": "research-linear-probe-v1", "probe_revision": "sha256:b0b274d695947fb3fc6d27f00d16f810bd40c894a980a361b8e21093b31be3cf"}
+{"type": "token", "index": 0, "text": " container", "risk": 0.6454391222283045}
+{"type": "token", "index": 1, "text": " documented", "risk": 0.9601377593573439}
+{"type": "token", "index": 2, "text": "\n", "risk": 0.6505618663591898}
+{"type": "token", "index": 3, "text": "Value", "risk": 0.663198893385909}
+{"type": "token", "index": 4, "text": ":", "risk": 0.478686191315489}
+{"type": "token", "index": 5, "text": " container", "risk": 0.8812486259608576}
+{"type": "token", "index": 6, "text": " documented", "risk": 0.9530385344651511}
+{"type": "token", "index": 7, "text": "\n", "risk": 0.7234525577165654}
+{"type": "token", "index": 8, "text": "Value", "risk": 0.9571719704482351}
+{"type": "token", "index": 9, "text": ":", "risk": 0.9946882556534519}
+{"type": "token", "index": 10, "text": " container", "risk": 0.902636286462954}
+{"type": "token", "index": 11, "text": " documented", "risk": 0.994180333922667}
+{"type": "token", "index": 12, "text": "\n", "risk": 0.9817088854672282}
+{"type": "token", "index": 13, "text": "Value", "risk": 0.9605026724300784}
+{"type": "token", "index": 14, "text": ":", "risk": 0.9956074690397841}
+{"type": "token", "index": 15, "text": " container", "risk": 0.8554459746449087}
+{"type": "end", "token_count": 16}

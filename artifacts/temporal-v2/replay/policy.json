@@ -1,0 +1,14 @@
+{
+  "family": "chart-chronology-words-v1",
+  "match_version": "source-suffix.v1",
+  "line_scope": "matching line before mention",
+  "prior_regex": "\\b(?:prior|previous|previously|earlier|older|past|last|historical|archived|closed|preceding|former)\\b",
+  "current_regex": "\\b(?:current|today|active|present|latest|now|ongoing|confirmed|this encounter|this visit|most recent|in progress)\\b",
+  "regex_flags": "IGNORECASE (Unicode)",
+  "prior_only_risk": 1.0,
+  "current_only_risk": 0.0,
+  "otherwise": "original token risk",
+  "fallback_probe_sha256": "3c7bd6c3ab4547618a013f4aae07e1ad69708ca151064ba3b8da8b230d945350",
+  "halt_rule": "risk >= threshold",
+  "threshold": 0.9552176915681485
+}

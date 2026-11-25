@@ -50,8 +50,6 @@ class SourceEvaluationTests(unittest.TestCase):
 class PublishedTemporalSourceTests(unittest.TestCase):
     def test_reproduce_two_frozen_evaluations_without_model(self):
         base = Path(__file__).resolve().parents[2] / "artifacts/temporal-v2"
-        if not (base / "source-test").is_dir():
-            self.skipTest("Fresh source evaluation has not been published in this revision")
         raw_sha = "6b7dc3b52e77721705bd5fe4a9d7e2c6321783c2ce450f84605b9f74ec01b6ae"
         source_sha = "8d0f4e8d359affa07be74cb3a2e8c564296c21f654861068530833f9d436358c"
         sel, probes, rows = load_development(base / "dev", raw_sha)

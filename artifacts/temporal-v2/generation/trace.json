@@ -1,0 +1,108 @@
+{
+  "schema_version": "research-trace.v1",
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "layer": 12,
+  "probe_id": "sha256:b0b274d695947fb3fc6d27f00d16f810bd40c894a980a361b8e21093b31be3cf",
+  "source_row": "temporal-v1.test.annotated_extract.sample_container.1-2.prior.current_first.current-2.candidate-2",
+  "prompt": "File excerpt covering consecutive visits. Field: container documented.\nThe value beside the open visit is a pouch.\nThe open and archived portions use the same field names.\nThe value beside the archived visit is a vial.\n\nFor the open visit, what container did the chart list for this encounter?\nValue:",
+  "tokens": [
+    {
+      "position": 0,
+      "token_id": 5476,
+      "text": " container",
+      "risk_score": 0.6454391222283045
+    },
+    {
+      "position": 1,
+      "token_id": 26372,
+      "text": " documented",
+      "risk_score": 0.9601377593573439
+    },
+    {
+      "position": 2,
+      "token_id": 198,
+      "text": "\n",
+      "risk_score": 0.6505618663591898
+    },
+    {
+      "position": 3,
+      "token_id": 1130,
+      "text": "Value",
+      "risk_score": 0.663198893385909
+    },
+    {
+      "position": 4,
+      "token_id": 25,
+      "text": ":",
+      "risk_score": 0.478686191315489
+    },
+    {
+      "position": 5,
+      "token_id": 5476,
+      "text": " container",
+      "risk_score": 0.8812486259608576
+    },
+    {
+      "position": 6,
+      "token_id": 26372,
+      "text": " documented",
+      "risk_score": 0.9530385344651511
+    },
+    {
+      "position": 7,
+      "token_id": 198,
+      "text": "\n",
+      "risk_score": 0.7234525577165654
+    },
+    {
+      "position": 8,
+      "token_id": 1130,
+      "text": "Value",
+      "risk_score": 0.9571719704482351
+    },
+    {
+      "position": 9,
+      "token_id": 25,
+      "text": ":",
+      "risk_score": 0.9946882556534519
+    },
+    {
+      "position": 10,
+      "token_id": 5476,
+      "text": " container",
+      "risk_score": 0.902636286462954
+    },
+    {
+      "position": 11,
+      "token_id": 26372,
+      "text": " documented",
+      "risk_score": 0.994180333922667
+    },
+    {
+      "position": 12,
+      "token_id": 198,
+      "text": "\n",
+      "risk_score": 0.9817088854672282
+    },
+    {
+      "position": 13,
+      "token_id": 1130,
+      "text": "Value",
+      "risk_score": 0.9605026724300784
+    },
+    {
+      "position": 14,
+      "token_id": 25,
+      "text": ":",
+      "risk_score": 0.9956074690397841
+    },
+    {
+      "position": 15,
+      "token_id": 5476,
+      "text": " container",
+      "risk_score": 0.8554459746449087
+    }
+  ],
+  "trace_id": "greedy-246fcd823c4b534425528d45a20d4f5bed0a8d12a480778837199d61be47dd7a"
+}

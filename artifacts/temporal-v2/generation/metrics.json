@@ -1,0 +1,76 @@
+{
+  "selected": "recalibrated-v1",
+  "selection_sha256": "6b7dc3b52e77721705bd5fe4a9d7e2c6321783c2ce450f84605b9f74ec01b6ae",
+  "source_probe_sha256": "8d0f4e8d359affa07be74cb3a2e8c564296c21f654861068530833f9d436358c",
+  "test_dataset_sha256": "d1a844e5302ebde8d8c65f78e3c3e285990d5285851770a557f585f809882536",
+  "device": "cuda",
+  "dtype": "float16",
+  "max_tokens": 16,
+  "n": 32,
+  "opening_counts": {
+    "current": {
+      "prompts": 6,
+      "original": {
+        "halt_anywhere": 4,
+        "halt_by_value_end": 1
+      },
+      "selected": {
+        "halt_anywhere": 4,
+        "halt_by_value_end": 1
+      },
+      "source": {
+        "halt_anywhere": 4,
+        "halt_by_value_end": 1
+      },
+      "chronology-words": {
+        "halt_anywhere": 4,
+        "halt_by_value_end": 1
+      }
+    },
+    "prior": {
+      "prompts": 2,
+      "original": {
+        "halt_anywhere": 2,
+        "halt_by_value_end": 1
+      },
+      "selected": {
+        "halt_anywhere": 2,
+        "halt_by_value_end": 0
+      },
+      "source": {
+        "halt_anywhere": 2,
+        "halt_by_value_end": 1
+      },
+      "chronology-words": {
+        "halt_anywhere": 2,
+        "halt_by_value_end": 2
+      }
+    },
+    "unclassified": {
+      "prompts": 24,
+      "original": {
+        "halt_anywhere": 24,
+        "halt_by_value_end": null
+      },
+      "selected": {
+        "halt_anywhere": 22,
+        "halt_by_value_end": null
+      },
+      "source": {
+        "halt_anywhere": 24,
+        "halt_by_value_end": null
+      },
+      "chronology-words": {
+        "halt_anywhere": 24,
+        "halt_by_value_end": null
+      }
+    }
+  },
+  "sha256": {
+    "generations.jsonl": "36536f4e6afef58b99039d70e3095362f51cb9555c869346e1385554df976fb5",
+    "source.trace.json": "57f6d77310ab837f49c14a154a99cbcbee228473b510b5429c05fbf95fafd1a9",
+    "source.trace.wire.jsonl": "b7c1b8f31ed31877cd3b99e185d4f344b90253952a497b3802153daea30bd1a9",
+    "trace.json": "ee1d95db23d8d5238284168bfbe2f15f3debd011b0aff00020b3b7f8f03dc97b",
+    "trace.wire.jsonl": "9475e31da0ffefb9f601cdf91ae8f23bfbadab7a2fa686c49a349c77e7fbe8b0"
+  }
+}

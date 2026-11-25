@@ -1,0 +1,2897 @@
+{
+  "schema_version": "source-role-evaluation.v1",
+  "source_method": "source-role",
+  "raw_primary": "recalibrated-v1",
+  "rows": 640,
+  "thresholds": {
+    "frozen-v1": 0.9552176915681485,
+    "recalibrated-v1": 0.9740611507233753,
+    "source-role": 0.9412578522854479,
+    "chronology-words": 0.9552176915681485
+  },
+  "overall": {
+    "frozen-v1": {
+      "n": 640,
+      "tp": 193,
+      "fp": 39,
+      "tn": 281,
+      "fn": 127,
+      "auroc": 0.7901464843749999,
+      "f1": 0.6992753623188406,
+      "false_positive_rate": 0.121875,
+      "recall": 0.603125,
+      "accuracy": 0.740625,
+      "precision": 0.8318965517241379,
+      "prior_catch": {
+        "flagged": 39,
+        "total": 160,
+        "rate": 0.24375
+      },
+      "absent_catch": {
+        "flagged": 154,
+        "total": 160,
+        "rate": 0.9625
+      },
+      "supported_false_alarm": {
+        "flagged": 39,
+        "total": 320,
+        "rate": 0.121875
+      }
+    },
+    "recalibrated-v1": {
+      "n": 640,
+      "tp": 172,
+      "fp": 20,
+      "tn": 300,
+      "fn": 148,
+      "auroc": 0.7901464843749999,
+      "f1": 0.671875,
+      "false_positive_rate": 0.0625,
+      "recall": 0.5375,
+      "accuracy": 0.7375,
+      "precision": 0.8958333333333334,
+      "prior_catch": {
+        "flagged": 27,
+        "total": 160,
+        "rate": 0.16875
+      },
+      "absent_catch": {
+        "flagged": 145,
+        "total": 160,
+        "rate": 0.90625
+      },
+      "supported_false_alarm": {
+        "flagged": 20,
+        "total": 320,
+        "rate": 0.0625
+      }
+    },
+    "source-role": {
+      "n": 640,
+      "tp": 180,
+      "fp": 0,
+      "tn": 320,
+      "fn": 140,
+      "auroc": 0.844091796875,
+      "f1": 0.72,
+      "false_positive_rate": 0.0,
+      "recall": 0.5625,
+      "accuracy": 0.78125,
+      "precision": 1.0,
+      "prior_catch": {
+        "flagged": 24,
+        "total": 160,
+        "rate": 0.15
+      },
+      "absent_catch": {
+        "flagged": 156,
+        "total": 160,
+        "rate": 0.975
+      },
+      "supported_false_alarm": {
+        "flagged": 0,
+        "total": 320,
+        "rate": 0.0
+      }
+    },
+    "chronology-words": {
+      "n": 640,
+      "tp": 277,
+      "fp": 35,
+      "tn": 285,
+      "fn": 43,
+      "auroc": 0.9362207031250002,
+      "f1": 0.8765822784810127,
+      "false_positive_rate": 0.109375,
+      "recall": 0.865625,
+      "accuracy": 0.878125,
+      "precision": 0.8878205128205128,
+      "prior_catch": {
+        "flagged": 123,
+        "total": 160,
+        "rate": 0.76875
+      },
+      "absent_catch": {
+        "flagged": 154,
+        "total": 160,
+        "rate": 0.9625
+      },
+      "supported_false_alarm": {
+        "flagged": 35,
+        "total": 320,
+        "rate": 0.109375
+      }
+    }
+  },
+  "coverage": {
+    "matched": 480,
+    "unmatched": 160
+  },
+  "cue_counts": {
+    "no-cues": 280,
+    "unmatched": 160,
+    "current-cue": 80,
+    "prior-cue": 120
+  },
+  "by_coverage": {
+    "matched": {
+      "frozen-v1": {
+        "n": 480,
+        "tp": 39,
+        "fp": 39,
+        "tn": 281,
+        "fn": 121,
+        "auroc": 0.59740234375,
+        "f1": 0.3277310924369748,
+        "false_positive_rate": 0.121875,
+        "recall": 0.24375,
+        "accuracy": 0.6666666666666666,
+        "precision": 0.5,
+        "prior_catch": {
+          "flagged": 39,
+          "total": 160,
+          "rate": 0.24375
+        },
+        "absent_catch": {
+          "flagged": 0,
+          "total": 0,
+          "rate": null
+        },
+        "supported_false_alarm": {
+          "flagged": 39,
+          "total": 320,
+          "rate": 0.121875
+        }
+      },
+      "recalibrated-v1": {
+        "n": 480,
+        "tp": 27,
+        "fp": 20,
+        "tn": 300,
+        "fn": 133,
+        "auroc": 0.59740234375,
+        "f1": 0.2608695652173913,
+        "false_positive_rate": 0.0625,
+        "recall": 0.16875,
+        "accuracy": 0.68125,
+        "precision": 0.574468085106383,
+        "prior_catch": {
+          "flagged": 27,
+          "total": 160,
+          "rate": 0.16875
+        },
+        "absent_catch": {
+          "flagged": 0,
+          "total": 0,
+          "rate": null
+        },
+        "supported_false_alarm": {
+          "flagged": 20,
+          "total": 320,
+          "rate": 0.0625
+        }
+      },
+      "source-role": {
+        "n": 480,
+        "tp": 24,
+        "fp": 0,
+        "tn": 320,
+        "fn": 136,
+        "auroc": 0.68818359375,
+        "f1": 0.2608695652173913,
+        "false_positive_rate": 0.0,
+        "recall": 0.15,
+        "accuracy": 0.7166666666666667,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 24,
+          "total": 160,
+          "rate": 0.15
+        },
+        "absent_catch": {
+          "flagged": 0,
+          "total": 0,
+          "rate": null
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 320,
+          "rate": 0.0
+        }
+      },
+      "chronology-words": {
+        "n": 480,
+        "tp": 123,
+        "fp": 35,
+        "tn": 285,
+        "fn": 37,
+        "auroc": 0.88796875,
+        "f1": 0.7735849056603774,
+        "false_positive_rate": 0.109375,
+        "recall": 0.76875,
+        "accuracy": 0.85,
+        "precision": 0.7784810126582279,
+        "prior_catch": {
+          "flagged": 123,
+          "total": 160,
+          "rate": 0.76875
+        },
+        "absent_catch": {
+          "flagged": 0,
+          "total": 0,
+          "rate": null
+        },
+        "supported_false_alarm": {
+          "flagged": 35,
+          "total": 320,
+          "rate": 0.109375
+        }
+      }
+    },
+    "unmatched": {
+      "frozen-v1": {
+        "n": 160,
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 0,
+          "rate": null
+        },
+        "absent_catch": {
+          "flagged": 154,
+          "total": 160,
+          "rate": 0.9625
+        },
+        "prior_catch": {
+          "flagged": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "recalibrated-v1": {
+        "n": 160,
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 0,
+          "rate": null
+        },
+        "absent_catch": {
+          "flagged": 145,
+          "total": 160,
+          "rate": 0.90625
+        },
+        "prior_catch": {
+          "flagged": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "source-role": {
+        "n": 160,
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 0,
+          "rate": null
+        },
+        "absent_catch": {
+          "flagged": 156,
+          "total": 160,
+          "rate": 0.975
+        },
+        "prior_catch": {
+          "flagged": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "chronology-words": {
+        "n": 160,
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 0,
+          "rate": null
+        },
+        "absent_catch": {
+          "flagged": 154,
+          "total": 160,
+          "rate": 0.9625
+        },
+        "prior_catch": {
+          "flagged": 0,
+          "total": 0,
+          "rate": null
+        }
+      }
+    }
+  },
+  "by_layout": {
+    "case_index": {
+      "frozen-v1": {
+        "n": 160,
+        "tp": 42,
+        "fp": 12,
+        "tn": 68,
+        "fn": 38,
+        "auroc": 0.74140625,
+        "f1": 0.6268656716417911,
+        "false_positive_rate": 0.15,
+        "recall": 0.525,
+        "accuracy": 0.6875,
+        "precision": 0.7777777777777778,
+        "prior_catch": {
+          "flagged": 3,
+          "total": 40,
+          "rate": 0.075
+        },
+        "absent_catch": {
+          "flagged": 39,
+          "total": 40,
+          "rate": 0.975
+        },
+        "supported_false_alarm": {
+          "flagged": 12,
+          "total": 80,
+          "rate": 0.15
+        }
+      },
+      "recalibrated-v1": {
+        "n": 160,
+        "tp": 40,
+        "fp": 5,
+        "tn": 75,
+        "fn": 40,
+        "auroc": 0.74140625,
+        "f1": 0.64,
+        "false_positive_rate": 0.0625,
+        "recall": 0.5,
+        "accuracy": 0.71875,
+        "precision": 0.8888888888888888,
+        "prior_catch": {
+          "flagged": 2,
+          "total": 40,
+          "rate": 0.05
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 5,
+          "total": 80,
+          "rate": 0.0625
+        }
+      },
+      "source-role": {
+        "n": 160,
+        "tp": 40,
+        "fp": 0,
+        "tn": 80,
+        "fn": 40,
+        "auroc": 0.79578125,
+        "f1": 0.6666666666666666,
+        "false_positive_rate": 0.0,
+        "recall": 0.5,
+        "accuracy": 0.75,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 0,
+          "total": 40,
+          "rate": 0.0
+        },
+        "absent_catch": {
+          "flagged": 40,
+          "total": 40,
+          "rate": 1.0
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      },
+      "chronology-words": {
+        "n": 160,
+        "tp": 42,
+        "fp": 12,
+        "tn": 68,
+        "fn": 38,
+        "auroc": 0.74140625,
+        "f1": 0.6268656716417911,
+        "false_positive_rate": 0.15,
+        "recall": 0.525,
+        "accuracy": 0.6875,
+        "precision": 0.7777777777777778,
+        "prior_catch": {
+          "flagged": 3,
+          "total": 40,
+          "rate": 0.075
+        },
+        "absent_catch": {
+          "flagged": 39,
+          "total": 40,
+          "rate": 0.975
+        },
+        "supported_false_alarm": {
+          "flagged": 12,
+          "total": 80,
+          "rate": 0.15
+        }
+      }
+    },
+    "copy_review": {
+      "frozen-v1": {
+        "n": 160,
+        "tp": 43,
+        "fp": 4,
+        "tn": 76,
+        "fn": 37,
+        "auroc": 0.84984375,
+        "f1": 0.6771653543307087,
+        "false_positive_rate": 0.05,
+        "recall": 0.5375,
+        "accuracy": 0.74375,
+        "precision": 0.9148936170212766,
+        "prior_catch": {
+          "flagged": 4,
+          "total": 40,
+          "rate": 0.1
+        },
+        "absent_catch": {
+          "flagged": 39,
+          "total": 40,
+          "rate": 0.975
+        },
+        "supported_false_alarm": {
+          "flagged": 4,
+          "total": 80,
+          "rate": 0.05
+        }
+      },
+      "recalibrated-v1": {
+        "n": 160,
+        "tp": 37,
+        "fp": 3,
+        "tn": 77,
+        "fn": 43,
+        "auroc": 0.84984375,
+        "f1": 0.6166666666666667,
+        "false_positive_rate": 0.0375,
+        "recall": 0.4625,
+        "accuracy": 0.7125,
+        "precision": 0.925,
+        "prior_catch": {
+          "flagged": 2,
+          "total": 40,
+          "rate": 0.05
+        },
+        "absent_catch": {
+          "flagged": 35,
+          "total": 40,
+          "rate": 0.875
+        },
+        "supported_false_alarm": {
+          "flagged": 3,
+          "total": 80,
+          "rate": 0.0375
+        }
+      },
+      "source-role": {
+        "n": 160,
+        "tp": 51,
+        "fp": 0,
+        "tn": 80,
+        "fn": 29,
+        "auroc": 0.86296875,
+        "f1": 0.7786259541984732,
+        "false_positive_rate": 0.0,
+        "recall": 0.6375,
+        "accuracy": 0.81875,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 11,
+          "total": 40,
+          "rate": 0.275
+        },
+        "absent_catch": {
+          "flagged": 40,
+          "total": 40,
+          "rate": 1.0
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      },
+      "chronology-words": {
+        "n": 160,
+        "tp": 79,
+        "fp": 0,
+        "tn": 80,
+        "fn": 1,
+        "auroc": 1.0,
+        "f1": 0.9937106918238994,
+        "false_positive_rate": 0.0,
+        "recall": 0.9875,
+        "accuracy": 0.99375,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 40,
+          "total": 40,
+          "rate": 1.0
+        },
+        "absent_catch": {
+          "flagged": 39,
+          "total": 40,
+          "rate": 0.975
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      }
+    },
+    "revision_notes": {
+      "frozen-v1": {
+        "n": 160,
+        "tp": 68,
+        "fp": 18,
+        "tn": 62,
+        "fn": 12,
+        "auroc": 0.9012500000000001,
+        "f1": 0.8192771084337349,
+        "false_positive_rate": 0.225,
+        "recall": 0.85,
+        "accuracy": 0.8125,
+        "precision": 0.7906976744186046,
+        "prior_catch": {
+          "flagged": 30,
+          "total": 40,
+          "rate": 0.75
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 18,
+          "total": 80,
+          "rate": 0.225
+        }
+      },
+      "recalibrated-v1": {
+        "n": 160,
+        "tp": 58,
+        "fp": 12,
+        "tn": 68,
+        "fn": 22,
+        "auroc": 0.9012500000000001,
+        "f1": 0.7733333333333333,
+        "false_positive_rate": 0.15,
+        "recall": 0.725,
+        "accuracy": 0.7875,
+        "precision": 0.8285714285714286,
+        "prior_catch": {
+          "flagged": 23,
+          "total": 40,
+          "rate": 0.575
+        },
+        "absent_catch": {
+          "flagged": 35,
+          "total": 40,
+          "rate": 0.875
+        },
+        "supported_false_alarm": {
+          "flagged": 12,
+          "total": 80,
+          "rate": 0.15
+        }
+      },
+      "source-role": {
+        "n": 160,
+        "tp": 51,
+        "fp": 0,
+        "tn": 80,
+        "fn": 29,
+        "auroc": 0.9903124999999999,
+        "f1": 0.7786259541984732,
+        "false_positive_rate": 0.0,
+        "recall": 0.6375,
+        "accuracy": 0.81875,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 13,
+          "total": 40,
+          "rate": 0.325
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      },
+      "chronology-words": {
+        "n": 160,
+        "tp": 78,
+        "fp": 18,
+        "tn": 62,
+        "fn": 2,
+        "auroc": 0.9790625000000001,
+        "f1": 0.8863636363636364,
+        "false_positive_rate": 0.225,
+        "recall": 0.975,
+        "accuracy": 0.875,
+        "precision": 0.8125,
+        "prior_catch": {
+          "flagged": 40,
+          "total": 40,
+          "rate": 1.0
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 18,
+          "total": 80,
+          "rate": 0.225
+        }
+      }
+    },
+    "annotated_extract": {
+      "frozen-v1": {
+        "n": 160,
+        "tp": 40,
+        "fp": 5,
+        "tn": 75,
+        "fn": 40,
+        "auroc": 0.7124999999999999,
+        "f1": 0.64,
+        "false_positive_rate": 0.0625,
+        "recall": 0.5,
+        "accuracy": 0.71875,
+        "precision": 0.8888888888888888,
+        "prior_catch": {
+          "flagged": 2,
+          "total": 40,
+          "rate": 0.05
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 5,
+          "total": 80,
+          "rate": 0.0625
+        }
+      },
+      "recalibrated-v1": {
+        "n": 160,
+        "tp": 37,
+        "fp": 0,
+        "tn": 80,
+        "fn": 43,
+        "auroc": 0.7124999999999999,
+        "f1": 0.6324786324786325,
+        "false_positive_rate": 0.0,
+        "recall": 0.4625,
+        "accuracy": 0.73125,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 0,
+          "total": 40,
+          "rate": 0.0
+        },
+        "absent_catch": {
+          "flagged": 37,
+          "total": 40,
+          "rate": 0.925
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      },
+      "source-role": {
+        "n": 160,
+        "tp": 38,
+        "fp": 0,
+        "tn": 80,
+        "fn": 42,
+        "auroc": 0.70359375,
+        "f1": 0.6440677966101694,
+        "false_positive_rate": 0.0,
+        "recall": 0.475,
+        "accuracy": 0.7375,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 0,
+          "total": 40,
+          "rate": 0.0
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 80,
+          "rate": 0.0
+        }
+      },
+      "chronology-words": {
+        "n": 160,
+        "tp": 78,
+        "fp": 5,
+        "tn": 75,
+        "fn": 2,
+        "auroc": 0.99578125,
+        "f1": 0.9570552147239264,
+        "false_positive_rate": 0.0625,
+        "recall": 0.975,
+        "accuracy": 0.95625,
+        "precision": 0.9397590361445783,
+        "prior_catch": {
+          "flagged": 40,
+          "total": 40,
+          "rate": 1.0
+        },
+        "absent_catch": {
+          "flagged": 38,
+          "total": 40,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 5,
+          "total": 80,
+          "rate": 0.0625
+        }
+      }
+    }
+  },
+  "by_chart_order": {
+    "current_first": {
+      "frozen-v1": {
+        "n": 320,
+        "tp": 91,
+        "fp": 37,
+        "tn": 123,
+        "fn": 69,
+        "auroc": 0.6951953125000001,
+        "f1": 0.6319444444444444,
+        "false_positive_rate": 0.23125,
+        "recall": 0.56875,
+        "accuracy": 0.66875,
+        "precision": 0.7109375,
+        "prior_catch": {
+          "flagged": 13,
+          "total": 80,
+          "rate": 0.1625
+        },
+        "absent_catch": {
+          "flagged": 78,
+          "total": 80,
+          "rate": 0.975
+        },
+        "supported_false_alarm": {
+          "flagged": 37,
+          "total": 160,
+          "rate": 0.23125
+        }
+      },
+      "recalibrated-v1": {
+        "n": 320,
+        "tp": 78,
+        "fp": 20,
+        "tn": 140,
+        "fn": 82,
+        "auroc": 0.6951953125000001,
+        "f1": 0.6046511627906976,
+        "false_positive_rate": 0.125,
+        "recall": 0.4875,
+        "accuracy": 0.68125,
+        "precision": 0.7959183673469388,
+        "prior_catch": {
+          "flagged": 5,
+          "total": 80,
+          "rate": 0.0625
+        },
+        "absent_catch": {
+          "flagged": 73,
+          "total": 80,
+          "rate": 0.9125
+        },
+        "supported_false_alarm": {
+          "flagged": 20,
+          "total": 160,
+          "rate": 0.125
+        }
+      },
+      "source-role": {
+        "n": 320,
+        "tp": 91,
+        "fp": 0,
+        "tn": 160,
+        "fn": 69,
+        "auroc": 0.866015625,
+        "f1": 0.7250996015936255,
+        "false_positive_rate": 0.0,
+        "recall": 0.56875,
+        "accuracy": 0.784375,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 13,
+          "total": 80,
+          "rate": 0.1625
+        },
+        "absent_catch": {
+          "flagged": 78,
+          "total": 80,
+          "rate": 0.975
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 160,
+          "rate": 0.0
+        }
+      },
+      "chronology-words": {
+        "n": 320,
+        "tp": 138,
+        "fp": 33,
+        "tn": 127,
+        "fn": 22,
+        "auroc": 0.9012109375000001,
+        "f1": 0.8338368580060423,
+        "false_positive_rate": 0.20625,
+        "recall": 0.8625,
+        "accuracy": 0.828125,
+        "precision": 0.8070175438596491,
+        "prior_catch": {
+          "flagged": 60,
+          "total": 80,
+          "rate": 0.75
+        },
+        "absent_catch": {
+          "flagged": 78,
+          "total": 80,
+          "rate": 0.975
+        },
+        "supported_false_alarm": {
+          "flagged": 33,
+          "total": 160,
+          "rate": 0.20625
+        }
+      }
+    },
+    "prior_first": {
+      "frozen-v1": {
+        "n": 320,
+        "tp": 102,
+        "fp": 2,
+        "tn": 158,
+        "fn": 58,
+        "auroc": 0.8748828124999999,
+        "f1": 0.7727272727272727,
+        "false_positive_rate": 0.0125,
+        "recall": 0.6375,
+        "accuracy": 0.8125,
+        "precision": 0.9807692307692307,
+        "prior_catch": {
+          "flagged": 26,
+          "total": 80,
+          "rate": 0.325
+        },
+        "absent_catch": {
+          "flagged": 76,
+          "total": 80,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 2,
+          "total": 160,
+          "rate": 0.0125
+        }
+      },
+      "recalibrated-v1": {
+        "n": 320,
+        "tp": 94,
+        "fp": 0,
+        "tn": 160,
+        "fn": 66,
+        "auroc": 0.8748828124999999,
+        "f1": 0.7401574803149606,
+        "false_positive_rate": 0.0,
+        "recall": 0.5875,
+        "accuracy": 0.79375,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 22,
+          "total": 80,
+          "rate": 0.275
+        },
+        "absent_catch": {
+          "flagged": 72,
+          "total": 80,
+          "rate": 0.9
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 160,
+          "rate": 0.0
+        }
+      },
+      "source-role": {
+        "n": 320,
+        "tp": 89,
+        "fp": 0,
+        "tn": 160,
+        "fn": 71,
+        "auroc": 0.8242578125000002,
+        "f1": 0.714859437751004,
+        "false_positive_rate": 0.0,
+        "recall": 0.55625,
+        "accuracy": 0.778125,
+        "precision": 1.0,
+        "prior_catch": {
+          "flagged": 11,
+          "total": 80,
+          "rate": 0.1375
+        },
+        "absent_catch": {
+          "flagged": 78,
+          "total": 80,
+          "rate": 0.975
+        },
+        "supported_false_alarm": {
+          "flagged": 0,
+          "total": 160,
+          "rate": 0.0
+        }
+      },
+      "chronology-words": {
+        "n": 320,
+        "tp": 139,
+        "fp": 2,
+        "tn": 158,
+        "fn": 21,
+        "auroc": 0.9744921874999999,
+        "f1": 0.9235880398671097,
+        "false_positive_rate": 0.0125,
+        "recall": 0.86875,
+        "accuracy": 0.928125,
+        "precision": 0.9858156028368794,
+        "prior_catch": {
+          "flagged": 63,
+          "total": 80,
+          "rate": 0.7875
+        },
+        "absent_catch": {
+          "flagged": 76,
+          "total": 80,
+          "rate": 0.95
+        },
+        "supported_false_alarm": {
+          "flagged": 2,
+          "total": 160,
+          "rate": 0.0125
+        }
+      }
+    }
+  },
+  "by_layout_and_order": [
+    {
+      "layout_id": "annotated_extract",
+      "chart_order": "current_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 20,
+          "fp": 4,
+          "tn": 36,
+          "fn": 20,
+          "auroc": 0.701875,
+          "f1": 0.625,
+          "false_positive_rate": 0.1,
+          "recall": 0.5,
+          "accuracy": 0.7,
+          "precision": 0.8333333333333334,
+          "prior_catch": {
+            "flagged": 1,
+            "total": 20,
+            "rate": 0.05
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 4,
+            "total": 40,
+            "rate": 0.1
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 19,
+          "fp": 0,
+          "tn": 40,
+          "fn": 21,
+          "auroc": 0.701875,
+          "f1": 0.6440677966101694,
+          "false_positive_rate": 0.0,
+          "recall": 0.475,
+          "accuracy": 0.7375,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "source-role": {
+          "n": 80,
+          "tp": 19,
+          "fp": 0,
+          "tn": 40,
+          "fn": 21,
+          "auroc": 0.73375,
+          "f1": 0.6440677966101694,
+          "false_positive_rate": 0.0,
+          "recall": 0.475,
+          "accuracy": 0.7375,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "chronology-words": {
+          "n": 80,
+          "tp": 39,
+          "fp": 4,
+          "tn": 36,
+          "fn": 1,
+          "auroc": 0.9949999999999999,
+          "f1": 0.9397590361445783,
+          "false_positive_rate": 0.1,
+          "recall": 0.975,
+          "accuracy": 0.9375,
+          "precision": 0.9069767441860465,
+          "prior_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 4,
+            "total": 40,
+            "rate": 0.1
+          }
+        }
+      },
+      "cue_counts": {
+        "no-cues": 40,
+        "prior-cue": 20,
+        "unmatched": 20
+      }
+    },
+    {
+      "layout_id": "annotated_extract",
+      "chart_order": "prior_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 20,
+          "fp": 1,
+          "tn": 39,
+          "fn": 20,
+          "auroc": 0.713125,
+          "f1": 0.6557377049180327,
+          "false_positive_rate": 0.025,
+          "recall": 0.5,
+          "accuracy": 0.7375,
+          "precision": 0.9523809523809523,
+          "prior_catch": {
+            "flagged": 1,
+            "total": 20,
+            "rate": 0.05
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 1,
+            "total": 40,
+            "rate": 0.025
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 18,
+          "fp": 0,
+          "tn": 40,
+          "fn": 22,
+          "auroc": 0.713125,
+          "f1": 0.6206896551724138,
+          "false_positive_rate": 0.0,
+          "recall": 0.45,
+          "accuracy": 0.725,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 18,
+            "total": 20,
+            "rate": 0.9
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "source-role": {
+          "n": 80,
+          "tp": 19,
+          "fp": 0,
+          "tn": 40,
+          "fn": 21,
+          "auroc": 0.67625,
+          "f1": 0.6440677966101694,
+          "false_positive_rate": 0.0,
+          "recall": 0.475,
+          "accuracy": 0.7375,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "chronology-words": {
+          "n": 80,
+          "tp": 39,
+          "fp": 1,
+          "tn": 39,
+          "fn": 1,
+          "auroc": 0.9981249999999999,
+          "f1": 0.975,
+          "false_positive_rate": 0.025,
+          "recall": 0.975,
+          "accuracy": 0.975,
+          "precision": 0.975,
+          "prior_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 1,
+            "total": 40,
+            "rate": 0.025
+          }
+        }
+      },
+      "cue_counts": {
+        "no-cues": 40,
+        "prior-cue": 20,
+        "unmatched": 20
+      }
+    },
+    {
+      "layout_id": "case_index",
+      "chart_order": "current_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 20,
+          "fp": 12,
+          "tn": 28,
+          "fn": 20,
+          "auroc": 0.5575000000000001,
+          "f1": 0.5555555555555556,
+          "false_positive_rate": 0.3,
+          "recall": 0.5,
+          "accuracy": 0.6,
+          "precision": 0.625,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 12,
+            "total": 40,
+            "rate": 0.3
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 19,
+          "fp": 5,
+          "tn": 35,
+          "fn": 21,
+          "auroc": 0.5575000000000001,
+          "f1": 0.59375,
+          "false_positive_rate": 0.125,
+          "recall": 0.475,
+          "accuracy": 0.675,
+          "precision": 0.7916666666666666,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 5,
+            "total": 40,
+            "rate": 0.125
+          }
+        },
+        "source-role": {
+          "n": 80,
+          "tp": 20,
+          "fp": 0,
+          "tn": 40,
+          "fn": 20,
+          "auroc": 0.765,
+          "f1": 0.6666666666666666,
+          "false_positive_rate": 0.0,
+          "recall": 0.5,
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "chronology-words": {
+          "n": 80,
+          "tp": 20,
+          "fp": 12,
+          "tn": 28,
+          "fn": 20,
+          "auroc": 0.5575000000000001,
+          "f1": 0.5555555555555556,
+          "false_positive_rate": 0.3,
+          "recall": 0.5,
+          "accuracy": 0.6,
+          "precision": 0.625,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 12,
+            "total": 40,
+            "rate": 0.3
+          }
+        }
+      },
+      "cue_counts": {
+        "no-cues": 60,
+        "unmatched": 20
+      }
+    },
+    {
+      "layout_id": "case_index",
+      "chart_order": "prior_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 22,
+          "fp": 0,
+          "tn": 40,
+          "fn": 18,
+          "auroc": 0.928125,
+          "f1": 0.7096774193548387,
+          "false_positive_rate": 0.0,
+          "recall": 0.55,
+          "accuracy": 0.775,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 3,
+            "total": 20,
+            "rate": 0.15
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 21,
+          "fp": 0,
+          "tn": 40,
+          "fn": 19,
+          "auroc": 0.928125,
+          "f1": 0.6885245901639344,
+          "false_positive_rate": 0.0,
+          "recall": 0.525,
+          "accuracy": 0.7625,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 2,
+            "total": 20,
+            "rate": 0.1
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "source-role": {
+          "n": 80,
+          "tp": 20,
+          "fp": 0,
+          "tn": 40,
+          "fn": 20,
+          "auroc": 0.815625,
+          "f1": 0.6666666666666666,
+          "false_positive_rate": 0.0,
+          "recall": 0.5,
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "chronology-words": {
+          "n": 80,
+          "tp": 22,
+          "fp": 0,
+          "tn": 40,
+          "fn": 18,
+          "auroc": 0.928125,
+          "f1": 0.7096774193548387,
+          "false_positive_rate": 0.0,
+          "recall": 0.55,
+          "accuracy": 0.775,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 3,
+            "total": 20,
+            "rate": 0.15
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        }
+      },
+      "cue_counts": {
+        "no-cues": 60,
+        "unmatched": 20
+      }
+    },
+    {
+      "layout_id": "copy_review",
+      "chart_order": "current_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 21,
+          "fp": 4,
+          "tn": 36,
+          "fn": 19,
+          "auroc": 0.818125,
+          "f1": 0.6461538461538462,
+          "false_positive_rate": 0.1,
+          "recall": 0.525,
+          "accuracy": 0.7125,
+          "precision": 0.84,
+          "prior_catch": {
+            "flagged": 1,
+            "total": 20,
+            "rate": 0.05
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 4,
+            "total": 40,
+            "rate": 0.1
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 17,
+          "fp": 3,
+          "tn": 37,
+          "fn": 23,
+          "auroc": 0.818125,
+          "f1": 0.5666666666666667,
+          "false_positive_rate": 0.075,
+          "recall": 0.425,
+          "accuracy": 0.675,
+          "precision": 0.85,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 17,
+            "total": 20,
+            "rate": 0.85
+          },
+          "supported_false_alarm": {
+            "flagged": 3,
+            "total": 40,
+            "rate": 0.075
+          }
+        },
+        "source-role": {
+          "n": 80,
+          "tp": 31,
+          "fp": 0,
+          "tn": 40,
+          "fn": 9,
+          "auroc": 1.0,
+          "f1": 0.8732394366197183,
+          "false_positive_rate": 0.0,
+          "recall": 0.775,
+          "accuracy": 0.8875,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 11,
+            "total": 20,
+            "rate": 0.55
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "chronology-words": {
+          "n": 80,
+          "tp": 40,
+          "fp": 0,
+          "tn": 40,
+          "fn": 0,
+          "auroc": 1.0,
+          "f1": 1.0,
+          "false_positive_rate": 0.0,
+          "recall": 1.0,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        }
+      },
+      "cue_counts": {
+        "current-cue": 40,
+        "prior-cue": 20,
+        "unmatched": 20
+      }
+    },
+    {
+      "layout_id": "copy_review",
+      "chart_order": "prior_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 22,
+          "fp": 0,
+          "tn": 40,
+          "fn": 18,
+          "auroc": 0.88125,
+          "f1": 0.7096774193548387,
+          "false_positive_rate": 0.0,
+          "recall": 0.55,
+          "accuracy": 0.775,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 3,
+            "total": 20,
+            "rate": 0.15
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 20,
+          "fp": 0,
+          "tn": 40,
+          "fn": 20,
+          "auroc": 0.88125,
+          "f1": 0.6666666666666666,
+          "false_positive_rate": 0.0,
+          "recall": 0.5,
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 2,
+            "total": 20,
+            "rate": 0.1
+          },
+          "absent_catch": {
+            "flagged": 18,
+            "total": 20,
+            "rate": 0.9
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "source-role": {
+          "n": 80,
+          "tp": 20,
+          "fp": 0,
+          "tn": 40,
+          "fn": 20,
+          "auroc": 0.6518750000000001,
+          "f1": 0.6666666666666666,
+          "false_positive_rate": 0.0,
+          "recall": 0.5,
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "absent_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "chronology-words": {
+          "n": 80,
+          "tp": 39,
+          "fp": 0,
+          "tn": 40,
+          "fn": 1,
+          "auroc": 1.0,
+          "f1": 0.9873417721518988,
+          "false_positive_rate": 0.0,
+          "recall": 0.975,
+          "accuracy": 0.9875,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        }
+      },
+      "cue_counts": {
+        "current-cue": 40,
+        "prior-cue": 20,
+        "unmatched": 20
+      }
+    },
+    {
+      "layout_id": "revision_notes",
+      "chart_order": "current_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 30,
+          "fp": 17,
+          "tn": 23,
+          "fn": 10,
+          "auroc": 0.75625,
+          "f1": 0.6896551724137931,
+          "false_positive_rate": 0.425,
+          "recall": 0.75,
+          "accuracy": 0.6625,
+          "precision": 0.6382978723404256,
+          "prior_catch": {
+            "flagged": 11,
+            "total": 20,
+            "rate": 0.55
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 17,
+            "total": 40,
+            "rate": 0.425
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 23,
+          "fp": 12,
+          "tn": 28,
+          "fn": 17,
+          "auroc": 0.75625,
+          "f1": 0.6133333333333333,
+          "false_positive_rate": 0.3,
+          "recall": 0.575,
+          "accuracy": 0.6375,
+          "precision": 0.6571428571428571,
+          "prior_catch": {
+            "flagged": 5,
+            "total": 20,
+            "rate": 0.25
+          },
+          "absent_catch": {
+            "flagged": 18,
+            "total": 20,
+            "rate": 0.9
+          },
+          "supported_false_alarm": {
+            "flagged": 12,
+            "total": 40,
+            "rate": 0.3
+          }
+        },
+        "source-role": {
+          "n": 80,
+          "tp": 21,
+          "fp": 0,
+          "tn": 40,
+          "fn": 19,
+          "auroc": 0.97,
+          "f1": 0.6885245901639344,
+          "false_positive_rate": 0.0,
+          "recall": 0.525,
+          "accuracy": 0.7625,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 2,
+            "total": 20,
+            "rate": 0.1
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "chronology-words": {
+          "n": 80,
+          "tp": 39,
+          "fp": 17,
+          "tn": 23,
+          "fn": 1,
+          "auroc": 0.9631250000000001,
+          "f1": 0.8125,
+          "false_positive_rate": 0.425,
+          "recall": 0.975,
+          "accuracy": 0.775,
+          "precision": 0.6964285714285714,
+          "prior_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 17,
+            "total": 40,
+            "rate": 0.425
+          }
+        }
+      },
+      "cue_counts": {
+        "no-cues": 40,
+        "prior-cue": 20,
+        "unmatched": 20
+      }
+    },
+    {
+      "layout_id": "revision_notes",
+      "chart_order": "prior_first",
+      "methods": {
+        "frozen-v1": {
+          "n": 80,
+          "tp": 38,
+          "fp": 1,
+          "tn": 39,
+          "fn": 2,
+          "auroc": 0.99,
+          "f1": 0.9620253164556962,
+          "false_positive_rate": 0.025,
+          "recall": 0.95,
+          "accuracy": 0.9625,
+          "precision": 0.9743589743589743,
+          "prior_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 1,
+            "total": 40,
+            "rate": 0.025
+          }
+        },
+        "recalibrated-v1": {
+          "n": 80,
+          "tp": 35,
+          "fp": 0,
+          "tn": 40,
+          "fn": 5,
+          "auroc": 0.99,
+          "f1": 0.9333333333333333,
+          "false_positive_rate": 0.0,
+          "recall": 0.875,
+          "accuracy": 0.9375,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 18,
+            "total": 20,
+            "rate": 0.9
+          },
+          "absent_catch": {
+            "flagged": 17,
+            "total": 20,
+            "rate": 0.85
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "source-role": {
+          "n": 80,
+          "tp": 30,
+          "fp": 0,
+          "tn": 40,
+          "fn": 10,
+          "auroc": 0.999375,
+          "f1": 0.8571428571428571,
+          "false_positive_rate": 0.0,
+          "recall": 0.75,
+          "accuracy": 0.875,
+          "precision": 1.0,
+          "prior_catch": {
+            "flagged": 11,
+            "total": 20,
+            "rate": 0.55
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 0,
+            "total": 40,
+            "rate": 0.0
+          }
+        },
+        "chronology-words": {
+          "n": 80,
+          "tp": 39,
+          "fp": 1,
+          "tn": 39,
+          "fn": 1,
+          "auroc": 0.9949999999999999,
+          "f1": 0.975,
+          "false_positive_rate": 0.025,
+          "recall": 0.975,
+          "accuracy": 0.975,
+          "precision": 0.975,
+          "prior_catch": {
+            "flagged": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "absent_catch": {
+            "flagged": 19,
+            "total": 20,
+            "rate": 0.95
+          },
+          "supported_false_alarm": {
+            "flagged": 1,
+            "total": 40,
+            "rate": 0.025
+          }
+        }
+      },
+      "cue_counts": {
+        "no-cues": 40,
+        "prior-cue": 20,
+        "unmatched": 20
+      }
+    }
+  ],
+  "paired": {
+    "frozen-v1": {
+      "source-role": {
+        "prior_catch": {
+          "total": 160,
+          "both_flagged": 13,
+          "both_clear": 110,
+          "newly_flagged": 11,
+          "newly_clear": 26,
+          "rate_delta": -0.09375,
+          "group_bootstrap_95pct": [
+            -0.16875,
+            -0.01875
+          ]
+        },
+        "absent_catch": {
+          "total": 160,
+          "both_flagged": 154,
+          "both_clear": 4,
+          "newly_flagged": 2,
+          "newly_clear": 0,
+          "rate_delta": 0.0125,
+          "group_bootstrap_95pct": [
+            0.0,
+            0.03125
+          ]
+        },
+        "supported_false_alarm": {
+          "total": 320,
+          "both_flagged": 0,
+          "both_clear": 281,
+          "newly_flagged": 0,
+          "newly_clear": 39,
+          "rate_delta": -0.121875,
+          "group_bootstrap_95pct": [
+            -0.165625,
+            -0.078125
+          ]
+        }
+      },
+      "chronology-words": {
+        "prior_catch": {
+          "total": 160,
+          "both_flagged": 39,
+          "both_clear": 37,
+          "newly_flagged": 84,
+          "newly_clear": 0,
+          "rate_delta": 0.525,
+          "group_bootstrap_95pct": [
+            0.475,
+            0.575
+          ]
+        },
+        "absent_catch": {
+          "total": 160,
+          "both_flagged": 154,
+          "both_clear": 6,
+          "newly_flagged": 0,
+          "newly_clear": 0,
+          "rate_delta": 0.0,
+          "group_bootstrap_95pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "supported_false_alarm": {
+          "total": 320,
+          "both_flagged": 35,
+          "both_clear": 281,
+          "newly_flagged": 0,
+          "newly_clear": 4,
+          "rate_delta": -0.0125,
+          "group_bootstrap_95pct": [
+            -0.03125,
+            0.0
+          ]
+        }
+      }
+    },
+    "recalibrated-v1": {
+      "source-role": {
+        "prior_catch": {
+          "total": 160,
+          "both_flagged": 9,
+          "both_clear": 118,
+          "newly_flagged": 15,
+          "newly_clear": 18,
+          "rate_delta": -0.01875,
+          "group_bootstrap_95pct": [
+            -0.0875,
+            0.05625
+          ]
+        },
+        "absent_catch": {
+          "total": 160,
+          "both_flagged": 145,
+          "both_clear": 4,
+          "newly_flagged": 11,
+          "newly_clear": 0,
+          "rate_delta": 0.06875,
+          "group_bootstrap_95pct": [
+            0.025,
+            0.11875
+          ]
+        },
+        "supported_false_alarm": {
+          "total": 320,
+          "both_flagged": 0,
+          "both_clear": 300,
+          "newly_flagged": 0,
+          "newly_clear": 20,
+          "rate_delta": -0.0625,
+          "group_bootstrap_95pct": [
+            -0.096875,
+            -0.03125
+          ]
+        }
+      },
+      "chronology-words": {
+        "prior_catch": {
+          "total": 160,
+          "both_flagged": 27,
+          "both_clear": 37,
+          "newly_flagged": 96,
+          "newly_clear": 0,
+          "rate_delta": 0.6,
+          "group_bootstrap_95pct": [
+            0.55625,
+            0.65
+          ]
+        },
+        "absent_catch": {
+          "total": 160,
+          "both_flagged": 145,
+          "both_clear": 6,
+          "newly_flagged": 9,
+          "newly_clear": 0,
+          "rate_delta": 0.05625,
+          "group_bootstrap_95pct": [
+            0.01875,
+            0.1
+          ]
+        },
+        "supported_false_alarm": {
+          "total": 320,
+          "both_flagged": 17,
+          "both_clear": 282,
+          "newly_flagged": 18,
+          "newly_clear": 3,
+          "rate_delta": 0.046875,
+          "group_bootstrap_95pct": [
+            0.01875,
+            0.078125
+          ]
+        }
+      }
+    },
+    "chronology-words": {
+      "source-role": {
+        "prior_catch": {
+          "total": 160,
+          "both_flagged": 24,
+          "both_clear": 37,
+          "newly_flagged": 0,
+          "newly_clear": 99,
+          "rate_delta": -0.61875,
+          "group_bootstrap_95pct": [
+            -0.66875,
+            -0.56875
+          ]
+        },
+        "absent_catch": {
+          "total": 160,
+          "both_flagged": 154,
+          "both_clear": 4,
+          "newly_flagged": 2,
+          "newly_clear": 0,
+          "rate_delta": 0.0125,
+          "group_bootstrap_95pct": [
+            0.0,
+            0.03125
+          ]
+        },
+        "supported_false_alarm": {
+          "total": 320,
+          "both_flagged": 0,
+          "both_clear": 285,
+          "newly_flagged": 0,
+          "newly_clear": 35,
+          "rate_delta": -0.109375,
+          "group_bootstrap_95pct": [
+            -0.153125,
+            -0.06875
+          ]
+        }
+      }
+    }
+  },
+  "paired_by_layout_and_order": [
+    {
+      "layout_id": "annotated_extract",
+      "chart_order": "current_first",
+      "methods": {
+        "source-role": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 19,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 36,
+            "newly_flagged": 0,
+            "newly_clear": 4,
+            "rate_delta": -0.1
+          }
+        },
+        "chronology-words": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 1,
+            "both_clear": 0,
+            "newly_flagged": 19,
+            "newly_clear": 0,
+            "rate_delta": 0.95
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 4,
+            "both_clear": 36,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "annotated_extract",
+      "chart_order": "prior_first",
+      "methods": {
+        "source-role": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 19,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 39,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.025
+          }
+        },
+        "chronology-words": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 1,
+            "both_clear": 0,
+            "newly_flagged": 19,
+            "newly_clear": 0,
+            "rate_delta": 0.95
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 1,
+            "both_clear": 39,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "case_index",
+      "chart_order": "current_first",
+      "methods": {
+        "source-role": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 20,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 20,
+            "both_clear": 0,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 28,
+            "newly_flagged": 0,
+            "newly_clear": 12,
+            "rate_delta": -0.3
+          }
+        },
+        "chronology-words": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 20,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 20,
+            "both_clear": 0,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 12,
+            "both_clear": 28,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "case_index",
+      "chart_order": "prior_first",
+      "methods": {
+        "source-role": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 17,
+            "newly_flagged": 0,
+            "newly_clear": 3,
+            "rate_delta": -0.15
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 0,
+            "newly_flagged": 1,
+            "newly_clear": 0,
+            "rate_delta": 0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 40,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        },
+        "chronology-words": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 3,
+            "both_clear": 17,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 40,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "copy_review",
+      "chart_order": "current_first",
+      "methods": {
+        "source-role": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 1,
+            "both_clear": 9,
+            "newly_flagged": 10,
+            "newly_clear": 0,
+            "rate_delta": 0.5
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 20,
+            "both_clear": 0,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 36,
+            "newly_flagged": 0,
+            "newly_clear": 4,
+            "rate_delta": -0.1
+          }
+        },
+        "chronology-words": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 1,
+            "both_clear": 0,
+            "newly_flagged": 19,
+            "newly_clear": 0,
+            "rate_delta": 0.95
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 20,
+            "both_clear": 0,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 36,
+            "newly_flagged": 0,
+            "newly_clear": 4,
+            "rate_delta": -0.1
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "copy_review",
+      "chart_order": "prior_first",
+      "methods": {
+        "source-role": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 0,
+            "both_clear": 17,
+            "newly_flagged": 0,
+            "newly_clear": 3,
+            "rate_delta": -0.15
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 0,
+            "newly_flagged": 1,
+            "newly_clear": 0,
+            "rate_delta": 0.05
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 40,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        },
+        "chronology-words": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 3,
+            "both_clear": 0,
+            "newly_flagged": 17,
+            "newly_clear": 0,
+            "rate_delta": 0.85
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 40,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "revision_notes",
+      "chart_order": "current_first",
+      "methods": {
+        "source-role": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 2,
+            "both_clear": 9,
+            "newly_flagged": 0,
+            "newly_clear": 9,
+            "rate_delta": -0.45
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 23,
+            "newly_flagged": 0,
+            "newly_clear": 17,
+            "rate_delta": -0.425
+          }
+        },
+        "chronology-words": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 11,
+            "both_clear": 0,
+            "newly_flagged": 9,
+            "newly_clear": 0,
+            "rate_delta": 0.45
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 17,
+            "both_clear": 23,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        }
+      }
+    },
+    {
+      "layout_id": "revision_notes",
+      "chart_order": "prior_first",
+      "methods": {
+        "source-role": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 10,
+            "both_clear": 0,
+            "newly_flagged": 1,
+            "newly_clear": 9,
+            "rate_delta": -0.4
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 0,
+            "both_clear": 39,
+            "newly_flagged": 0,
+            "newly_clear": 1,
+            "rate_delta": -0.025
+          }
+        },
+        "chronology-words": {
+          "prior_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 0,
+            "newly_flagged": 1,
+            "newly_clear": 0,
+            "rate_delta": 0.05
+          },
+          "absent_catch": {
+            "total": 20,
+            "both_flagged": 19,
+            "both_clear": 1,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          },
+          "supported_false_alarm": {
+            "total": 40,
+            "both_flagged": 1,
+            "both_clear": 39,
+            "newly_flagged": 0,
+            "newly_clear": 0,
+            "rate_delta": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "error_row_ids": {
+    "source-role": {
+      "supported_false_alarm": [],
+      "prior_missed": [
+        "temporal-v1.test.case_index.accompaniment.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.accompaniment.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.accompaniment.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.accompaniment.0-3.prior.prior_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.accompaniment.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.accompaniment.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.accompaniment.1-2.prior.prior_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.accompaniment.1-2.prior.prior_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.wound_cover.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.wound_cover.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.wound_cover.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.wound_cover.0-3.prior.prior_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.wound_cover.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.wound_cover.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.wound_cover.1-2.prior.prior_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.wound_cover.1-2.prior.prior_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.access_material.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.access_material.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.access_material.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.access_material.0-3.prior.prior_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.access_material.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.access_material.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.access_material.1-2.prior.prior_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.access_material.1-2.prior.prior_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.id_document.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.id_document.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.id_document.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.id_document.0-3.prior.prior_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.id_document.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.id_document.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.id_document.1-2.prior.prior_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.id_document.1-2.prior.prior_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.sample_container.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.sample_container.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.sample_container.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.sample_container.0-3.prior.prior_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.sample_container.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.sample_container.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.sample_container.1-2.prior.prior_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.sample_container.1-2.prior.prior_first.current-2.candidate-1",
+        "temporal-v1.test.copy_review.accompaniment.0-1.prior.prior_first.current-0.candidate-1",
+        "temporal-v1.test.copy_review.accompaniment.0-1.prior.prior_first.current-1.candidate-0",
+        "temporal-v1.test.copy_review.accompaniment.2-3.prior.current_first.current-2.candidate-3",
+        "temporal-v1.test.copy_review.accompaniment.2-3.prior.current_first.current-3.candidate-2",
+        "temporal-v1.test.copy_review.accompaniment.2-3.prior.prior_first.current-2.candidate-3",
+        "temporal-v1.test.copy_review.accompaniment.2-3.prior.prior_first.current-3.candidate-2",
+        "temporal-v1.test.copy_review.wound_cover.0-1.prior.current_first.current-0.candidate-1",
+        "temporal-v1.test.copy_review.wound_cover.0-1.prior.prior_first.current-0.candidate-1",
+        "temporal-v1.test.copy_review.wound_cover.0-1.prior.prior_first.current-1.candidate-0",
+        "temporal-v1.test.copy_review.wound_cover.2-3.prior.current_first.current-2.candidate-3",
+        "temporal-v1.test.copy_review.wound_cover.2-3.prior.prior_first.current-2.candidate-3",
+        "temporal-v1.test.copy_review.wound_cover.2-3.prior.prior_first.current-3.candidate-2",
+        "temporal-v1.test.copy_review.access_material.0-1.prior.current_first.current-0.candidate-1",
+        "temporal-v1.test.copy_review.access_material.0-1.prior.prior_first.current-0.candidate-1",
+        "temporal-v1.test.copy_review.access_material.0-1.prior.prior_first.current-1.candidate-0",
+        "temporal-v1.test.copy_review.access_material.2-3.prior.current_first.current-3.candidate-2",
+        "temporal-v1.test.copy_review.access_material.2-3.prior.prior_first.current-2.candidate-3",
+        "temporal-v1.test.copy_review.access_material.2-3.prior.prior_first.current-3.candidate-2",
+        "temporal-v1.test.copy_review.id_document.0-1.prior.current_first.current-0.candidate-1",
+        "temporal-v1.test.copy_review.id_document.0-1.prior.current_first.current-1.candidate-0",
+        "temporal-v1.test.copy_review.id_document.0-1.prior.prior_first.current-0.candidate-1",
+        "temporal-v1.test.copy_review.id_document.0-1.prior.prior_first.current-1.candidate-0",
+        "temporal-v1.test.copy_review.id_document.2-3.prior.current_first.current-2.candidate-3",
+        "temporal-v1.test.copy_review.id_document.2-3.prior.prior_first.current-2.candidate-3",
+        "temporal-v1.test.copy_review.id_document.2-3.prior.prior_first.current-3.candidate-2",
+        "temporal-v1.test.copy_review.sample_container.0-1.prior.prior_first.current-0.candidate-1",
+        "temporal-v1.test.copy_review.sample_container.0-1.prior.prior_first.current-1.candidate-0",
+        "temporal-v1.test.copy_review.sample_container.2-3.prior.prior_first.current-2.candidate-3",
+        "temporal-v1.test.copy_review.sample_container.2-3.prior.prior_first.current-3.candidate-2",
+        "temporal-v1.test.revision_notes.accompaniment.0-2.prior.current_first.current-0.candidate-2",
+        "temporal-v1.test.revision_notes.accompaniment.0-2.prior.current_first.current-2.candidate-0",
+        "temporal-v1.test.revision_notes.accompaniment.1-3.prior.current_first.current-1.candidate-3",
+        "temporal-v1.test.revision_notes.accompaniment.1-3.prior.current_first.current-3.candidate-1",
+        "temporal-v1.test.revision_notes.wound_cover.0-2.prior.current_first.current-0.candidate-2",
+        "temporal-v1.test.revision_notes.wound_cover.0-2.prior.current_first.current-2.candidate-0",
+        "temporal-v1.test.revision_notes.wound_cover.1-3.prior.current_first.current-1.candidate-3",
+        "temporal-v1.test.revision_notes.wound_cover.1-3.prior.prior_first.current-1.candidate-3",
+        "temporal-v1.test.revision_notes.access_material.0-2.prior.current_first.current-0.candidate-2",
+        "temporal-v1.test.revision_notes.access_material.0-2.prior.current_first.current-2.candidate-0",
+        "temporal-v1.test.revision_notes.access_material.0-2.prior.prior_first.current-0.candidate-2",
+        "temporal-v1.test.revision_notes.access_material.0-2.prior.prior_first.current-2.candidate-0",
+        "temporal-v1.test.revision_notes.access_material.1-3.prior.current_first.current-3.candidate-1",
+        "temporal-v1.test.revision_notes.id_document.0-2.prior.current_first.current-0.candidate-2",
+        "temporal-v1.test.revision_notes.id_document.0-2.prior.current_first.current-2.candidate-0",
+        "temporal-v1.test.revision_notes.id_document.0-2.prior.prior_first.current-2.candidate-0",
+        "temporal-v1.test.revision_notes.id_document.1-3.prior.current_first.current-1.candidate-3",
+        "temporal-v1.test.revision_notes.id_document.1-3.prior.current_first.current-3.candidate-1",
+        "temporal-v1.test.revision_notes.id_document.1-3.prior.prior_first.current-1.candidate-3",
+        "temporal-v1.test.revision_notes.sample_container.0-2.prior.current_first.current-0.candidate-2",
+        "temporal-v1.test.revision_notes.sample_container.0-2.prior.current_first.current-2.candidate-0",
+        "temporal-v1.test.revision_notes.sample_container.0-2.prior.prior_first.current-0.candidate-2",
+        "temporal-v1.test.revision_notes.sample_container.0-2.prior.prior_first.current-2.candidate-0",
+        "temporal-v1.test.revision_notes.sample_container.1-3.prior.current_first.current-1.candidate-3",
+        "temporal-v1.test.revision_notes.sample_container.1-3.prior.current_first.current-3.candidate-1",
+        "temporal-v1.test.revision_notes.sample_container.1-3.prior.prior_first.current-1.candidate-3",
+        "temporal-v1.test.revision_notes.sample_container.1-3.prior.prior_first.current-3.candidate-1",
+        "temporal-v1.test.annotated_extract.accompaniment.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.annotated_extract.accompaniment.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.annotated_extract.accompaniment.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.annotated_extract.accompaniment.0-3.prior.prior_first.current-3.candidate-0",
+        "temporal-v1.test.annotated_extract.accompaniment.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.annotated_extract.accompaniment.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.annotated_extract.accompaniment.1-2.prior.prior_first.current-1.candidate-2",
+        "temporal-v1.test.annotated_extract.accompaniment.1-2.prior.prior_first.current-2.candidate-1",
+        "temporal-v1.test.annotated_extract.wound_cover.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.annotated_extract.wound_cover.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.annotated_extract.wound_cover.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.annotated_extract.wound_cover.0-3.prior.prior_first.current-3.candidate-0",
+        "temporal-v1.test.annotated_extract.wound_cover.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.annotated_extract.wound_cover.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.annotated_extract.wound_cover.1-2.prior.prior_first.current-1.candidate-2",
+        "temporal-v1.test.annotated_extract.wound_cover.1-2.prior.prior_first.current-2.candidate-1",
+        "temporal-v1.test.annotated_extract.access_material.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.annotated_extract.access_material.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.annotated_extract.access_material.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.annotated_extract.access_material.0-3.prior.prior_first.current-3.candidate-0",
+        "temporal-v1.test.annotated_extract.access_material.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.annotated_extract.access_material.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.annotated_extract.access_material.1-2.prior.prior_first.current-1.candidate-2",
+        "temporal-v1.test.annotated_extract.access_material.1-2.prior.prior_first.current-2.candidate-1",
+        "temporal-v1.test.annotated_extract.id_document.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.annotated_extract.id_document.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.annotated_extract.id_document.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.annotated_extract.id_document.0-3.prior.prior_first.current-3.candidate-0",
+        "temporal-v1.test.annotated_extract.id_document.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.annotated_extract.id_document.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.annotated_extract.id_document.1-2.prior.prior_first.current-1.candidate-2",
+        "temporal-v1.test.annotated_extract.id_document.1-2.prior.prior_first.current-2.candidate-1",
+        "temporal-v1.test.annotated_extract.sample_container.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.annotated_extract.sample_container.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.annotated_extract.sample_container.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.annotated_extract.sample_container.0-3.prior.prior_first.current-3.candidate-0",
+        "temporal-v1.test.annotated_extract.sample_container.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.annotated_extract.sample_container.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.annotated_extract.sample_container.1-2.prior.prior_first.current-1.candidate-2",
+        "temporal-v1.test.annotated_extract.sample_container.1-2.prior.prior_first.current-2.candidate-1"
+      ],
+      "absent_missed": [
+        "temporal-v1.test.revision_notes.access_material.0-2.absent.current_first.current-2.candidate-0",
+        "temporal-v1.test.revision_notes.access_material.0-2.absent.prior_first.current-2.candidate-0",
+        "temporal-v1.test.annotated_extract.accompaniment.1-2.absent.current_first.current-1.candidate-2",
+        "temporal-v1.test.annotated_extract.accompaniment.1-2.absent.prior_first.current-1.candidate-2"
+      ]
+    },
+    "chronology-words": {
+      "supported_false_alarm": [
+        "temporal-v1.test.case_index.accompaniment.1-2.prior.current_first.current-1.candidate-1",
+        "temporal-v1.test.case_index.accompaniment.1-2.absent.current_first.current-1.candidate-1",
+        "temporal-v1.test.case_index.access_material.0-3.prior.current_first.current-0.candidate-0",
+        "temporal-v1.test.case_index.access_material.0-3.absent.current_first.current-0.candidate-0",
+        "temporal-v1.test.case_index.access_material.1-2.prior.current_first.current-2.candidate-2",
+        "temporal-v1.test.case_index.access_material.1-2.absent.current_first.current-2.candidate-2",
+        "temporal-v1.test.case_index.id_document.0-3.absent.current_first.current-3.candidate-3",
+        "temporal-v1.test.case_index.id_document.1-2.prior.current_first.current-1.candidate-1",
+        "temporal-v1.test.case_index.id_document.1-2.absent.current_first.current-1.candidate-1",
+        "temporal-v1.test.case_index.sample_container.0-3.prior.current_first.current-0.candidate-0",
+        "temporal-v1.test.case_index.sample_container.1-2.prior.current_first.current-2.candidate-2",
+        "temporal-v1.test.case_index.sample_container.1-2.absent.current_first.current-2.candidate-2",
+        "temporal-v1.test.revision_notes.accompaniment.1-3.prior.current_first.current-1.candidate-1",
+        "temporal-v1.test.revision_notes.accompaniment.1-3.absent.current_first.current-1.candidate-1",
+        "temporal-v1.test.revision_notes.access_material.0-2.prior.current_first.current-0.candidate-0",
+        "temporal-v1.test.revision_notes.access_material.0-2.prior.current_first.current-2.candidate-2",
+        "temporal-v1.test.revision_notes.access_material.0-2.prior.prior_first.current-2.candidate-2",
+        "temporal-v1.test.revision_notes.access_material.0-2.absent.current_first.current-0.candidate-0",
+        "temporal-v1.test.revision_notes.access_material.0-2.absent.current_first.current-2.candidate-2",
+        "temporal-v1.test.revision_notes.access_material.1-3.absent.current_first.current-1.candidate-1",
+        "temporal-v1.test.revision_notes.id_document.0-2.prior.current_first.current-0.candidate-0",
+        "temporal-v1.test.revision_notes.id_document.0-2.absent.current_first.current-0.candidate-0",
+        "temporal-v1.test.revision_notes.id_document.1-3.prior.current_first.current-1.candidate-1",
+        "temporal-v1.test.revision_notes.id_document.1-3.prior.current_first.current-3.candidate-3",
+        "temporal-v1.test.revision_notes.id_document.1-3.absent.current_first.current-1.candidate-1",
+        "temporal-v1.test.revision_notes.id_document.1-3.absent.current_first.current-3.candidate-3",
+        "temporal-v1.test.revision_notes.sample_container.0-2.prior.current_first.current-0.candidate-0",
+        "temporal-v1.test.revision_notes.sample_container.0-2.prior.current_first.current-2.candidate-2",
+        "temporal-v1.test.revision_notes.sample_container.0-2.absent.current_first.current-0.candidate-0",
+        "temporal-v1.test.revision_notes.sample_container.0-2.absent.current_first.current-2.candidate-2",
+        "temporal-v1.test.annotated_extract.accompaniment.0-3.absent.current_first.current-0.candidate-0",
+        "temporal-v1.test.annotated_extract.accompaniment.1-2.prior.current_first.current-1.candidate-1",
+        "temporal-v1.test.annotated_extract.accompaniment.1-2.absent.current_first.current-1.candidate-1",
+        "temporal-v1.test.annotated_extract.id_document.1-2.prior.current_first.current-1.candidate-1",
+        "temporal-v1.test.annotated_extract.id_document.1-2.prior.prior_first.current-1.candidate-1"
+      ],
+      "prior_missed": [
+        "temporal-v1.test.case_index.accompaniment.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.accompaniment.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.accompaniment.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.accompaniment.0-3.prior.prior_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.accompaniment.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.accompaniment.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.accompaniment.1-2.prior.prior_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.wound_cover.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.wound_cover.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.wound_cover.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.wound_cover.0-3.prior.prior_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.wound_cover.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.wound_cover.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.wound_cover.1-2.prior.prior_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.wound_cover.1-2.prior.prior_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.access_material.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.access_material.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.access_material.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.access_material.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.access_material.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.access_material.1-2.prior.prior_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.id_document.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.id_document.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.id_document.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.id_document.0-3.prior.prior_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.id_document.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.id_document.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.id_document.1-2.prior.prior_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.id_document.1-2.prior.prior_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.sample_container.0-3.prior.current_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.sample_container.0-3.prior.current_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.sample_container.0-3.prior.prior_first.current-0.candidate-3",
+        "temporal-v1.test.case_index.sample_container.0-3.prior.prior_first.current-3.candidate-0",
+        "temporal-v1.test.case_index.sample_container.1-2.prior.current_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.sample_container.1-2.prior.current_first.current-2.candidate-1",
+        "temporal-v1.test.case_index.sample_container.1-2.prior.prior_first.current-1.candidate-2",
+        "temporal-v1.test.case_index.sample_container.1-2.prior.prior_first.current-2.candidate-1"
+      ],
+      "absent_missed": [
+        "temporal-v1.test.case_index.access_material.0-3.absent.prior_first.current-3.candidate-0",
+        "temporal-v1.test.copy_review.access_material.2-3.absent.prior_first.current-3.candidate-2",
+        "temporal-v1.test.revision_notes.access_material.0-2.absent.current_first.current-2.candidate-0",
+        "temporal-v1.test.revision_notes.access_material.0-2.absent.prior_first.current-2.candidate-0",
+        "temporal-v1.test.annotated_extract.accompaniment.1-2.absent.current_first.current-1.candidate-2",
+        "temporal-v1.test.annotated_extract.accompaniment.1-2.absent.prior_first.current-1.candidate-2"
+      ]
+    }
+  }
+}

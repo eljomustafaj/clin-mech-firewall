@@ -1,0 +1,18 @@
+{"type":"start","schema_version":1,"trace_id":"greedy-fcfa725e2014077d12e4850a1c8fdbd10e54550078c82d90ebb4a59853eadedb","model_id":"Qwen/Qwen2.5-0.5B-Instruct","model_revision":"7ae557604adf67be50417f59c2c2f167def9a775","layer":12,"probe_id":"chart-chronology-words-v1","probe_revision":"sha256:f84ab495986f504e55a51c2ab88befe9d0a36ef756f1225312e560a53c787fc6"}
+{"type":"token","index":0,"text":" passport","risk":1.0}
+{"type":"token","index":1,"text":"\n","risk":1.0}
+{"type":"token","index":2,"text":"To","risk":0.9061682010077199}
+{"type":"token","index":3,"text":" determine","risk":0.9136347485295861}
+{"type":"token","index":4,"text":" the","risk":0.8768236876879487}
+{"type":"token","index":5,"text":" identification","risk":0.8978755863933272}
+{"type":"token","index":6,"text":" presented","risk":0.743491071254551}
+{"type":"token","index":7,"text":" for","risk":0.46661419943022164}
+{"type":"token","index":8,"text":" the","risk":0.6499469090706671}
+{"type":"token","index":9,"text":" encounter","risk":0.4661311000845553}
+{"type":"token","index":10,"text":" under","risk":0.7782090587609225}
+{"type":"token","index":11,"text":" review","risk":0.8275070736169576}
+{"type":"token","index":12,"text":",","risk":0.9454947122322355}
+{"type":"token","index":13,"text":" let","risk":0.9933397876535189}
+{"type":"token","index":14,"text":"'s","risk":0.9879725728339491}
+{"type":"token","index":15,"text":" analyze","risk":0.9796958541879495}
+{"type":"end","token_count":16}

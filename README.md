@@ -2,6 +2,12 @@
 
 `clin-mech-firewall` is a research project investigating whether an open-weight model’s internal activations can flag fabricated clinical details as it generates them. The first milestone is a single clinical prompt whose real token-by-token risk scores can be replayed through a firewall and inspected in a browser. Clinical accuracy, intervention effects, and latency are open questions.
 
+## Prior-visit details on fresh charts
+
+A rule that checks **where the candidate detail appears in the chart** caught **123/160** answers copied from an earlier visit, up from **39/160** for the original probe. It recovered all ten misses from the original study. On the fresh charts it retained all 39 original detections, added 84, and flagged **35/320** supported answers, compared with **39/320** before. Both methods caught **154/160** substitutions absent from the chart. The recalibrated answer-token probe and the learned source-role probe caught 27 and 24 prior substitutions respectively.
+
+The rule succeeded when the matching line contained an explicit cue such as “preceding attendance.” It caught just **3/40** when a separate header identified which encounter was historical. In free generation, it halted by the end of both directly matched prior-value openings and one of six correct openings. The other 24 openings were unclassified. [Full results and reproduction commands](docs/PRIOR_VISIT_RESULTS.md) · [Live scorer](mech_interp/chronology.py)
+
 ## Task 1 — Research baseline (owner: eljomustafaj)
 
 **Completed.** The baseline uses a linear probe trained on block 12 of Qwen2.5-0.5B-Instruct using 160 candidate answers to fictional chart questions. A separate 40 answers set the decision threshold. The final 40 answers came from 10 matched groups on a held-out chart layout. Each group pairs a supported detail with a substitution and reverses the values to balance answer wording. [Dataset and split design](data/README.md)
@@ -32,11 +38,7 @@ Build the first vertical slice through a Python inference worker, a Rust streami
 
 ## Research and replay handoff
 
-**Source-role scorer frozen for fresh evaluation.** At its validation-selected threshold of `0.9412578522854479`, it caught 6/96 prior substitutions, caught 95/96 absent substitutions, and flagged 4/192 supported answers. A rule using explicit chronology words on the same matched text caught 96/96 prior substitutions and flagged 0/192 supported answers. Both go into the fresh evaluation alongside the original and recalibrated probe. The source probe SHA-256 is `8d0f4e8d359affa07be74cb3a2e8c564296c21f654861068530833f9d436358c`. [Frozen source probe](artifacts/temporal-v2/source-dev/source-probe.json) · [Development record](artifacts/temporal-v2/source-dev/source-development.json)
-
-**eljomustafaj → Clad · Prior-visit follow-up.** I read your measured replay update on `clad/measured-handoff`. I am comparing the original scorer with recalibration and two new linear probes. The primary test uses unseen chart layouts and fields, and a separate generation check will measure early halts on supported answers. I will post the winning development configuration before scoring the fresh test cases. [Frozen experiment rules](docs/PRIOR_VISIT_PROTOCOL.md)
-
-**eljomustafaj → Clad · Answer-token probe frozen.** Validation selected the original weights at a higher threshold of `0.9740611507233753`. That choice cannot increase recall over v1. I am separately testing a source-role probe that reads the model state at the candidate’s matching occurrence in the chart. Both methods will be frozen before any fresh scoring. The answer-token selection digest is `6b7dc3b52e77721705bd5fe4a9d7e2c6321783c2ce450f84605b9f74ec01b6ae`; the sealed test source digest is `176d849ee2504d425d604bba6037d433be2ad0e5295aa3eda75c037d6ecaaa20`. [Selection](artifacts/temporal-v2/dev/selection.json) · [Data card](data/temporal_README.md)
+**eljomustafaj → Clad · Prior-visit results ready.** The fixed chronology rule outperformed the learned alternatives on the new candidate test. The 32 recorded generations include every candidate token, raw score, cue and released prefix. The live iterator yields those decisions before release. [Results and failure cases](docs/PRIOR_VISIT_RESULTS.md) · [Recorded generations](artifacts/temporal-v2/generation/generations.jsonl) · [Selection protocol](docs/PRIOR_VISIT_PROTOCOL.md)
 
 **eljomustafaj → Clad · Measured trace delivered and replayed.** The chart said the patient arrived by bus today and by car at the previous visit. The model generated ` by car.` The first token ` by` scored `0.965618595746429`, so the proxy halted at index 0 and released zero bytes. The token ` car` scored `0.9019257519510192`, below the same threshold. This trace shows why the token that triggers a halt can differ from the factual error. The browser displayed the same token, score and decision. [Wire input](artifacts/baseline/trace.wire.jsonl) · [Prompt and token IDs](artifacts/baseline/trace.json)
 

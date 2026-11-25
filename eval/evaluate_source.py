@@ -3,7 +3,6 @@
 import argparse
 import math
 import os
-import re
 import tempfile
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -15,27 +14,11 @@ from eval.evaluate_temporal import (
     sha, summarize,
 )
 from eval.validate_trace import parse_json
+from mech_interp.chronology import cue_score
 
 
-PRIOR_PATTERN = re.compile(r"\b(?:prior|previous|previously|earlier|older|past|last|historical|archived|closed|preceding|former)\b", re.I)
-CURRENT_PATTERN = re.compile(r"\b(?:current|today|active|present|latest|now|ongoing|confirmed|this encounter|this visit|most recent|in progress)\b", re.I)
 SOURCE = "source-role"
 TEXT = "chronology-words"
-
-
-def cue_score(prompt, start, frozen_risk):
-    """Use only the prefix of the matching chart line and the frozen fallback risk."""
-    if start is None:
-        return frozen_risk, "unmatched"
-    require(type(start) is int and 0 <= start < len(prompt), "match cursor outside prompt")
-    line_prefix = prompt[prompt.rfind("\n", 0, start) + 1:start]
-    prior = PRIOR_PATTERN.search(line_prefix) is not None
-    current = CURRENT_PATTERN.search(line_prefix) is not None
-    if prior and not current:
-        return 1.0, "prior-cue"
-    if current and not prior:
-        return 0.0, "current-cue"
-    return frozen_risk, "conflicting-cues" if prior else "no-cues"
 
 
 def match_record(match):

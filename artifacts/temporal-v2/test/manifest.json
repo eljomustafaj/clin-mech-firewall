@@ -1,0 +1,33 @@
+{
+  "schema_version": "temporal-test-run.v1",
+  "selection_sha256": "6b7dc3b52e77721705bd5fe4a9d7e2c6321783c2ce450f84605b9f74ec01b6ae",
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "layer": 12,
+  "device": "cuda",
+  "dtype": "float16",
+  "batch_size": 8,
+  "source_sha256": "176d849ee2504d425d604bba6037d433be2ad0e5295aa3eda75c037d6ecaaa20",
+  "versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.53.3",
+    "numpy": "2.2.6"
+  },
+  "development_sha256": {
+    "development.jsonl": "bd22f8fc1b6cd6c568ff0558fd1464f4fb2df68a675a52984cca77229e219396",
+    "validation-predictions.jsonl": "043c6c821e65a165c8c09106c42d4dafefd742b44fbb367d0d216642045f6cba",
+    "activations.npz": "a6fa1fb02d50d8afd12400b5d468d0c7fb062052dcbc6aa4fdf5446719b2e329"
+  },
+  "probe_sha256": {
+    "frozen-v1": "3c7bd6c3ab4547618a013f4aae07e1ad69708ca151064ba3b8da8b230d945350",
+    "recalibrated-v1": "b0b274d695947fb3fc6d27f00d16f810bd40c894a980a361b8e21093b31be3cf",
+    "balanced-v2": "62ab3b192b4ec28b7a231d907e69e40e1308dfa671466f79bb1735ae2111e80f",
+    "prior-weighted-v2": "60a6c8dab29e9323f1ccc39903f2084a865f39e2e5778b679fba72e2cfbd489e"
+  },
+  "sha256": {
+    "activations.npz": "1f1667093767b837a7331469bdf466710fb5ceb88b0d7500b02519b1bc3db236",
+    "dataset.jsonl": "d1a844e5302ebde8d8c65f78e3c3e285990d5285851770a557f585f809882536",
+    "metrics.json": "0995945abd72cbd06d56c535ca3e98d08478623e52d503c137590831666e347e",
+    "predictions.jsonl": "e8397c2fc3189b5ca290ce2985014157170c5a460db542e2326c31119959acaa"
+  }
+}
