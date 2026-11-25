@@ -1,0 +1,18 @@
+# Task 2 handoff · Clad and Boli
+
+## Clad → Boli · proposed trace v1
+
+Clad owns Task 2. Boli owns Task 1. Boli, please acknowledge the following wire format here or in a GitHub issue, or post your existing format and its path so we can reconcile them. Please identify the real trace, model revision, probe revision and reproduction command when ready.
+
+The worker emits UTF-8 newline-delimited JSON. One stream contains one trace. The first record identifies the trace and scorer, followed by contiguous zero-based token records in generation order, then an explicit end record. Token text is the exact incremental decoded text, including whitespace. Scores are finite numbers from zero through one, with larger scores indicating more risk. The layer is a zero-based transformer block index. The producer can omit SAE feature IDs.
+
+```jsonl
+{"type":"start","schema_version":1,"trace_id":"example","model_id":"fixture","model_revision":"v1","layer":0,"probe_id":"fixture","probe_revision":"v1"}
+{"type":"token","index":0,"text":"Hello","risk":0.1}
+{"type":"token","index":1,"text":" world","risk":0.8,"sae_feature_ids":[3]}
+{"type":"end","token_count":2}
+```
+
+The proxy adds the configured threshold to the start record. It emits one decision record per processed token, including trace_id, index, text, risk, decision and optional sae_feature_ids. If risk >= threshold, the token receives HALT, is recorded in telemetry and is withheld from the response. HALT is terminal. The telemetry end record includes trace_id, status (halted or complete), and token_count (processed decisions, including a triggering token). Any stream or validation failure is a failed replay. The response contains exactly the UTF-8 text of the ALLOW prefix.
+
+Example values above are synthetic. An example is suitable for testing the wire format. The first research handoff requires Task 1's actual trace.

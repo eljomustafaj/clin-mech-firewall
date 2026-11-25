@@ -15,3 +15,5 @@ Start by agreeing on a versioned event schema with Codex, before either owner bu
 Build the first vertical slice through a Python inference worker, a Rust streaming proxy, and a TypeScript replay view. The proxy should apply a configurable `ALLOW` or `HALT` decision before releasing each token and stream the decision to the view. Record the triggering token in telemetry even when it is withheld from the response.
 
 **First handoff.** Replay the trace from Task 1 through the proxy. Use a threshold that exercises `HALT`, verify that the triggering token never reaches the response, and show its score and decision at the same token position in the browser. Save the replay command and integration test so both owners can reproduce the result.
+
+Clad and Boli coordinate the trace contract and milestone status in the [shared handoff](docs/HANDOFF.md).
