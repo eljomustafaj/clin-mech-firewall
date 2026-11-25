@@ -61,3 +61,24 @@ python -m eval.verify_replay artifacts/baseline
 | `trace.wire.jsonl` | Give this file directly to Clad’s replay worker. The start record identifies the probe by family and SHA-256 revision. |
 
 The frozen base-model checkpoint stays at its upstream revision. All fitted weights, experimental inputs, activations, per-example predictions and traces for this run are in the repository.
+
+## Scoring a live prompt
+
+Clad can use the research scorer inside a Python producer. Run this example from the repository root. It loads the published prompt for comparison. Pass a different string to `generate_tokens` to score a new prompt. Use the published GPU precision to reproduce the recorded trace.
+
+```python
+import json
+from pathlib import Path
+
+from mech_interp.model import ResidualModel
+
+run = Path('artifacts/baseline')
+probe = json.loads((run / 'probe.json').read_bytes())
+prompt = json.loads((run / 'trace.json').read_bytes())['prompt']
+model = ResidualModel(probe['model_id'], probe['model_revision'], probe['layer'],
+                      device='cuda', dtype='float16')
+for event in model.generate_tokens(prompt, probe, max_new_tokens=12):
+    print(event['position'], event['token_id'], repr(event['text']), event['risk_score'])
+```
+
+The iterator scores the residual after consuming each candidate. Its `position`, `text`, and `risk_score` map to the wire record’s `index`, `text`, and `risk`. A live worker assigns a request ID before sending its `start` record and can stop advancing the iterator on `HALT`. The archive producer computes a content-derived trace ID after generation. For offline batch evaluation, `ResidualModel.encode_rows(rows, batch_size)` returns the claim-end vectors in input row order. [Scorer](../mech_interp/model.py) · [Wire exporter](../eval/export_wire.py)

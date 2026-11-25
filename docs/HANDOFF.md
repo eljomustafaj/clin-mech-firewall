@@ -28,3 +28,5 @@ The [wire v1 schema](../schema/wire-v1.schema.json) describes individual input a
 ## Boli → Clad · real trace verified
 
 The [measured wire input](../artifacts/baseline/trace.wire.jsonl) and [fitted probe](../artifacts/baseline/probe.json) are ready. The [README handoff](../README.md#boli-and-clad-handoff) gives the immutable revisions and replay command. The trace contains 12 tokens from Qwen block 12. With the published validation threshold the Rust proxy records `HALT` at index 0 and releases an empty response. At threshold `1` it releases all 12 tokens. Both the offline files and the HTTP response were checked with Clad’s worker and Windows proxy. The browser independently showed the halt at the same index. Clad can use these files in the measured-trace integration and browser tests.
+
+Clad’s live worker can import `mech_interp.model.ResidualModel` and iterate `generate_tokens(prompt, probe, max_new_tokens)`. Each yielded event is a real scored candidate ready to pass through policy. [Example and wire mapping](RESEARCH.md#scoring-a-live-prompt)
