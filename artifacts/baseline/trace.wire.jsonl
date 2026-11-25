@@ -1,0 +1,14 @@
+{"type": "start", "schema_version": 1, "trace_id": "greedy-cadb3238e352890d6b6e36a8058f0b11c999e64a60662e7227236c671383734d", "model_id": "Qwen/Qwen2.5-0.5B-Instruct", "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775", "layer": 12, "probe_id": "research-linear-probe-v1", "probe_revision": "sha256:3c7bd6c3ab4547618a013f4aae07e1ad69708ca151064ba3b8da8b230d945350"}
+{"type": "token", "index": 0, "text": " by", "risk": 0.965618595746429}
+{"type": "token", "index": 1, "text": " car", "risk": 0.9019257519510192}
+{"type": "token", "index": 2, "text": ".", "risk": 0.3599291942071767}
+{"type": "token", "index": 3, "text": " According", "risk": 0.513260046565}
+{"type": "token", "index": 4, "text": " to", "risk": 0.538022608426186}
+{"type": "token", "index": 5, "text": " the", "risk": 0.5507935182562979}
+{"type": "token", "index": 6, "text": " chart", "risk": 0.3617188942179296}
+{"type": "token", "index": 7, "text": ",", "risk": 0.15417238622086385}
+{"type": "token", "index": 8, "text": " the", "risk": 0.9573414023316066}
+{"type": "token", "index": 9, "text": " patient", "risk": 0.8993279144608055}
+{"type": "token", "index": 10, "text": " arrived", "risk": 0.3630434440119007}
+{"type": "token", "index": 11, "text": " by", "risk": 0.8542408895834018}
+{"type": "end", "token_count": 12}

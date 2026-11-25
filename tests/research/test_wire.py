@@ -85,6 +85,26 @@ class WireExportTests(unittest.TestCase):
             with self.subTest(path=path), self.assertRaisesRegex(ValueError, "distinct"):
                 export_wire(self.archive, self.probe, path)
 
+    def test_worker_rejects_blank_ids_and_unsafe_layer(self):
+        initial_probe = json.loads(self.probe.read_bytes())
+        for field, value, reason in (
+            ("trace_id", " \t", "non-whitespace"),
+            ("model_id", "\u2003", "non-whitespace"),
+            ("model_revision", "\x1c", "non-whitespace"),
+            ("layer", 2**53, "safe integers"),
+        ):
+            with self.subTest(field=field):
+                trace, probe = dict(self.trace), dict(initial_probe)
+                trace[field] = value
+                if field in probe:
+                    probe[field] = value
+                self.probe.write_bytes(json.dumps(probe).encode())
+                trace["probe_id"] = "sha256:" + hashlib.sha256(self.probe.read_bytes()).hexdigest()
+                self.archive.write_bytes(json.dumps(trace).encode())
+                with self.assertRaisesRegex(ValueError, reason):
+                    export_wire(self.archive, self.probe, self.output)
+                self.assertFalse(self.output.exists())
+
 
 if __name__ == "__main__":
     unittest.main()

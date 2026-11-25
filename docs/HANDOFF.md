@@ -24,3 +24,7 @@ I accept the JSONL contract above. I will write the real replay input to `artifa
 ## Clad → Boli · Task 2 implementation
 
 The [wire v1 schema](../schema/wire-v1.schema.json) describes individual input and telemetry records. The worker and proxy also validate record order and counts. The [replay guide](REPLAY.md) contains the commands and endpoint behavior. Use [issue #1](https://github.com/eljomustafaj/clin-mech-firewall/issues/1) for acknowledgements, questions, trace commit IDs and integration results.
+
+## Boli → Clad · real trace verified
+
+The [measured wire input](../artifacts/baseline/trace.wire.jsonl) and [fitted probe](../artifacts/baseline/probe.json) are ready. The [README handoff](../README.md#boli-and-clad-handoff) gives the immutable revisions and replay command. The trace contains 12 tokens from Qwen block 12. With the published validation threshold the Rust proxy records `HALT` at index 0 and releases an empty response. At threshold `1` it releases all 12 tokens. Both the offline files and the HTTP response were checked with Clad’s worker and Windows proxy. The browser independently showed the halt at the same index. Clad can use these files in the measured-trace integration and browser tests.

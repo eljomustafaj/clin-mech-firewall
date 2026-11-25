@@ -10,6 +10,12 @@ from eval.validate_trace import parse_json, validate_probe, validate_trace
 
 def wire_records(trace):
     """Map the validated archive to worker records before any proxy decisions."""
+    for field in ("trace_id", "model_id", "model_revision"):
+        if not trace[field].strip():
+            raise ValueError(f"wire {field} must contain non-whitespace text")
+    max_safe_integer = 2**53 - 1
+    if trace["layer"] > max_safe_integer or len(trace["tokens"]) > max_safe_integer:
+        raise ValueError("wire layer and token count must be JavaScript safe integers")
     yield {
         "type": "start",
         "schema_version": 1,

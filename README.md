@@ -4,9 +4,21 @@
 
 ## Task 1 — Boli owns the research baseline
 
-Choose an open-weight model and residual-stream layer that fit the available hardware. Build a small, source-traceable set of paired clinical prompts, including cases where a patient detail is supported by the context and cases where it is invented. Keep both members of each pair in the same data split. Capture activations, train a linear probe, and measure its performance on held-out cases.
+**Completed.** Boli trained a linear probe on block 12 of Qwen2.5-0.5B-Instruct using 160 candidate answers to fictional chart questions. A separate 40 answers set the decision threshold. The final 40 answers came from 10 matched groups on a held-out chart layout. Each group pairs a supported detail with a substitution and reverses the values to balance answer wording. [Dataset and split design](data/README.md)
 
-**First handoff.** Provide the versioned probe weights, model and layer identifiers, and a command that reproduces one real token trace and the held-out evaluation. Document a false alarm or missed fabrication if one occurs. A probe score measures association. Claims about steering will require a later controlled intervention, such as activation patching or ablation.
+| Held-out scorer | AUROC | F1 | Unsupported answers caught | Supported answers flagged |
+| --- | ---: | ---: | ---: | ---: |
+| Residual-stream linear probe | 0.990 | 0.667 | 10/20 | 0/20 |
+| Flag a term absent from the whole prompt | 0.750 | 0.667 | 10/20 | 0/20 |
+
+The probe ranked unsupported answers above their matched supported answers in 19 of 20 chart pairs. At the validation-selected threshold of `0.9552176915681485`, it caught every substitution absent from the note and missed every substitution copied from a prior visit. For example, one chart recorded a blood sample today and a urine sample previously. The unsupported answer “a urine sample” scored `0.4964` and passed. These results measure association on templated chart questions. Clinical generalization, latency and causal steering require separate experiments. [Metrics](artifacts/baseline/metrics.json) · [Per-answer predictions](artifacts/baseline/predictions.jsonl)
+
+After installing the [research dependencies](docs/RESEARCH.md), this command reproduces the evaluation, refits the weights, and generates the real trace from the pinned model. To inspect the published results immediately, the second command needs only Python.
+
+```sh
+python -m eval.run --device cuda --dtype float16 --batch-size 8 --output runs/reproduction
+python -m eval.report artifacts/baseline
+```
 
 ## Task 2 — Clad owns the streaming firewall and visualizer
 
@@ -18,7 +30,13 @@ Build the first vertical slice through a Python inference worker, a Rust streami
 
 ## Boli and Clad handoff
 
-**Boli → Clad · Wire v1 accepted.** I will publish the measured trace as `artifacts/baseline/trace.wire.jsonl` in Clad's start/token/end format, plus a research archive with the original token IDs and prompt. The planned scorer is Qwen2.5-0.5B-Instruct at zero-based post-block layer 12. I will publish the model revision, exact probe digest, replay command and an example threshold with the measured trace.
+**Boli → Clad · Measured trace delivered and replayed.** The chart said the patient arrived by bus today and by car at the previous visit. The model generated ` by car.` The first token ` by` scored `0.965618595746429`, so the proxy halted at index 0 and released zero bytes. The token ` car` scored `0.9019257519510192`, below the same threshold. This trace shows why the token that triggers a halt can differ from the factual error. The browser displayed the same token, score and decision. [Wire input](artifacts/baseline/trace.wire.jsonl) · [Prompt and token IDs](artifacts/baseline/trace.json)
+
+The model revision is `7ae557604adf67be50417f59c2c2f167def9a775`. The probe revision is `sha256:3c7bd6c3ab4547618a013f4aae07e1ad69708ca151064ba3b8da8b230d945350`. A second GPU run reproduced all eight output files byte for byte. A separate model hook reproduced the 12 generated tokens and their scores. [Probe weights](artifacts/baseline/probe.json) · [Run manifest](artifacts/baseline/manifest.json) · [Verification commands](docs/RESEARCH.md)
+
+```sh
+python scripts/replay.py artifacts/baseline/trace.wire.jsonl --threshold '0.9552176915681485'
+```
 
 Clad and Boli coordinate the trace contract and milestone status in the [shared handoff](docs/HANDOFF.md).
 
